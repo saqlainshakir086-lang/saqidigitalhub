@@ -1,317 +1,356 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#080d16">
-<meta name="description" content="SAQI DIGITAL HUB - Premium digital subscriptions, AI tools, VPN, editing and designing services.">
-<title>SAQI DIGITAL HUB | We Provide Quality</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<title>SAQI DIGITAL HUB | Premium Digital Services</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-:root{--bg:#080d16;--panel:#101a29;--panel2:#142237;--ink:#f5f8ff;--muted:#aab6c8;--blue:#36a9ff;--cyan:#55e1ee;--line:#ffffff18;--gold:#f6c86a}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-button,input{font:inherit}
-.container{width:min(1160px,90%);margin:auto}
-header{height:82px;position:sticky;top:0;z-index:1000;background:#080d16ed;backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
-.header-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:22px}
-.brand{display:flex;align-items:center;gap:12px;min-width:0}
-.brand img{width:112px;height:66px;object-fit:contain;border-radius:8px}
-.brand span{font-size:14px;font-weight:900;letter-spacing:1.2px;white-space:nowrap}
-nav{display:flex;align-items:center;gap:22px}
-nav a{font-size:12px;font-weight:700;color:#d5deeb;transition:.25s}
-nav a:hover{color:var(--cyan)}
-.menu-btn{display:none;background:none;border:0;color:white;font-size:24px}
-.hero{min-height:620px;display:grid;place-items:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 15% 25%,#0d477155,transparent 38%),radial-gradient(ellipse at 85% 75%,#075b6c55,transparent 35%),linear-gradient(135deg,#080d16,#101d2d 60%,#080d16)}
-.hero:before,.hero:after{content:"";position:absolute;width:360px;height:360px;border:1px solid #52d8ff20;border-radius:50%;filter:blur(1px)}
-.hero:before{top:-190px;left:-100px}.hero:after{bottom:-230px;right:-100px}
-.slider{width:min(1000px,90%);height:520px;position:relative;z-index:1}
-.slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:30px 10px;opacity:0;visibility:hidden;transform:translateY(16px);transition:opacity .45s ease,transform .45s ease,visibility .45s}
-.slide.active{opacity:1;visibility:visible;transform:translateY(0)}
-.hero-logo{width:min(370px,76vw);height:220px;object-fit:contain;border-radius:12px;filter:drop-shadow(0 18px 32px #0009);margin-bottom:20px}
-.kicker{color:var(--cyan);font-size:12px;font-weight:800;letter-spacing:4px;text-transform:uppercase;margin-bottom:12px}
-.slide h1{font-size:clamp(35px,7vw,72px);line-height:1.04;font-weight:900;letter-spacing:-1.5px}
-.gradient{background:linear-gradient(90deg,#fff,var(--cyan),#5baaff);background-clip:text;-webkit-background-clip:text;color:transparent}
-.slide h3{font-size:clamp(17px,3vw,25px);color:var(--gold);margin:15px 0 10px}
-.slide p{max-width:690px;color:#c1ccda;line-height:1.8;font-size:15px}
-.actions{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;margin-top:25px}
-.btn{border:1px solid transparent;padding:13px 23px;border-radius:50px;background:linear-gradient(110deg,#168bdc,#27c5d7);color:#06111c;font-size:13px;font-weight:900;box-shadow:0 9px 28px #159ed944;transition:.25s}
-.btn:hover{transform:translateY(-4px);box-shadow:0 14px 30px #159ed966}
-.btn.ghost{background:#ffffff0c;color:white;border-color:#ffffff38;box-shadow:none}
-.dots{position:absolute;bottom:8px;left:0;right:0;display:flex;justify-content:center;gap:9px}
-.dot{width:9px;height:9px;border:0;border-radius:20px;background:#627186;cursor:pointer;transition:.25s}
-.dot.active{width:29px;background:var(--cyan)}
-.trust-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:#0c1421;padding:17px 0}
-.trust-inner{display:flex;justify-content:center;gap:34px;flex-wrap:wrap;color:#bdc9d9;font-size:12px;font-weight:700}
-.trust-inner i{color:var(--cyan);margin-right:7px}
-section{padding:78px 0}
-.section-head{text-align:center;margin:0 auto 35px;max-width:720px}
-.eyebrow{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin-bottom:10px}
-.section-head h2{font-size:clamp(28px,4.5vw,43px);font-weight:900}
-.section-head p{color:var(--muted);font-size:14px;line-height:1.8;margin-top:10px}
-.search-wrap{max-width:540px;margin:0 auto 34px;position:relative}
-.search-wrap i{position:absolute;left:18px;top:17px;color:#8fa2b9}
-.search-wrap input{width:100%;padding:15px 18px 15px 47px;border-radius:50px;background:#111d2d;border:1px solid #ffffff22;color:white;outline:none}
-.search-wrap input:focus{border-color:var(--cyan);box-shadow:0 0 0 3px #55e1ee18}
-.category-nav{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-bottom:46px}
-.category-nav a{font-size:11px;font-weight:800;color:#c5d1e0;border:1px solid #ffffff20;background:#101a29;padding:9px 14px;border-radius:30px;transition:.2s}
-.category-nav a:hover{background:#163b50;border-color:var(--cyan);color:white}
-.service-section{padding:42px 0 48px;border-top:1px solid #ffffff12;scroll-margin-top:90px}
-.service-section:first-of-type{border-top:0}
-.category-title{display:flex;align-items:center;gap:14px;margin-bottom:22px}
-.category-title .cat-icon{width:48px;height:48px;display:grid;place-items:center;border-radius:15px;color:#06121e;font-size:20px;background:linear-gradient(145deg,#fff,var(--cyan));box-shadow:7px 8px 18px #0008,-2px -2px 8px #ffffff25}
-.category-title h3{font-size:23px;font-weight:900}
-.category-title p{font-size:12px;color:var(--muted);margin-top:3px}
-.service-grid{display:grid;grid-template-columns
-              :repeat(4,minmax(0,1fr));gap:16px}
-.service-card{min-height:174px;position:relative;overflow:hidden;padding:22px 17px;border-radius:19px;background:linear-gradient(145deg,#17263a,#0e1929);border:1px solid #ffffff18;box-shadow:0 12px 28px #0004;transition:transform .28s,border-color .28s,box-shadow .28s}
-.service-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 90% 0%,#3bbfe51b,transparent 48%);pointer-events:none}
-.service-card:hover{transform:translateY(-7px);border-color:#55e1ee88;box-shadow:0 18px 35px #0007,0 0 22px #37c8e51c}
-.icon-3d{width:57px;height:57px;border-radius:17px;display:grid;place-items:center;background:linear-gradient(145deg,#f9fcff,#b8c9d9);box-shadow:7px 8px 13px #0008,inset -3px -4px 7px #7d8fa4,inset 2px 2px 5px #fff;color:#111d2b;margin-bottom:15px;transform:perspective(300px) rotateX(7deg) rotateY(-7deg);transition:.3s}
-.service-card:hover .icon-3d{transform:perspective(300px) rotateY(12deg) rotateX(-5deg) scale(1.06)}
-.icon-3d img{width:31px;height:31px;object-fit:contain}
-.icon-3d i{font-size:27px}
-.service-card h4{font-size:15px;font-weight:800;margin-bottom:5px;position:relative}
-.service-card p{font-size:11px;color:#aebdd0;line-height:1.6;position:relative}
-.order-link{display:inline-block;margin-top:11px;color:var(--cyan);font-size:10px;font-weight:900;letter-spacing:.5px}
-.empty{display:none;text-align:center;color:var(--muted);padding:25px}
-.why{background:linear-gradient(180deg,#0b1421,#101d2d)}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-.why-card{padding:28px;border:1px solid #ffffff17;border-radius:18px;background:#ffffff08;text-align:center}
-.why-card i{font-size:28px;color:var(--cyan);margin-bottom:14px}
-.why-card h3{font-size:17px;margin-bottom:8px}
-.why-card p{font-size:12px;color:var(--muted);line-height:1.8}
-.about-box{max-width:850px;text-align:center;margin:auto}
-.about-box p{color:var(--muted);font-size:14px;line-height:2}
-.contact{background:radial-gradient(ellipse at 50% 100%,#12425a55,transparent 55%),#0d1725;text-align:center}
-.contact p{color:var(--muted);max-width:620px;margin:12px auto 25px;line-height:1.8;font-size:14px}
-.contact-links{display:flex;justify-content:center;gap:13px;flex-wrap:wrap}
-.contact-card{display:flex;align-items:center;gap:12px;padding:14px 20px;border:1px solid #ffffff24;background:#ffffff0b;border-radius:14px;text-align:left;transition:.25s}
-.contact-card:hover{transform:translateY(-5px);border-color:var(--cyan)}
-.contact-card i{font-size:26px}.contact-card small{display:block;color:var(--muted);font-size:10px}.contact-card strong{font-size:13px}
-.fa-whatsapp{color:#25d366}.fa-instagram{color:#f06aa6}
-footer{background:#060a11;border-top:1px solid #ffffff14;padding:38px 0 20px}
-.footer-inner{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
-.footer-brand{font-weight:900;letter-spacing:1px}.footer-brand p{font-size:12px;color:var(--muted);font-weight:400;letter-spacing:0;margin-top:7px}
-.footer-links{display:flex;gap:17px;flex-wrap:wrap}.footer-links a{font-size:11px;color:#b8c5d6}.footer-links a:hover{color:var(--cyan)}
-.copy{border-top:1px solid #ffffff13;margin-top:25px;padding-top:17px;text-align:center;color:#8190a3;font-size:10px}
-.float-wa{position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#20c968;color:white;font-size:29px;z-index:999;box-shadow:0 8px 25px #0008;animation:pulse 2s infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 11px #20c96820,0 8px 25px #0008}}
-@media(max-width:900px){.service-grid{grid-template-columns:repeat(3,1fr)}nav{gap:13px}nav a{font-size:10px}}
-@media(max-width:680px){
- header{height:72px}.brand img{width:82px;height:55px}.brand span{font-size:11px}
- .menu-btn{display:block}
- nav{display:none;position:absolute;top:71px;left:0;right:0;padding:20px;background:#0b1421;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}
- nav.show{display:flex}nav a{font-size:13px;padding:12px 5%;border-bottom:1px solid #ffffff10}
- .hero{min-height:570px}.slider{height:500px;width:92%}.hero-logo{height:175px;width:min(310px,82vw)}
- .slide p{font-size:13px}.slide h1{font-size:clamp(34px,10vw,52px)}
- section{padding:60px 0}.service-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
- .service-card{padding:17px 13px;min-height:166px}.category-title h3{font-size:20px}
- .category-title .cat-icon{width:43px;height:43px}.why-grid{grid-template-columns:1fr}
- .trust-inner{gap:13px;font-size:10px}.footer-inner{flex-direction:column}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:'Poppins',sans-serif;
+background:#eef3fa;
+color:#202b3c;
 }
-@media(max-width:360px){.service-grid{grid-template-columns:1fr}.brand span{font-size:10px}}
+header{
+background:#fff;
+padding:16px 6%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 3px 15px #0001;
+position:sticky;
+top:0;
+z-index:100;
+}
+.logo{font-size:21px;font-weight:800;color:#087fce}
+.logo span{color:#17243a}
+nav{display:flex;gap:20px;align-items:center}
+nav a{text-decoration:none;color:#253348;font-size:13px;font-weight:600}
+.contact-btn{
+background:#087fce;color:white!important;
+padding:10px 18px;border-radius:25px;
+cursor:pointer;border:0;font-family:inherit;
+}
+.hero{
+padding:35px 5%;
+text-align:center;
+}
+.hero h1{font-size:29px;color:#152c4c}
+.hero p{font-size:13px;color:#718096;margin-top:8px}
+.slider{
+overflow:hidden;
+padding:15px 0;
+}
+.slide-track{
+display:flex;
+gap:18px;
+width:max-content;
+animation:scroll 28s linear infinite;
+}
+.slider:hover .slide-track{animation-play-state:paused}
+.slide{
+width:190px;
+height:115px;
+background:white;
+border-radius:16px;
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+box-shadow:0 5px 18px #00000012;
+border:1px solid #e4eaf2;
+}
+.slide .symbol{font-size:30px;font-weight:800}
+.slide h3{font-size:16px;margin-top:5px}
+@keyframes scroll{
+0%{transform:translateX(0)}
+100%{transform:translateX(-50%)}
+}
+.container{max-width:1100px;margin:auto;padding:15px 5%}
+.section-title{
+font-size:22px;
+font-weight:800;
+margin:25px 0 15px;
+color:#172d4b;
+}
+.section-title:after{
+content:"";
+display:block;
+width:48px;
+height:4px;
+background:#078cdb;
+border-radius:5px;
+margin-top:6px;
+}
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
+gap:14px;
+}
+.card{
+background:white;
+border-radius:14px;
+padding:19px 10px;
+text-align:center;
+box-shadow:0 4px 15px #0000000b;
+border:1px solid #e9edf3;
+transition:.3s;
+}
+.card:hover{transform:translateY(-5px);box-shadow:0 8px 20px #0002}
+.card .icon{font-size:31px}
+.card h3{font-size:14px;margin-top:9px}
+.card p{font-size:10px;color:#8793a3;margin-top:5px}
+.category{
+margin-top:35px;
+}
+.banner{
+margin:40px 0;
+padding:35px 20px;
+background:linear-gradient(120deg,#087fce,#132f59);
+color:white;
+border-radius:18px;
+text-align:center;
+}
+.banner h2{font-size:24px}
+.banner p{font-size:12px;margin-top:8px}
+.banner a{
+display:inline-block;
+margin-top:15px;
+background:white;color:#087fce;
+text-decoration:none;
+padding:10px 23px;border-radius:25px;
+font-weight:700;font-size:12px;
+}
+footer{
+background:#101d30;
+color:white;
+padding:30px 5%;
+text-align:center;
+}
+footer h2{font-size:20px;color:#29a9ff}
+footer p{font-size:11px;color:#bdc9d8;margin-top:10px}
+.contact-area{position:relative}
+.dropdown{
+display:none;
+position:absolute;
+right:0;
+top:48px;
+width:235px;
+background:white;
+border-radius:14px;
+padding:12px;
+box-shadow:0 8px 30px #0003;
+z-index:200;
+}
+.dropdown.show{display:block}
+.dropdown a{
+display:flex;
+align-items:center;
+gap:12px;
+padding:12px;
+margin:3px 0;
+border-radius:9px;
+text-decoration:none;
+color:#253348;
+font-size:13px;
+font-weight:600;
+}
+.dropdown a:hover{background:#edf5fc}
+.dropdown .emoji{font-size:19px}
+.backup{
+border-top:1px solid #eee;
+margin-top:7px;
+padding-top:8px;
+}
+@media(max-width:600px){
+header{padding:13px 4%}
+.logo{font-size:17px}
+nav{gap:8px}
+nav a{font-size:11px}
+.contact-btn{padding:9px 12px;font-size:11px}
+.hero h1{font-size:23px}
+.slide{width:155px;height:100px}
+.cards{grid-template-columns:repeat(2,1fr)}
+}
 </style>
 </head>
-<body>
-<header>
- <div class="container header-inner">
-  <a class="brand" href="#home">
-   <img src="wolf-logo.jpg" alt="SAQI DIGITAL HUB Wolf Logo">
-   <span>SAQI DIGITAL HUB</span>
-  </a>
-  <button class="menu-btn" aria-label="Open navigation" onclick="document.querySelector('nav').classList.toggle('show')"><i class="fa-solid fa-bars"></i></button>
-  <nav>
-   <a href="#home">HOME</a><a href="#services">ALL SERVICES</a><a href="#vpn">VPN</a><a href="#editing">EDITING</a><a href="#design">DESIGNING</a><a href="#contact">CONTACT</a>
-  </nav>
- </div>
-</header>
-<main>
-<div class="hero" id="home">
- <div class="slider">
-  <article class="slide active">
-   <img class="hero-logo" src="wolf-logo.jpg" alt="SAQI DIGITAL HUB original wolf logo">
-   <div class="kicker">WELCOME TO YOUR DIGITAL WORLD</div>
-   <h1>SAQI <span class="gradient">DIGITAL HUB</span></h1>
-   <h3>WE PROVIDE QUALITY</h3>
-   <p>Premium digital subscriptions, AI tools, VPN, editing and designing services — all in one place.</p>
-   <div class="actions"><a class="btn" href="#services">EXPLORE SERVICES</a><a class="btn ghost" href="https://wa.me/923471191229">CONTACT ON WHATSAPP</a></div>
-  </article>
-  <article class="slide">
-   <img class="hero-logo" src="wolf-logo.jpg" alt="SAQI DIGITAL HUB wolf logo">
-   <div class="kicker
-    ">ONE HUB • MANY SOLUTIONS</div>
-   <h1>YOUR <span class="gradient">PREMIUM</span> DIGITAL STORE</h1>
-   <h3>AI • VPN • EDITING • ENTERTAINMENT</h3>
-   <p>Find the tools you need for work, creativity, privacy and entertainment.</p>
-   <div class="actions"><a class="btn" href="#services">VIEW CATEGORIES</a><a class="btn ghost" href="https://wa.me/923471191229">ORDER NOW</a></div>
-  </article>
-  <article class="slide">
-   <img class="hero-logo" src="wolf-logo.jpg" alt="SAQI DIGITAL HUB wolf logo">
-   <div class="kicker">YOUR TRUSTED DIGITAL PARTNER</div>
-   <h1>SMARTER <span class="gradient">DIGITAL LIFE</span></h1>
-   <h3>FAST SUPPORT • QUALITY SERVICE</h3>
-   <p>Message us to check availability, current prices and subscription details.</p>
-   <div class="actions"><a class="btn" href="https://wa.me/923471191229">CHAT WITH US</a><a class="btn ghost" href="https://www.instagram.com/saqi_digitalhub/" target="_blank" rel="noopener">FOLLOW INSTAGRAM</a></div>
-  </article>
-  <div class="dots"><button class="dot active" aria-label="Slide 1" onclick="goSlide(0)"></button><button class="dot" aria-label="Slide 2" onclick="goSlide(1)"></button><button class="dot" aria-label="Slide 3" onclick="goSlide(2)"></button></div>
- </div>
-</div>
-<div class="trust-strip"><div class="container trust-inner">
- <span><i class="fa-solid fa-shield-halved"></i> DIGITAL SOLUTIONS</span><span><i class="fa-solid fa-bolt"></i> QUICK RESPONSE</span><span><i class="fa-solid fa-headset"></i> CUSTOMER SUPPORT</span><span><i class="fa-solid fa-star"></i> QUALITY FIRST</span>
-</div></div>
-<section id="services">
- <div class="container">
-  <div class="section-head"><div class="eyebrow">Explore our categories</div><h2>Our Digital Services</h2><p>Har service ki apni alag category — apni required service search karein aur WhatsApp par availability poochhein.</p></div>
-  <div class="search-wrap"><i class="fa-solid fa-magnifying-glass"></i><input id="serviceSearch" type="search" placeholder="Search services e.g. Netflix, VPN, Canva..." aria-label="Search services"></div>
-  <div class="category-nav">
-   <a href="#ai">AI TOOLS</a><a href="#vpn">VPN</a><a href="#editing">VIDEO EDITING</a><a href="#design">DESIGNING</a><a href="#streaming">STREAMING</a><a href="#social">SOCIAL MEDIA</a><a href="#writing">WRITING</a><a href="#marketing">MARKETING</a><a href="#music">VOICE & MUSIC</a>
-  </div>
-<div class="service-section" id="ai">
-   <div class="category-title"><div class="cat-icon"><i class="fa-solid fa-robot"></i></div><div><h3>AI & Smart Tools</h3><p>AI assistants, research and productivity tools</p></div></div>
-   <div class="service-grid">
-    <div class="service-card" data-search="chatgpt openai ai chatbot"><div class="icon-3d"><img src="https://cdn.simpleicons.org/openai/111827" alt="OpenAI" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-robot" style="display:none"></i></div><h4>ChatGPT Plus</h4><p>AI assistant and smart productivity.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="gemini google ai"><div class="icon-3d"><img src="https://cdn.simpleicons.org/googlegemini/4285F4" alt="Gemini" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-star" style="display:none"></i></div><h4>Gemini Pro</h4><p>Google AI tools and assistance.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="grok x ai"><div class="icon-3d"><img src="https://cdn.simpleicons.org/x/111827" alt="Grok / X" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-brain" style="display:none"></i></div><h4>Grok AI</h4><p>AI chat and information assistant.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="perplexity ai search"><div class="icon-3d"><img src="https://cdn.simpleicons.org/perplexity/111827" alt="Perplexity" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-magnifying-glass" style="display:none"></i></div><h4>Perplexity AI</h4><p>AI-powered search and research.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="claude anthropic ai"><div class="icon-3d"><img src="https://cdn.simpleicons.org/claude/111827" alt="Claude" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-comment-dots" style="display:none"></i></div><h4>Claude AI</h4><p>AI writing and reasoning assistant.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="leonardo ai image generation"><div class="icon-3d"><i class="fa-solid fa-wand-magic-sparkles"></i></div><h4>Leonardo AI</h4><p>AI image and creative generation.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-   </div>
-  </div>
 
-<div class="service-section" id="vpn">
-   <div class="category-title"><div class="cat-icon"><i class="fa-solid fa-shield-halved"></i></div><div><h3>VPN & Online Security</h3><p>Privacy, secure browsing and VPN subscriptions</p></div></div>
-   <div class="service-grid">
-    <div class="service-card" data-search="nordvpn nord vpn"><div class="icon-3d"><img src="https://cdn.simpleicons.org/nordvpn/4687FF" alt="NordVPN" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-shield-halved" style="display:none"></i></div><h4>NordVPN</h4><p>Premium VPN and secure browsing.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="surfshark vpn"><div class="icon-3d"><img src="https://cdn.simpleicons.org/surfshark/178BFF" alt="Surfshark" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-water" style="display:none"></i></div><h4>Surfshark VPN</h4><p>VPN protection for your devices.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="expressvpn express vpn"><div class="icon-3d"><img src="https://cdn.simpleicons.org/expressvpn/DA3940" alt="ExpressVPN" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-lock" style="display:none"></i></div><h4>ExpressVPN</h4><p>Private and encrypted connection.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>https://cdn.simpleicons.org/protonvpn/6D4AFF
-        <div class="service-card" data-search="proton vpn"><div class="icon-3d"><img src="https://cdn.simpleicons.org/protonvpn/6D4AFF" alt="Proton VPN" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-user-shield" style="display:none"></i></div><h4>Proton VPN</h4><p>Privacy-focused VPN solution.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-   </div>
-  </div>
-   <div class="service-section" id="editing">
-   <div class="category-title"><div class="cat-icon"><i class="fa-solid fa-film"></i></div><div><h3>Video Editing Tools</h3><p>Video editing, reels and professional content creation</p></div></div>
-   <div class="service-grid">
-    <div class="service-card" data-search="capcut video editing"><div class="icon-3d"><img src="https://cdn.simpleicons.org/capcut/111827" alt="CapCut" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-scissors" style="display:none"></i></div><h4>CapCut Pro</h4><p>Video editing and creative effects.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="adobe premiere pro video"><div class="icon-3d"><img src="https://cdn.simpleicons.org/adobepremierepro/9999FF" alt="Premiere Pro" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-clapperboard" style="display:none"></i></div><h4>Premiere Pro</h4><p>Professional video production tools.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="filmora video editor"><div class="icon-3d"><i class="fa-solid fa-video"></i></div><h4>Filmora</h4><p>Simple and powerful video editing.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="after effects motion graphics"><div class="icon-3d"><img src="https://cdn.simpleicons.org/adobeaftereffects/9999FF" alt="After Effects" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-photo-film" style="display:none"></i></div><h4>After Effects</h4><p>Motion graphics and visual effects.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-   </div>
-  </div><div class="service-section" id="design">
-   <div class="category-title"><div class="cat-icon"><i class="fa-solid fa-pen-ruler"></i></div><div><h3>Graphic Designing</h3><p>Logos, social posts, layouts and creative design</p></div></div>
-   <div class="service-grid">
-    <div class="service-card" data-search="canva pro design"><div class="icon-3d"><img src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-palette" style="display:none"></i></div><h4>Canva Pro</h4><p>Design graphics, posts and presentations.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="adobe photoshop"><div class="icon-3d"><img src="https://cdn.simpleicons.org/adobephotoshop/31A8FF" alt="Photoshop" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-image" style="display:none"></i></div><h4>Photoshop</h4><p>Photo editing and graphic design.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="adobe illustrator vector"><div class="icon-3d"><img src="https://cdn.simpleicons.org/adobeillustrator/FF9A00" alt="Illustrator" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-pen-nib" style="display:none"></i></div><h4>Illustrator</h4><p>Vector graphics and logo creation.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="figma ui ux design"><div class="icon-3d"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-brands fa-figma" style="display:none"></i></div><h4>Figma</h4><p>UI/UX design and collaboration.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-   </div>
-  </div>
-    <div class="service-section" id="streaming">
-   <div class="category-title"><div class="cat-icon"><i class="fa-solid fa-tv"></i></div><div><h3>Streaming & Entertainment</h3><p>Movies, series, anime and television</p></div></div>
-   <div class="service-grid">
-    <div class="service-card" data-search="netflix movies series"><div class="icon-3d"><img src="https://cdn.simpleicons.org/netflix/E50914" alt="Netflix" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-film" style="display:none"></i></div><h4>Netflix</h4><p>Movies, series and entertainment.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="prime video amazon"><div class="icon-3d"><img src="https://cdn.simpleicons.org/primevideo/00A8E1" alt="Prime Video" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-brands fa-amazon" style="display:none"></i></div><h4>Prime Video</h4><p>Popular films and TV shows.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="iptv live tv"><div class="icon-3d"><i class="fa-solid fa-tv"></i></div><h4>IPTV</h4><p>Live TV and digital channels.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="crunchyroll anime"><div class="icon-3d"><img src="https://cdn.simpleicons.org/crunchyroll/F47521" alt="Crunchyroll" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-play" style="display:none"></i></div><h4>Crunchyroll</h4><p>Anime streaming and entertainment.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVA<section class="why">
- <div class="container">
-  <div class="section-head"><div class="eyebrow">Why choose us</div><h2>What Sets Us Apart</h2><p>Our focus is to make your digital experience simple and convenient.</p></div>
-  <div class="why-grid">
-   <div class="why-card"><i class="fa-solid fa-tags"></i><h3>Competitive Prices</h3><p>Ask us for current prices and available subscription options.</p></div>
-   <div class="why-card"><i class="fa-solid fa-headset"></i><h3>Customer Support</h3><p>Get help with your questions and order details through WhatsApp.</p></div>
-   <div class="why-card"><i class="fa-solid fa-bolt"></i><h3>Quick Response</h3><p>We aim to respond promptly and guide you to the right service.</p></div>
-  </div>
- </div>
+<body>
+
+<header>
+<div class="logo">SAQI <span>DIGITAL HUB</span></div>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#services">Services</a>
+
+<div class="contact-area">
+<button class="contact-btn" onclick="toggleContact()">
+CONTACT ▼
+</button>
+
+<div class="dropdown" id="contactMenu">
+
+<a href="https://wa.me/923471191229">
+<span class="emoji">🟢</span> WhatsApp
+</a>
+
+<a href="https://instagram.com/yourusername">
+<span class="emoji">📸</span> Instagram
+</a>
+
+<a href="https://facebook.com/yourusername">
+<span class="emoji">🔵</span> Facebook
+</a>
+
+<a href="https://tiktok.com/@yourusername">
+<span class="emoji">🎵</span> TikTok
+</a>
+
+<div class="backup">
+<a href="tel:+923325293980">
+<span class="emoji">📞</span> Backup: 03325293980
+</a>
+</div>
+
+</div>
+</div>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<h1>Premium Digital Services</h1>
+<p>Your One Stop Shop For All Digital Subscriptions</p>
 </section>
-<section id="about"><div class="container about-box">
- <div class="section-head"><div class="eyebrow">About our hub</div><h2>About SAQI DIGITAL HUB</h2></div>
- <p>SAQI DIGITAL HUB is your destination for digital subscriptions, AI tools, VPN services, creative software, entertainment and online solutions. Our motto is simple: <strong>WE PROVIDE QUALITY.</strong> Contact us to confirm current availability, pricing and service details before placing your order.</p>
- <div class="actions"><a class="btn" href="https://wa.me/923471191229">CHAT WITH US</a></div>
-</div></section>
-<section class="contact" id="contact"><div class="container">
- <div class="eyebrow">We are here to help</div><h2 style="font-size:clamp(30px,5vw,46px)">Let's Connect!</h2>
- <p>Have a question or want to place an order? Message us on WhatsApp or follow our Instagram page.</p>
- <div class="contact-links">
-  <a class="contact-card" href="https://wa.me/923471191229" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i><span><small>WHATSAPP</small><strong>0347 1191229</strong></span></a>
-  <a class="contact-card" href="https://www.instagram.com/saqi_digitalhub/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i><span><small>INSTAGRAM</small><strong>@saqi_digitalhub</strong></span></a>
- </div>
-</div></section>
-     </main>
-<footer><div class="container">
- <div class="footer-inner"><div class="footer-brand">SAQI DIGITAL HUB<p>WE PROVIDE QUALITY.</p></div>
- <div class="footer-links"><a href="#home">Home</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a></div></div>
- <div class="copy">© 2026 SAQI DIGITAL HUB. All Rights Reserved.</div>
-</div></footer>
-<a class="float-wa" href="https://wa.me/923471191229" target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+
+<!-- AUTOMATIC SLIDER -->
+
+<div class="slider">
+<div class="slide-track">
+
+<div class="slide"><div class="symbol" style="color:#e50914">N</div><h3>NETFLIX</h3></div>
+<div class="slide"><div class="symbol" style="color:#159bd7">prime</div><h3>PRIME VIDEO</h3></div>
+<div class="slide"><div class="symbol" style="color:#ff0033">▶</div><h3>YOUTUBE PREMIUM</h3></div>
+<div class="slide"><div class="symbol" style="color:#f47521">CR</div><h3>CRUNCHYROLL</h3></div>
+<div class="slide"><div class="symbol" style="color:#1db954">♫</div><h3>SPOTIFY</h3></div>
+<div class="slide"><div class="symbol" style="color:#00a8e0">C</div><h3>CANVA PRO</h3></div>
+<div class="slide"><div class="symbol" style="color:#25a5f0">AI</div><h3>CHATGPT PLUS</h3></div>
+
+<!-- Duplicate for continuous animation -->
+
+<div class="slide"><div class="symbol" style="color:#e50914">N</div><h3>NETFLIX</h3></div>
+<div class="slide"><div class="symbol" style="color:#159bd7">prime</div><h3>PRIME VIDEO</h3></div>
+<div class="slide"><div class="symbol" style="color:#ff0033">▶</div><h3>YOUTUBE PREMIUM</h3></div>
+<div class="slide"><div class="symbol" style="color:#f47521">CR</div><h3>CRUNCHYROLL</h3></div>
+<div class="slide"><div class="symbol" style="color:#1db954">♫</div><h3>SPOTIFY</h3></div>
+<div class="slide"><div class="symbol" style="color:#00a8e0">C</div><h3>CANVA PRO</h3></div>
+<div class="slide"><div class="symbol" style="color:#25a5f0">AI</div><h3>CHATGPT PLUS</h3></div>
+
+</div>
+</div>
+
+<main class="container" id="services">
+
+<!-- STREAMING -->
+
+<section class="category">
+<h2 class="section-title">🎬 Streaming Services</h2>
+<div class="cards">
+
+<div class="card"><div class="icon">🎬</div><h3>Netflix</h3><p>Premium Streaming</p></div>
+<div class="card"><div class="icon">▶️</div><h3>Prime Video</h3><p>Movies & Series</p></div>
+<div class="card"><div class="icon">📺</div><h3>YouTube Premium</h3><p>Ad Free Experience</p></div>
+<div class="card"><div class="icon">🍿</div><h3>Crunchyroll</h3><p>Anime Streaming</p></div>
+<div class="card"><div class="icon">🎵</div><h3>Spotify</h3><p>Music Premium</p></div>
+<div class="card"><div class="icon">📺</div><h3>IPTV</h3><p>Live TV Channels</p></div>
+<div class="card"><div class="icon">🎞️</div><h3>Hulu</h3><p>Entertainment</p></div>
+<div class="card"><div class="icon">📡</div><h3>Zee5</h3><p>Entertainment</p></div>
+
+</div>
+</section>
+
+<!-- VPN -->
+
+<section class="category">
+<h2 class="section-title">🔐 VPN Services</h2>
+<div class="cards">
+<div class="card"><div class="icon">🛡️</div><h3>NordVPN</h3><p>Secure Connection</p></div>
+<div class="card"><div class="icon">🌐</div><h3>Surfshark</h3><p>VPN Protection</p></div>
+<div class="card"><div class="icon">🔒</div><h3>IPVanish</h3><p>Online Privacy</p></div>
+<div class="card"><div class="icon">⚡</div><h3>ExpressVPN</h3><p>Fast VPN</p></div>
+<div class="card"><div class="icon">🔐</div><h3>Proton VPN</h3><p>Private Browsing</p></div>
+</div>
+</section>
+
+<!-- AI -->
+
+<section class="category">
+<h2 class="section-title">🤖 AI & Smart Tools</h2>
+<div class="cards">
+<div class="card"><div class="icon">🤖</div><h3>ChatGPT Plus</h3><p>AI Assistant</p></div>
+<div class="card"><div class="icon">💎</div><h3>Gemini Pro</h3><p>Google AI</p></div>
+<div class="card"><div class="icon">🚀</div><h3>Grok AI</h3><p>AI Intelligence</p></div>
+<div class="card"><div class="icon">🧠</div><h3>Leonardo AI</h3><p>AI Images</p></div>
+<div class="card"><div class="icon">✍️</div><h3>Grammarly</h3><p>Writing Assistant</p></div>
+<div class="card"><div class="icon">📚</div><h3>QuillBot</h3><p>AI Writing</p></div>
+</div>
+</section>
+
+<!-- EDITING -->
+
+<section class="category">
+<h2 class="section-title">🎥 Editing Services</h2>
+<div class="cards">
+<div class="card"><div class="icon">🎬</div><h3>CapCut Pro</h3><p>Video Editing</p></div>
+<div class="card"><div class="icon">🎨</div><h3>Alight Motion</h3><p>Motion Graphics</p></div>
+<div class="card"><div class="icon">📹</div><h3>Filmora</h3><p>Video Editor</p></div>
+<div class="card"><div class="icon">✂️</div><h3>InShot Pro</h3><p>Video Editing</p></div>
+</div>
+</section>
+
+<!-- DESIGN -->
+
+<section class="category">
+<h2 class="section-title">🎨 Designing Services</h2>
+<div class="cards">
+<div class="card"><div class="icon">🖌️</div><h3>Canva Pro</h3><p>Graphic Designing</p></div>
+<div class="card"><div class="icon">🖼️</div><h3>Photoshop</h3><p>Photo Editing</p></div>
+<div class="card"><div class="icon">✨</div><h3>Freepik</h3><p>Creative Assets</p></div>
+<div class="card"><div class="icon">📐</div><h3>Adobe Express</h3><p>Creative Design</p></div>
+</div>
+</section>
+
+<section class="banner">
+<h2>SAQI DIGITAL HUB</h2>
+<p>Premium Quality • Best Prices • Trusted Services</p>
+<a href="https://wa.me/923471191229">ORDER NOW ON WHATSAPP</a>
+</section>
+
+</main>
+
+<footer>
+<h2>SAQI DIGITAL HUB</h2>
+<p>Premium Digital Services At Affordable Prices</p>
+<p>WhatsApp: 03471191229</p>
+<p>Backup: 03325293980</p>
+<p>© 2026 SAQI DIGITAL HUB. All Rights Reserved.</p>
+</footer>
+
 <script>
-let currentSlide=0;
-const slides=[...document.querySelectorAll('.slide')];
-const dots=[...document.querySelectorAll('.dot')];
-let slideTimer;
-function goSlide(index){
- slides[currentSlide].classList.remove('active');dots[currentSlide].classList.remove('active');
- currentSlide=(index+slides.length)%slides.length;
- slides[currentSlide].classList.add('active');dots[currentSlide].classList.add('active');
+function toggleContact(){
+document.getElementById("contactMenu").classList.toggle("show");
 }
-function startSlider(){clearInterval(slideTimer);slideTimer=setInterval(()=>goSlide(currentSlide+1),3500)}
-dots.forEach((dot,index)=>dot.addEventListener('click',()=>{goSlide(index);startSlider()}));
-startSlider();
-document.querySelectorAll('nav a').forEach(link=>link.addEventListener('click',()=>document.querySelector('nav').classList.remove('show')));
-const search=document.getElementById('serviceSearch');
-const cards=[...document.querySelectorAll('.service-card')];
-const sections=[...document.querySelectorAll('.service-section')];
-const empty=document.getElementById('emptyMessage');
-search.addEventListener('input',()=>{
- const q=search.value.trim().toLowerCase();let total=0;
- cards.forEach(card=>{
-  const match=!q||card.innerText.toLowerCase().includes(q)||(card.dataset.search||'').includes(q);
-  card.style.display=match?'':'none';if(match)total++;
- });
- sections.forEach(section=>{section.style.display=[...section.querySelectorAll('.service-card')].some(card=>card.style.display!=='none')?'':'none'});
- empty.style.display=total?'none':'block';
+
+document.addEventListener("click",function(e){
+if(!e.target.closest(".contact-area")){
+document.getElementById("contactMenu").classList.remove("show");
+}
 });
 </script>
-</body>
-    </html>ILABILITY ↗</a></div>
-    <div class="service-card" data-search="spotify music"><div class="icon-3d"><img src="https://cdn.simpleicons.org/spotify/1DB954" alt="Spotify" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-music" style="display:none"></i></div><h4>Spotify</h4><p>Music streaming and playlists.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-   </div>
-  </div>
 
-<div class="service-section" id="social">
-   <div class="category-title"><div class="cat-icon"><i class="fa-solid fa-hashtag"></i></div><div><h3>Social Media Services</h3><p>Social platforms and account-related digital solutions</p></div></div>
-   <div class="service-grid">
-    <div class="service-card" data-search="tiktok account uk"><div class="icon-3d"><img src="https://cdn.simpleicons.org/tiktok/111827" alt="TikTok" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-brands fa-tiktok" style="display:none"></i></div><h4>TikTok Accounts</h4><p>Account options and related services.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="instagram social"><div class="icon-3d"><img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-brands fa-instagram" style="display:none"></i></div><h4>Instagram Services</h4><p>Social media account solutions.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="facebook social"><div class="icon-3d"><img src="https://cdn.simpleicons.org/facebook/0866FF" alt="Facebook" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-brands fa-facebook" style="display:none"></i></div><h4>Facebook Services</h4><p>Digital account-related solutions.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="telegram premium"><div class="icon-3d"><img src="https://cdn.simpleicons.org/telegram/26A5E4" alt="Telegram" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-brands fa-telegram" style="display:none"></i></div><h4>Telegram Premium</h4><p>Messaging and premium features.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-   </div>
-  </div>
-    <div class="service-section" id="writing">
-   <div class="category-title"><div class="cat-icon"><i class="fa-solid fa-pen-to-square"></i></div><div><h3>Writing & Productivity</h3><p>Writing, grammar, notes and office productivity</p></div></div>
-   <div class="service-grid">
-    <div class="service-card" data-search="grammarly writing"><div class="icon-3d"><img src="https://cdn.simpleicons.org/grammarly/15C39A" alt="Grammarly" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-spell-check" style="display:none"></i></div><h4>Grammarly</h4><p>Writing and grammar assistance.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="quillbot paraphrasing"><div class="icon-3d"><i class="fa-solid fa-feather"></i></div><h4>QuillBot</h4><p>Writing and paraphrasing tools.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="notion productivity"><div class="icon-3d"><img src="https://cdn.simpleicons.org/notion/111827" alt="Notion" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-note-sticky" style="display:none"></i></div><h4>Notion</h4><p>Workspace and productivity tools.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="microsoft office 365"><div class="icon-3d"><img src="https://cdn.simpleicons.org/microsoftoffice/D83B01" alt="Microsoft Office" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-file-lines" style="display:none"></i></div><h4>MS Office 365</h4><p>Office and productivity applications.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-   </div>
-  </div>
-<div class="service-section" id="marketing">
-   <div class="category-title"><div class="cat-icon"><i class="fa-solid fa-chart-line"></i></div><div><h3>SEO & Digital Marketing</h3><p>Marketing, website growth and online research</p></div></div>
-   <div class="service-grid">
-    <div class="service-card" data-search="semrush seo"><div class="icon-3d"><img src="https://cdn.simpleicons.org/semrush/FF642D" alt="Semrush" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-chart-simple" style="display:none"></i></div><h4>Semrush</h4><p>SEO and competitive research tools.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="envato elements templates"><div class="icon-3d"><img src="https://cdn.simpleicons.org/envato/82B541" alt="Envato" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-cubes" style="display:none"></i></div><h4>Envato Elements</h4><p>Creative assets, templates and resources.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="freepik stock images"><div class="icon-3d"><img src="https://cdn.simpleicons.org/freepik/1273EB" alt="Freepik" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-images" style="display:none"></i></div><h4>Freepik</h4><p>Stock images and design resources.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-   </div>
-  </div>
-<div class="service-section" id="music">
-   <div class="category-title"><div class="cat-icon"><i class="fa-solid fa-microphone-lines"></i></div><div><h3>Voice & Music Tools</h3><p>AI voice generation, audio and music creation</p></div></div>
-   <div class="service-grid">
-    <div class="service-card" data-search="elevenlabs ai voice"><div class="icon-3d"><img src="https://cdn.simpleicons.org/elevenlabs/111827" alt="ElevenLabs" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid fa-microphone" style="display:none"></i></div><h4>ElevenLabs</h4><p>AI voice and text-to-speech tools.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-    <div class="service-card" data-search="suno ai music"><div class="icon-3d"><i class="fa-solid fa-music"></i></div><h4>Suno AI</h4><p>AI music and song generation.</p><a class="order-link" href="https://wa.me/923471191229">ASK AVAILABILITY ↗</a></div>
-   </div>
-  </div>
-  <p class="empty" id="emptyMessage">No matching service found. Try another keyword.</p>
- </div>
-</section>
+</body>
+</html>
