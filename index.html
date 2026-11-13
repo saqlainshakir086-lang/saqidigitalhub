@@ -1,180 +1,229 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SAQI DIGITAL HUB | Premium Digital Services</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<title>SAQI DIGITAL HUB</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-font-family:'Poppins',sans-serif;
-background:#eef3fa;
-color:#202b3c;
+:root {
+ --bg:#080d18;
+ --panel:#111d30;
+ --cyan:#35d5e5;
+ --muted:#9eacc0;
 }
-header{
-background:#fff;
-padding:16px 6%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 3px 15px #0001;
-position:sticky;
-top:0;
-z-index:100;
+* {box-sizing:border-box;margin:0;padding:0}
+body {font-family:Inter,Arial;background:var(--bg);color:#f5f7fb}
+a {text-decoration:none;color:inherit}
+button {font:inherit;cursor:pointer}
+
+header {
+ height:76px;padding:0 6%;display:flex;align-items:center;
+ justify-content:space-between;background:#080d18ed;
+ border-bottom:1px solid #ffffff18;position:sticky;top:0;
+ z-index:10;backdrop-filter:blur(15px)
 }
-.logo{font-size:21px;font-weight:800;color:#087fce}
-.logo span{color:#17243a}
-nav{display:flex;gap:20px;align-items:center}
-nav a{text-decoration:none;color:#253348;font-size:13px;font-weight:600}
-.contact-btn{
-background:#087fce;color:white!important;
-padding:10px 18px;border-radius:25px;
-cursor:pointer;border:0;font-family:inherit;
+.brand {display:flex;align-items:center;gap:10px;font-weight:900}
+.brand img {width:48px;height:48px;object-fit:contain}
+.brand span,.grad {
+ background:linear-gradient(90deg,#fff,#39d9e7,#8b8cff);
+ -webkit-background-clip:text;color:transparent
 }
-.hero{
-padding:35px 5%;
-text-align:center;
+nav {display:flex;gap:8px}
+.navbtn {
+ border:0;background:transparent;color:#b9c7d9;
+ padding:12px 15px;border-radius:10px;font-weight:800;font-size:12px
 }
-.hero h1{font-size:29px;color:#152c4c}
-.hero p{font-size:13px;color:#718096;margin-top:8px}
-.slider{
-overflow:hidden;
-padding:15px 0;
+.navbtn.active,.navbtn:hover {background:#1a3c58;color:white}
+.menu {
+ display:none;background:#17263b;color:white;
+ border:1px solid #ffffff22;padding:10px;border-radius:9px
 }
-.slide-track{
-display:flex;
-gap:18px;
-width:max-content;
-animation:scroll 28s linear infinite;
+.page {display:none;min-height:70vh;animation:fade .3s}
+.page.active {display:block}
+@keyframes fade {
+ from {opacity:.3;transform:translateY(8px)}
+ to {opacity:1;transform:none}
 }
-.slider:hover .slide-track{animation-play-state:paused}
-.slide{
-width:190px;
-height:115px;
-background:white;
-border-radius:16px;
-display:flex;
-align-items:center;
-justify-content:center;
-flex-direction:column;
-box-shadow:0 5px 18px #00000012;
-border:1px solid #e4eaf2;
+.hero {
+ min-height:570px;padding:70px 7%;display:grid;
+ grid-template-columns:1.1fr .9fr;align-items:center;
+ gap:25px;background:
+ radial-gradient(ellipse at 80% 30%,#16415b,transparent 45%),
+ radial-gradient(ellipse at 5% 95%,#2b1b4a,transparent 40%)
 }
-.slide .symbol{font-size:30px;font-weight:800}
-.slide h3{font-size:16px;margin-top:5px}
-@keyframes scroll{
-0%{transform:translateX(0)}
-100%{transform:translateX(-50%)}
+.kicker {
+ color:var(--cyan);font-size:12px;font-weight:900;
+ letter-spacing:3px;margin-bottom:16px
 }
-.container{max-width:1100px;margin:auto;padding:15px 5%}
-.section-title{
-font-size:22px;
-font-weight:800;
-margin:25px 0 15px;
-color:#172d4b;
+.hero h1 {
+ font-size:clamp(40px,6vw,76px);
+ line-height:1.05;letter-spacing:-2px;font-weight:900
 }
-.section-title:after{
-content:"";
-display:block;
-width:48px;
-height:4px;
-background:#078cdb;
-border-radius:5px;
-margin-top:6px;
+.hero p {
+ color:#afbdcf;line-height:1.9;max-width:560px;
+ margin:22px 0 28px;font-size:15px
 }
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
-gap:14px;
+.actions {display:flex;gap:12px;flex-wrap:wrap}
+.btn {
+ border:0;border-radius:11px;padding:14px 20px;color:white;
+ background:linear-gradient(110deg,#16b9ce,#496dff);
+ font-weight:900;font-size:12px;box-shadow:0 12px 28px #237ed344
 }
-.card{
-background:white;
-border-radius:14px;
-padding:19px 10px;
-text-align:center;
-box-shadow:0 4px 15px #0000000b;
-border:1px solid #e9edf3;
-transition:.3s;
+.btn.alt {
+ background:#ffffff10;border:1px solid #ffffff2b;box-shadow:none
 }
-.card:hover{transform:translateY(-5px);box-shadow:0 8px 20px #0002}
-.card .icon{font-size:31px}
-.card h3{font-size:14px;margin-top:9px}
-.card p{font-size:10px;color:#8793a3;margin-top:5px}
-.category{
-margin-top:35px;
+.btn:hover {transform:translateY(-3px)}
+.art {
+ display:grid;place-items:center;position:relative;min-height:330px
 }
-.banner{
-margin:40px 0;
-padding:35px 20px;
-background:linear-gradient(120deg,#087fce,#132f59);
-color:white;
-border-radius:18px;
-text-align:center;
+.aura {
+ width:min(340px,78vw);aspect-ratio:1;border-radius:50%;
+ display:grid;place-items:center;
+ background:radial-gradient(circle,#29415a,#101a2a 60%,transparent 72%);
+ filter:drop-shadow(0 20px 35px #0009)
 }
-.banner h2{font-size:24px}
-.banner p{font-size:12px;margin-top:8px}
-.banner a{
-display:inline-block;
-margin-top:15px;
-background:white;color:#087fce;
-text-decoration:none;
-padding:10px 23px;border-radius:25px;
-font-weight:700;font-size:12px;
+.aura img {
+ width:88%;height:88%;object-fit:contain;mix-blend-mode:screen
 }
-footer{
-background:#101d30;
-color:white;
-padding:30px 5%;
-text-align:center;
+.float {
+ position:absolute;background:#0d1a2de8;border:1px solid #ffffff25;
+ padding:12px 15px;border-radius:12px;font-size:11px;font-weight:800
 }
-footer h2{font-size:20px;color:#29a9ff}
-footer p{font-size:11px;color:#bdc9d8;margin-top:10px}
-.contact-area{position:relative}
-.dropdown{
-display:none;
-position:absolute;
-right:0;
-top:48px;
-width:235px;
-background:white;
-border-radius:14px;
-padding:12px;
-box-shadow:0 8px 30px #0003;
-z-index:200;
+.float.a {top:12%;left:0}
+.float.b {bottom:12%;right:0}
+.section {padding:65px 7%}
+.heading {text-align:center;max-width:700px;margin:0 auto 35px}
+.heading h2 {font-size:clamp(28px,4vw,44px);font-weight:900}
+.heading p,.banner p {
+ color:var(--muted);line-height:1.8;margin-top:12px;font-size:14px
 }
-.dropdown.show{display:block}
-.dropdown a{
-display:flex;
-align-items:center;
-gap:12px;
-padding:12px;
-margin:3px 0;
-border-radius:9px;
-text-decoration:none;
-color:#253348;
-font-size:13px;
-font-weight:600;
+.grid {
+ display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+ gap:18px;max-width:1200px;margin:auto
 }
-.dropdown a:hover{background:#edf5fc}
-.dropdown .emoji{font-size:19px}
-.backup{
-border-top:1px solid #eee;
-margin-top:7px;
-padding-top:8px;
+.tile,.product {
+ background:linear-gradient(145deg,#172740,#0e1828);
+ border:1px solid #ffffff17;border-radius:19px;
+ padding:23px;transition:.25s;position:relative
 }
-@media(max-width:600px){
-header{padding:13px 4%}
-.logo{font-size:17px}
-nav{gap:8px}
-nav a{font-size:11px}
-.contact-btn{padding:9px 12px;font-size:11px}
-.hero h1{font-size:23px}
-.slide{width:155px;height:100px}
-.cards{grid-template-columns:repeat(2,1fr)}
+.tile:hover,.product:hover {
+ transform:translateY(-6px);border-color:#35d5e577;
+ box-shadow:0 18px 35px #0005
+}
+.ico {
+ width:68px;height:68px;border-radius:19px;
+ background:linear-gradient(145deg,#fff,#b9c8da);
+ color:#101b2b;display:grid;place-items:center;font-size:30px;
+ margin-bottom:17px;box-shadow:8px 9px 16px #0008,
+ -4px -4px 10px #ffffff22;
+ transform:perspective(400px) rotateX(8deg) rotateY(-8deg);
+ transition:.3s
+}
+.tile:hover .ico {
+ transform:perspective(400px) rotateY(18deg) rotateX(-7deg)
+}
+.ico img {width:38px;height:38px;object-fit:contain}
+.tile h3,.product h3 {font-size:16px;margin-bottom:8px}
+.tile p,.product p {
+ color:var(--muted);font-size:12px;line-height:1.7
+}
+.banner {
+ padding:55px 7% 30px;
+ background:radial-gradient(ellipse at 50% 0,#183e60,transparent 65%)
+}
+.banner h1 {font-size:clamp(34px,5vw,56px);font-weight:900}
+.toolbar {
+ max-width:1200px;margin:0 auto 22px;display:flex;
+ justify-content:space-between;gap:12px;flex-wrap:wrap
+}
+.search {
+ background:#111e31;color:white;border:1px solid #ffffff25;
+ padding:13px 15px;border-radius:10px;min-width:260px
+}
+.filters {display:flex;gap:7px;flex-wrap:wrap}
+.filters button {
+ background:#17263c;color:#c4d0df;border:1px solid #ffffff18;
+ border-radius:9px;padding:9px 11px;font-size:11px;font-weight:800
+}
+.filters button.active {background:#1b6374;color:white}
+.producttop {
+ display:flex;justify-content:space-between;align-items:center;
+ margin-bottom:15px
+}
+.brandicon {
+ width:58px;height:58px;background:#f4f7fb;
+ border-radius:16px;display:grid;place-items:center;
+ box-shadow:7px 8px 14px #0008
+}
+.brandicon img {width:36px;height:36px;object-fit:contain}
+.tag {
+ font-size:9px;background:#174b5b;color:#8eeaf0;
+ padding:7px 9px;border-radius:20px;font-weight:900
+}
+.order {
+ display:inline-block;background:#138b91;color:white;
+ padding:9px 12px;border-radius:8px;font-size:11px;
+ font-weight:900;margin-top:14px
+}
+.empty {
+ grid-column:1/-1;text-align:center;padding:35px;color:var(--muted)
+}
+.contactbox {
+ max-width:850px;margin:auto;text-align:center;
+ background:linear-gradient(145deg,#172740,#0e1828);
+ border:1px solid #ffffff20;border-radius:20px;padding:35px
+}
+.contactbox p {color:var(--muted);line-height:1.9;margin:14px 0 22px}
+.socials {
+ display:flex;justify-content:center;gap:10px;flex-wrap:wrap
+}
+.socials a {
+ padding:13px 16px;background:#ffffff0d;
+ border:1px solid #ffffff20;border-radius:10px;
+ font-size:12px;font-weight:800
+}
+footer {
+ padding:28px 7%;border-top:1px solid #ffffff18;
+ color:#93a1b5;display:flex;justify-content:space-between;
+ gap:12px;flex-wrap:wrap;font-size:12px
+}
+.wa {
+ position:fixed;right:18px;bottom:18px;width:55px;height:55px;
+ border-radius:50%;display:grid;place-items:center;
+ background:#20c968;color:white;font-size:27px;z-index:20;
+ box-shadow:0 8px 25px #0008
+}
+@media(max-width:800px) {
+ .hero {grid-template-columns:1fr;text-align:center}
+ .hero p {margin:20px auto 25px}
+ .actions {justify-content:center}
+ .art {min-height:260px}
+ .grid {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:620px) {
+ header {height:66px;padding:0 5%}
+ .brand {font-size:12px}
+ .brand img {width:40px;height:40px}
+ .menu {display:block}
+ nav {
+  display:none;position:absolute;top:66px;left:0;right:0;
+  padding:12px;background:#0a1424;flex-direction:column
+ }
+ nav.open {display:flex}
+ .navbtn {text-align:left}
+ .hero {padding:55px 5% 30px;min-height:unset}
+ .section {padding:50px 5%}
+ .grid {gap:10px}
+ .tile,.product {padding:15px;border-radius:15px}
+ .ico {width:55px;height:55px;font-size:24px}
+ .ico img {width:31px;height:31px}
+ .tile h3,.product h3 {font-size:13px}
+ .tile p,.product p {font-size:10px}
+ .banner {padding:40px 5% 25px}
+ .contactbox {padding:24px 14px}
 }
 </style>
 </head>
@@ -182,174 +231,349 @@ nav a{font-size:11px}
 <body>
 
 <header>
-<div class="logo">SAQI <span>DIGITAL HUB</span></div>
+<a class="brand" href="#" onclick="showPage('home');return false">
+<img src="wolf-logo.jpg" alt="Wolf logo">
+<span>SAQI DIGITAL HUB</span>
+</a>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-
-<div class="contact-area">
-<button class="contact-btn" onclick="toggleContact()">
-CONTACT ▼
+<button class="menu" onclick="document.querySelector('nav').classList.toggle('open')">
+<i class="fa fa-bars"></i>
 </button>
 
-<div class="dropdown" id="contactMenu">
-
-<a href="https://wa.me/923471191229">
-<span class="emoji">🟢</span> WhatsApp
-</a>
-
-<a href="https://instagram.com/yourusername">
-<span class="emoji">📸</span> Instagram
-</a>
-
-<a href="https://facebook.com/yourusername">
-<span class="emoji">🔵</span> Facebook
-</a>
-
-<a href="https://tiktok.com/@yourusername">
-<span class="emoji">🎵</span> TikTok
-</a>
-
-<div class="backup">
-<a href="tel:+923325293980">
-<span class="emoji">📞</span> Backup: 03325293980
-</a>
-</div>
-
-</div>
-</div>
+<nav id="nav">
+<button class="navbtn active" data-page="home" onclick="showPage('home')">HOME</button>
+<button class="navbtn" data-page="shop" onclick="showPage('shop')">SHOP</button>
+<button class="navbtn" data-page="categories" onclick="showPage('categories')">CATEGORIES</button>
+<button class="navbtn" data-page="about" onclick="showPage('about')">ABOUT</button>
+<button class="navbtn" data-page="contact" onclick="showPage('contact')">CONTACT</button>
 </nav>
 </header>
 
-<section class="hero" id="home">
-<h1>Premium Digital Services</h1>
-<p>Your One Stop Shop For All Digital Subscriptions</p>
-</section>
+<main>
 
-<!-- AUTOMATIC SLIDER -->
-
-<div class="slider">
-<div class="slide-track">
-
-<div class="slide"><div class="symbol" style="color:#e50914">N</div><h3>NETFLIX</h3></div>
-<div class="slide"><div class="symbol" style="color:#159bd7">prime</div><h3>PRIME VIDEO</h3></div>
-<div class="slide"><div class="symbol" style="color:#ff0033">▶</div><h3>YOUTUBE PREMIUM</h3></div>
-<div class="slide"><div class="symbol" style="color:#f47521">CR</div><h3>CRUNCHYROLL</h3></div>
-<div class="slide"><div class="symbol" style="color:#1db954">♫</div><h3>SPOTIFY</h3></div>
-<div class="slide"><div class="symbol" style="color:#00a8e0">C</div><h3>CANVA PRO</h3></div>
-<div class="slide"><div class="symbol" style="color:#25a5f0">AI</div><h3>CHATGPT PLUS</h3></div>
-
-<!-- Duplicate for continuous animation -->
-
-<div class="slide"><div class="symbol" style="color:#e50914">N</div><h3>NETFLIX</h3></div>
-<div class="slide"><div class="symbol" style="color:#159bd7">prime</div><h3>PRIME VIDEO</h3></div>
-<div class="slide"><div class="symbol" style="color:#ff0033">▶</div><h3>YOUTUBE PREMIUM</h3></div>
-<div class="slide"><div class="symbol" style="color:#f47521">CR</div><h3>CRUNCHYROLL</h3></div>
-<div class="slide"><div class="symbol" style="color:#1db954">♫</div><h3>SPOTIFY</h3></div>
-<div class="slide"><div class="symbol" style="color:#00a8e0">C</div><h3>CANVA PRO</h3></div>
-<div class="slide"><div class="symbol" style="color:#25a5f0">AI</div><h3>CHATGPT PLUS</h3></div>
-
+<section class="page active" id="home">
+<div class="hero">
+<div>
+<div class="kicker">WELCOME TO YOUR DIGITAL STORE</div>
+<h1>SAQI <span class="grad">DIGITAL HUB</span></h1>
+<p>Premium digital subscriptions, AI tools, creative software, VPN services and entertainment — all in one place. Explore separate sections and order directly through WhatsApp.</p>
+<div class="actions">
+<button class="btn" onclick="showPage('shop')">
+<i class="fa fa-shopping-bag"></i> EXPLORE SHOP
+</button>
+<button class="btn alt" onclick="showPage('categories')">BROWSE CATEGORIES</button>
 </div>
 </div>
 
-<main class="container" id="services">
+<div class="art">
+<div class="aura">
+<img src="wolf-logo.jpg" alt="Saqi wolf logo">
+</div>
+<div class="float a"><i class="fa fa-bolt"></i> FAST SERVICE</div>
+<div class="float b"><i class="fa fa-shield"></i> QUALITY FIRST</div>
+</div>
+</div>
 
-<!-- STREAMING -->
-
-<section class="category">
-<h2 class="section-title">🎬 Streaming Services</h2>
-<div class="cards">
-
-<div class="card"><div class="icon">🎬</div><h3>Netflix</h3><p>Premium Streaming</p></div>
-<div class="card"><div class="icon">▶️</div><h3>Prime Video</h3><p>Movies & Series</p></div>
-<div class="card"><div class="icon">📺</div><h3>YouTube Premium</h3><p>Ad Free Experience</p></div>
-<div class="card"><div class="icon">🍿</div><h3>Crunchyroll</h3><p>Anime Streaming</p></div>
-<div class="card"><div class="icon">🎵</div><h3>Spotify</h3><p>Music Premium</p></div>
-<div class="card"><div class="icon">📺</div><h3>IPTV</h3><p>Live TV Channels</p></div>
-<div class="card"><div class="icon">🎞️</div><h3>Hulu</h3><p>Entertainment</p></div>
-<div class="card"><div class="icon">📡</div><h3>Zee5</h3><p>Entertainment</p></div>
-
+<div class="section">
+<div class="heading">
+<div class="kicker">WHAT WE OFFER</div>
+<h2>Everything, <span class="grad">Organized</span></h2>
+<p>Har service ka apna alag section — category select karein.</p>
+</div>
+<div class="grid" id="homeTiles"></div>
+<div style="text-align:center;margin-top:30px">
+<button class="btn" onclick="showPage('categories')">VIEW ALL SECTIONS →</button>
+</div>
 </div>
 </section>
 
-<!-- VPN -->
-
-<section class="category">
-<h2 class="section-title">🔐 VPN Services</h2>
-<div class="cards">
-<div class="card"><div class="icon">🛡️</div><h3>NordVPN</h3><p>Secure Connection</p></div>
-<div class="card"><div class="icon">🌐</div><h3>Surfshark</h3><p>VPN Protection</p></div>
-<div class="card"><div class="icon">🔒</div><h3>IPVanish</h3><p>Online Privacy</p></div>
-<div class="card"><div class="icon">⚡</div><h3>ExpressVPN</h3><p>Fast VPN</p></div>
-<div class="card"><div class="icon">🔐</div><h3>Proton VPN</h3><p>Private Browsing</p></div>
+<section class="page" id="shop">
+<div class="banner">
+<div class="kicker">SAQI DIGITAL STORE</div>
+<h1>Shop <span class="grad">All Services</span></h1>
+<p>Search products or filter by category.</p>
+</div>
+<div class="section" style="padding-top:25px">
+<div class="toolbar">
+<input class="search" id="search" placeholder="Search products..." oninput="renderProducts()">
+<div class="filters" id="filters"></div>
+</div>
+<div class="grid" id="products"></div>
 </div>
 </section>
 
-<!-- AI -->
-
-<section class="category">
-<h2 class="section-title">🤖 AI & Smart Tools</h2>
-<div class="cards">
-<div class="card"><div class="icon">🤖</div><h3>ChatGPT Plus</h3><p>AI Assistant</p></div>
-<div class="card"><div class="icon">💎</div><h3>Gemini Pro</h3><p>Google AI</p></div>
-<div class="card"><div class="icon">🚀</div><h3>Grok AI</h3><p>AI Intelligence</p></div>
-<div class="card"><div class="icon">🧠</div><h3>Leonardo AI</h3><p>AI Images</p></div>
-<div class="card"><div class="icon">✍️</div><h3>Grammarly</h3><p>Writing Assistant</p></div>
-<div class="card"><div class="icon">📚</div><h3>QuillBot</h3><p>AI Writing</p></div>
+<section class="page" id="categories">
+<div class="banner">
+<div class="kicker">BROWSE BY TYPE</div>
+<h1>Our <span class="grad">Categories</span></h1>
+<p>Click any section to see its products.</p>
+</div>
+<div class="section">
+<div class="grid" id="categoriesGrid"></div>
 </div>
 </section>
 
-<!-- EDITING -->
-
-<section class="category">
-<h2 class="section-title">🎥 Editing Services</h2>
-<div class="cards">
-<div class="card"><div class="icon">🎬</div><h3>CapCut Pro</h3><p>Video Editing</p></div>
-<div class="card"><div class="icon">🎨</div><h3>Alight Motion</h3><p>Motion Graphics</p></div>
-<div class="card"><div class="icon">📹</div><h3>Filmora</h3><p>Video Editor</p></div>
-<div class="card"><div class="icon">✂️</div><h3>InShot Pro</h3><p>Video Editing</p></div>
+<section class="page" id="detail">
+<div class="banner">
+<div class="kicker">CATEGORY SECTION</div>
+<h1 id="detailTitle">Services</h1>
+<p id="detailDesc"></p>
+</div>
+<div class="section">
+<div class="grid" id="detailProducts"></div>
+<div style="text-align:center;margin-top:25px">
+<button class="btn alt" onclick="showPage('categories')">← ALL CATEGORIES</button>
+</div>
 </div>
 </section>
 
-<!-- DESIGN -->
-
-<section class="category">
-<h2 class="section-title">🎨 Designing Services</h2>
-<div class="cards">
-<div class="card"><div class="icon">🖌️</div><h3>Canva Pro</h3><p>Graphic Designing</p></div>
-<div class="card"><div class="icon">🖼️</div><h3>Photoshop</h3><p>Photo Editing</p></div>
-<div class="card"><div class="icon">✨</div><h3>Freepik</h3><p>Creative Assets</p></div>
-<div class="card"><div class="icon">📐</div><h3>Adobe Express</h3><p>Creative Design</p></div>
+<section class="page" id="about">
+<div class="banner">
+<div class="kicker">WHO WE ARE</div>
+<h1>About <span class="grad">SAQI DIGITAL HUB</span></h1>
+<p>WE PROVIDE QUALITY.</p>
+</div>
+<div class="section">
+<div class="contactbox">
+<h2>Premium Digital Services</h2>
+<p>SAQI DIGITAL HUB is your destination for digital subscriptions, entertainment, AI solutions, creative tools and online services. Our goal is to provide affordable, convenient digital solutions and friendly customer support.</p>
+<button class="btn" onclick="showPage('shop')">VISIT SHOP</button>
+</div>
 </div>
 </section>
 
-<section class="banner">
+<section class="page" id="contact">
+<div class="banner">
+<div class="kicker">WE ARE HERE TO HELP</div>
+<h1>Let's <span class="grad">Connect</span></h1>
+<p>Questions or orders? Contact us through your preferred platform.</p>
+</div>
+<div class="section">
+<div class="contactbox">
 <h2>SAQI DIGITAL HUB</h2>
-<p>Premium Quality • Best Prices • Trusted Services</p>
-<a href="https://wa.me/923471191229">ORDER NOW ON WHATSAPP</a>
+<p>WhatsApp: 03471191229<br>Instagram: @saqi_digitalhub</p>
+<div class="socials">
+<a href="https://wa.me/923471191229" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+<a href="https://www.instagram.com/saqi_digitalhub/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
+<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+<a href="https://www.tiktok.com/" target="_blank"><i class="fab fa-tiktok"></i> TikTok</a>
+</div>
+</div>
+</div>
 </section>
 
 </main>
 
 <footer>
-<h2>SAQI DIGITAL HUB</h2>
-<p>Premium Digital Services At Affordable Prices</p>
-<p>WhatsApp: 03471191229</p>
-<p>Backup: 03325293980</p>
-<p>© 2026 SAQI DIGITAL HUB. All Rights Reserved.</p>
+<b>SAQI DIGITAL HUB</b>
+<span>WE PROVIDE QUALITY</span>
+<span>© 2026 All Rights Reserved.</span>
 </footer>
 
+<a class="wa" href="https://wa.me/923471191229" target="_blank">
+<i class="fab fa-whatsapp"></i>
+</a>
+
 <script>
-function toggleContact(){
-document.getElementById("contactMenu").classList.toggle("show");
+const WA='https://wa.me/923471191229';
+
+const cats=[
+{
+id:'ai',
+name:'AI & Smart Tools',
+desc:'AI assistants, writing and productivity tools.',
+icon:'fa-robot',
+items:[
+['ChatGPT Plus','chatgpt','AI assistant and productivity access.'],
+['Gemini Pro','googlegemini','AI assistant and research tools.'],
+['Grok AI','x','AI chat and creative assistance.'],
+['Grammarly Pro','grammarly','Writing and grammar assistance.'],
+['QuillBot','quillbot','Writing and paraphrasing tools.']
+]
+},
+{
+id:'video',
+name:'Video Editing',
+desc:'Video editing apps and creator tools.',
+icon:'fa-video',
+items:[
+['CapCut Pro','capcut','Video editing and creator features.'],
+['Filmora','filmora','Video editing tools.'],
+['Adobe Premiere Pro','adobepremierepro','Professional video editing.']
+]
+},
+{
+id:'vpn',
+name:'VPN & Security',
+desc:'VPN subscriptions and online privacy tools.',
+icon:'fa-shield-halved',
+items:[
+['NordVPN','nordvpn','VPN and online privacy.'],
+['Surfshark VPN','surfshark','VPN and security tools.'],
+['ExpressVPN','expressvpn','Secure private browsing.'],
+['Proton VPN','protonvpn','Privacy-focused VPN.']
+]
+},
+{
+id:'design',
+name:'Designing Tools',
+desc:'Graphic design and creative platforms.',
+icon:'fa-palette',
+items:[
+['Canva Pro','canva','Design posts, presentations and graphics.'],
+['Adobe Photoshop','adobephotoshop','Professional image editing.'],
+['Adobe Illustrator','adobeillustrator','Vector design and illustration.'],
+['Freepik Premium','freepik','Creative assets and design resources.']
+]
+},
+{
+id:'stream',
+name:'Streaming & Entertainment',
+desc:'Movies, series, anime and TV services.',
+icon:'fa-tv',
+items:[
+['Netflix','netflix','Movies and TV series.'],
+['Prime Video','primevideo','Movies and entertainment.'],
+['Crunchyroll','crunchyroll','Anime streaming.'],
+['IPTV','','Live TV and entertainment packages.'],
+['Spotify Premium','spotify','Music streaming.']
+]
+},
+{
+id:'social',
+name:'Social Media',
+desc:'Social platforms and digital solutions.',
+icon:'fa-hashtag',
+items:[
+['TikTok','tiktok','TikTok accounts and services.'],
+['Instagram','instagram','Instagram-related digital solutions.'],
+['Facebook','facebook','Facebook-related digital solutions.'],
+['YouTube Premium','youtube','Video and music features.']
+]
+},
+{
+id:'writing',
+name:'Writing & Productivity',
+desc:'Tools for documents, notes and productivity.',
+icon:'fa-pen-nib',
+items:[
+['Microsoft 365','microsoft','Office and productivity tools.'],
+['Notion','notion','Workspace and organization.'],
+['Jasper AI','jasper','AI writing assistance.']
+]
+},
+{
+id:'image',
+name:'AI Image Generation',
+desc:'AI image creation and creative tools.',
+icon:'fa-image',
+items:[
+['Leonardo AI','leonardo','AI image generation.'],
+['Midjourney','midjourney','AI art and image creation.'],
+['DALL·E','openai','AI image generation.']
+]
+}
+];
+
+let filter='all';
+
+function iconURL(s) {
+ return s?'https://cdn.simpleicons.org/'+s+'/111827':'';
 }
 
-document.addEventListener("click",function(e){
-if(!e.target.closest(".contact-area")){
-document.getElementById("contactMenu").classList.remove("show");
+function card(p,c) {
+ let [n,s,d]=p;
+ let src=iconURL(s);
+
+ return `
+ <article class="product">
+  <div class="producttop">
+   <div class="brandicon">
+    ${src
+    ? `<img src="${src}" alt="${n}" onerror="this.style.display='none'">`
+    : `<i class="fa-solid ${c.icon}" style="color:#17243a;font-size:27px"></i>`}
+   </div>
+   <span class="tag">${c.name}</span>
+  </div>
+  <h3>${n}</h3>
+  <p>${d}</p>
+  <a class="order" target="_blank"
+  href="${WA}?text=${encodeURIComponent('Assalam o Alaikum, I want to order '+n+' from SAQI DIGITAL HUB.')}">
+  <i class="fab fa-whatsapp"></i> ORDER NOW
+  </a>
+ </article>`;
 }
-});
+
+function renderProducts() {
+ let q=(document.getElementById('search')?.value||'').toLowerCase();
+
+ let out=cats.flatMap(c=>
+  c.items
+  .filter(p=>(filter==='all'||c.id===filter)&&p.join(' ').toLowerCase().includes(q))
+  .map(p=>card(p,c))
+ );
+
+ document.getElementById('products').innerHTML=
+ out.join('')||'<div class="empty">No products found.</div>';
+}
+
+function renderFilters() {
+ document.getElementById('filters').innerHTML=
+ [['all','All'],...cats.map(c=>[c.id,c.name])]
+ .map(([id,n])=>
+ `<button class="${filter===id?'active':''}" onclick="setFilter('${id}')">${n}</button>`
+ ).join('');
+}
+
+function setFilter(id) {
+ filter=id;
+ renderFilters();
+ renderProducts();
+}
+
+function openCat(id) {
+ let c=cats.find(x=>x.id===id);
+
+ document.getElementById('detailTitle').textContent=c.name;
+ document.getElementById('detailDesc').textContent=c.desc;
+ document.getElementById('detailProducts').innerHTML=
+ c.items.map(p=>card(p,c)).join('');
+
+ showPage('detail');
+}
+
+function tile(c) {
+ return `
+ <article class="tile" onclick="openCat('${c.id}')" style="cursor:pointer">
+  <div class="ico"><i class="fa-solid ${c.icon}"></i></div>
+  <h3>${c.name}</h3>
+  <p>${c.desc}</p>
+ </article>`;
+}
+
+document.getElementById('homeTiles').innerHTML=
+ cats.slice(0,6).map(tile).join('');
+
+document.getElementById('categoriesGrid').innerHTML=
+ cats.map(tile).join('');
+
+function showPage(id) {
+ document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+
+ document.querySelectorAll('.navbtn').forEach(b=>
+  b.classList.toggle(
+   'active',
+   b.dataset.page===id||(id==='detail'&&b.dataset.page==='categories')
+  )
+ );
+
+ document.getElementById('nav').classList.remove('open');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+
+renderFilters();
+renderProducts();
 </script>
 
 </body>
