@@ -140,10 +140,45 @@ box-shadow:0 3px 14px #0000000b
 }
 
 .icon{
-height:25px;
-display:flex;
-align-items:center;
-justify-content:center
+
+const icons = {
+"ChatGPT":"openai",
+"Gemini":"googlegemini",
+"Claude":"claude",
+"Grok":"x",
+"DeepSeek":"deepseek",
+"Perplexity":"perplexity",
+"Canva":"canva",
+"CapCut":"capcut",
+"Photoshop":"adobephotoshop",
+"Illustrator":"adobeillustrator",
+"Lightroom":"adobelightroom",
+"Netflix":"netflix",
+"Prime Video":"primevideo",
+"Spotify":"spotify",
+"YouTube Premium":"youtube",
+"Disney Plus":"disneyplus",
+"HBO Max":"hbo",
+"NordVPN":"nordvpn",
+"Surfshark":"surfshark",
+"ExpressVPN":"expressvpn",
+"Proton VPN":"protonvpn",
+"Grammarly":"grammarly",
+"QuillBot":"quillbot",
+"Notion AI":"notion"
+};
+
+function getIcon(name) {
+const slug = icons[name];
+if (!slug) return "";
+
+return `<img class="brand-logo"
+src="https://cdn.simpleicons.org/${slug}"
+alt="${name}"
+loading="lazy"
+onerror="this.style.display='none'">`;
+}
+  
 }
 
 .category{
