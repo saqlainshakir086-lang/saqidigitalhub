@@ -3,191 +3,204 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#ffffff">
-<title>SAQI DIGITAL HUB | Premium Digital Services</title>
+<meta name="theme-color" content="#0b1020">
+<title>SAQI DIGITAL HUB</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
-:root{--red:#e74755;--red2:#ff7880;--ink:#20212a;--muted:#777d89;--line:#ececf0;--soft:#fff3f3;--white:#fff}
+:root{--bg:#0b1020;--panel:#121a2d;--panel2:#19243b;--text:#f7f8fc;--muted:#a8b1c5;--line:#ffffff18;--accent:#ff5368;--accent2:#ff9b75;--shadow:0 18px 45px #0005}
+body.light{--bg:#f7f8fc;--panel:#fff;--panel2:#f0f2f8;--text:#171b29;--muted:#687084;--line:#18203a18;--shadow:0 18px 45px #25305212}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Inter,Arial,sans-serif;background:#fff;color:var(--ink)}
-button,input{font:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-a{text-decoration:none;color:inherit}
-.topline{height:5px;background:linear-gradient(90deg,#ef4655,#ff9a9f,#ef4655)}
-header{position:sticky;top:0;z-index:20;background:#ffffffed;backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.head-inner{max-width:1180px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:-.6px;font-size:clamp(16px,3vw,22px)}
-.brand img{width:45px;height:45px;object-fit:contain}
-.brand-name{background:linear-gradient(90deg,#222,#e74755);-webkit-background-clip:text;background-clip:text;color:transparent}
-.menu{display:none;border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;color:var(--ink)}
-nav{display:flex;gap:6px;align-items:center}
-nav a{font-size:11px;font-weight:800;color:#555b66;padding:11px 13px;border-radius:9px}
-nav a:hover,nav a.active{background:var(--soft);color:var(--red)}
-main{max-width:1180px;margin:auto;padding:0 22px}
-.intro{text-align:center;padding:53px 12px 34px}
-.eyebrow{font-size:10px;letter-spacing:3px;color:var(--red);font-weight:900;margin-bottom:13px}
-h1{font-size:clamp(34px,6vw,62px);line-height:1.05;letter-spacing:-2.5px;font-weight:900}
-h1 span{color:var(--red)}
-.intro p{max-width:650px;margin:15px auto 0;color:var(--muted);font-size:14px;line-height:1.8}
-.promo{margin:0 auto 34px;max-width:1050px;border:1px solid #ffdadd;border-radius:20px;padding:22px 25px;background:linear-gradient(110deg,#fff4f4,#fff 65%);display:flex;align-items:center;justify-content:space-between;gap:18px}
-.promo strong{font-size:16px}.promo p{color:var(--muted);font-size:12px;margin-top:5px;line-height:1.6}
-.promo-icon{width:52px;height:52px;flex:0 0 52px;border-radius:16px;background:#ffe2e4;color:var(--red);display:grid;place-items:center;font-size:22px}
-.section-head{text-align:center;margin:35px 0 22px}
-.section-head h2{font-size:clamp(24px,4vw,34px);font-weight:900;letter-spacing:-1px}
-.section-head p{font-size:12px;color:var(--muted);margin-top:8px}
-.categories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:45px}
-.category{border:1px solid var(--line);border-radius:18px;padding:22px;background:#fff;text-align:left;cursor:pointer;transition:.22s;min-height:150px;box-shadow:0 5px 20px #25253a08}
-.category:hover{transform:translateY(-5px);border-color:#ffc4c9;box-shadow:0 14px 30px #e7475517}
-.cat-icon{width:52px;height:52px;border-radius:15px;background:var(--soft);color:var(--red);display:grid;place-items:center;font-size:23px;margin-bottom:16px}
-.category h3{font-size:15px;font-weight:800;margin-bottom:6px}
-.category p{font-size:11px;line-height:1.6;color:var(--muted)}
-.category .arrow{float:right;color:#c3c5cc}
-#catalog{display:none;border-top:1px solid var(--line);padding:34px 0 55px;scroll-margin-top:90px}
-.catalog-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:20px}
-.catalog-top h2{font-size:clamp(23px,4vw,32px);font-weight:900}
-.back{border:1px solid #ffd0d3;background:#fff7f7;color:var(--red);padding:10px 13px;border-radius:9px;font-weight:800;font-size:11px;cursor:pointer}
-.search-wrap{margin-bottom:18px}
-.search{width:100%;max-width:420px;padding:13px 15px;border:1px solid var(--line);border-radius:11px;outline:none;font-size:13px}
-.search:focus{border-color:#f28b92;box-shadow:0 0 0 3px #e7475512}
-.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.product{border:1px solid var(--line);border-radius:16px;padding:18px;background:#fff;display:flex;flex-direction:column;min-height:185px;transition:.2s}
-.product:hover{border-color:#ffc2c7;box-shadow:0 10px 25px #2221;transform:translateY(-3px)}
-.product-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:17px}
-.logo-box{width:48px;height:48px;border:1px solid #f0f0f2;border-radius:13px;display:grid;place-items:center;background:#fff}
-.logo-box img{width:28px;height:28px;object-fit:contain}
-.logo-box i{font-size:22px;color:var(--red)}
-.available{font-size:9px;font-weight:800;color:#b64a53;background:#fff0f1;padding:6px 8px;border-radius:20px}
-.product h3{font-size:14px;font-weight:800;margin-bottom:7px}
-.product-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:13px}
-.price{font-size:17px;font-weight:900;color:var(--red)}
-.price small{font-size:9px;color:var(--muted);font-weight:700}
-.order{background:#20b968;color:#fff;border:0;border-radius:9px;padding:10px 12px;font-size:10px;font-weight:900;cursor:pointer}
-.order:hover{background:#159b54}
-.empty{grid-column:1/-1;text-align:center;color:var(--muted);padding:30px}
-.contact{margin:5px 0 45px;padding:30px 20px;text-align:center;border-radius:20px;background:#fff5f5;border:1px solid #ffe0e2}
-.contact h2{font-size:23px;font-weight:900}
-.contact p{font-size:12px;color:var(--muted);margin:9px 0 17px}
-.contact a{display:inline-flex;gap:8px;align-items:center;background:#20b968;color:#fff;padding:12px 17px;border-radius:10px;font-size:12px;font-weight:800}
-footer{border-top:1px solid var(--line);padding:22px;text-align:center;color:#8b8e98;font-size:10px}
-footer strong{color:var(--red)}
-@media(max-width:760px){.categories,.products{grid-template-columns:repeat(2,minmax(0,1fr))}.head-inner{padding:10px 15px}main{padding:0 15px}}
-@media(max-width:560px){
- .menu{display:block}
- nav{display:none;position:absolute;left:0;right:0;top:69px;background:#fff;padding:10px 15px 15px;border-bottom:1px solid var(--line);box-shadow:0 12px 18px #0000000b;flex-direction:column;align-items:stretch}
- nav.open{display:flex}nav a{padding:12px}
- .brand img{width:38px;height:38px}.intro{padding:40px 5px 27px}
- .categories{gap:10px}.category{padding:15px;min-height:145px}.cat-icon{width:45px;height:45px}
- .products{gap:10px}.product{padding:13px;min-height:180px}.product h3{font-size:12px}
- .product-foot{align-items:flex-start;flex-direction:column}.order{width:100%}
- .catalog-top{align-items:flex-start}.promo{padding:17px}
-}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);transition:background .3s,color .3s}
+a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}
+.wrap{width:min(1160px,92%);margin:auto}
+header{height:76px;position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.head{height:100%;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.brand{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:900;letter-spacing:.5px}
+.brand img{width:43px;height:43px;object-fit:contain}
+.brand span{background:linear-gradient(90deg,var(--text),var(--accent),var(--accent2));background-clip:text;-webkit-background-clip:text;color:transparent}
+.nav{display:flex;align-items:center;gap:7px}
+.nav a,.theme{font-size:11px;font-weight:800;color:var(--muted);padding:11px 13px;border:1px solid transparent;border-radius:10px;background:transparent}
+.nav a:hover,.theme:hover{color:var(--text);background:var(--panel2);border-color:var(--line)}
+.theme{border:1px solid var(--line);color:var(--text)}
+.menu{display:none;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px}
+.hero{min-height:620px;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;padding:80px 0 65px;background:radial-gradient(ellipse at 50% 20%,#ff53682b,transparent 45%),radial-gradient(ellipse at 12% 85%,#625cff20,transparent 35%)}
+.hero:before,.hero:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #ff718333;border-radius:42% 58% 60% 40%;transform:rotate(30deg);pointer-events:none}
+.hero:before{top:50px;left:-120px}.hero:after{right:-120px;bottom:20px}
+.hero-content{position:relative;z-index:1}
+.hero-kicker{font-size:11px;font-weight:900;letter-spacing:4px;color:var(--accent);margin-bottom:20px}
+.hero h1{font-size:clamp(44px,9vw,100px);line-height:.98;letter-spacing:-5px;font-weight:900}
+.hero h1 span{display:block;background:linear-gradient(90deg,var(--accent),var(--accent2),#a18cff);background-clip:text;-webkit-background-clip:text;color:transparent}
+.round-lines{display:flex;justify-content:center;gap:9px;margin:25px auto 22px}
+.round-lines i{display:block;height:7px;border-radius:20px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.round-lines i:nth-child(1){width:38px}.round-lines i:nth-child(2){width:70px;opacity:.75}.round-lines i:nth-child(3){width:38px;opacity:.5}
+.hero p{max-width:650px;margin:auto;color:var(--muted);font-size:14px;line-height:1.9}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 21px;border:0;border-radius:12px;background:linear-gradient(110deg,var(--accent),var(--accent2));color:white;font-size:11px;font-weight:900;box-shadow:0 12px 28px #ff536833;transition:.2s}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.07)}
+.hero .btn{margin-top:28px}
+.section{padding:75px 0}
+.section-head{text-align:center;margin:0 auto 32px;max-width:720px}
+.kicker{font-size:10px;letter-spacing:3px;color:var(--accent);font-weight:900;margin-bottom:12px}
+.section-head h2{font-size:clamp(28px,5vw,43px);font-weight:900;letter-spacing:-1.5px}
+.section-head p{font-size:13px;color:var(--muted);line-height:1.8;margin-top:10px}
+.service-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.service-card,.category-card,.product,.payment-card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:19px;box-shadow:var(--shadow)}
+.service-card{padding:22px;text-align:center}
+.service-card .icon3d{margin:0 auto 13px}
+.service-card h3{font-size:14px;margin-bottom:6px}
+.service-card p{font-size:11px;color:var(--muted);line-height:1.6}
+.icon3d{width:72px;height:72px;border-radius:21px;display:grid;place-items:center;background:linear-gradient(145deg,#fff,#d9dfec);box-shadow:8px 10px 16px #0004,inset -4px -5px 9px #9ba6bc55,inset 3px 3px 7px #fff;transform:perspective(500px) rotateX(7deg) rotateY(-8deg);transition:.25s;overflow:hidden}
+.icon3d img{width:43px;height:43px;object-fit:contain;filter:drop-shadow(2px 3px 2px #0003)}
+.icon3d i{font-size:30px;color:#202a40}
+.service-card:hover .icon3d,.category-card:hover .icon3d{transform:perspective(500px) rotateX(-5deg) rotateY(12deg) translateY(-4px)}
+.slider-shell{position:relative;overflow:hidden;border-radius:25px;background:linear-gradient(120deg,#211d3d,#172d45 65%,#45263a);border:1px solid #ffffff1c;box-shadow:var(--shadow);min-height:255px}
+.slides{display:flex;transition:transform .65s cubic-bezier(.2,.8,.2,1)}
+.slide{min-width:100%;padding:45px clamp(24px,7vw,75px);min-height:255px;display:flex;align-items:center;justify-content:space-between;gap:25px;color:#fff}
+.slide small{color:#ff9eaa;letter-spacing:3px;font-weight:900;font-size:10px}
+.slide h3{font-size:clamp(25px,4vw,40px);font-weight:900;margin:12px 0}
+.slide p{color:#d3d7e4;max-width:500px;font-size:13px;line-height:1.8}
+.slide-art{font-size:clamp(55px,9vw,100px);color:#ffffffd9;filter:drop-shadow(8px 14px 8px #0007);padding:10px 25px}
+.slider-controls{position:absolute;bottom:16px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border:0;border-radius:20px;background:#ffffff66;padding:0}
+.dot.active{width:25px;background:#fff}
+.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.category-card{padding:23px 17px;text-align:center;cursor:pointer;color:var(--text);transition:.25s}
+.category-card:hover{transform:translateY(-6px);border-color:#ff536877}
+.category-card .icon3d{margin:0 auto 15px}
+.category-card h3{font-size:14px;margin-bottom:7px}
+.category-card p{font-size:11px;color:var(--muted);line-height:1.6}
+.center{text-align:center;margin-top:28px}
+#prices{scroll-margin-top:90px}
+.price-tools{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin:0 0 20px}
+.search{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;padding:13px 15px;width:min(100%,330px);outline:none}
+.price-tabs{display:flex;gap:7px;flex-wrap:wrap}
+.price-tabs button{border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:9px 12px;border-radius:9px;font-size:10px;font-weight:800}
+.price-tabs button.active{background:var(--accent);color:white;border-color:var(--accent)}
+.price-group{margin:25px 0 34px}
+.price-group h3{font-size:19px;font-weight:900;margin-bottom:14px}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
+.product{padding:17px;display:flex;align-items:center;gap:13px;min-height:105px}
+.product .icon3d{width:53px;height:53px;flex:0 0 53px;border-radius:15px}
+.product .icon3d img{width:31px;height:31px}
+.product .icon3d i{font-size:22px}
+.product-info{min-width:0;flex:1}
+.product h4{font-size:12px;font-weight:800;margin-bottom:6px}
+.product .price{font-size:14px;color:var(--accent);font-weight:900}
+.product .price small{font-size:9px;color:var(--muted);font-weight:600}
+.order{display:inline-flex;align-items:center;gap:6px;background:#1dbb68;color:white;border-radius:8px;padding:9px 10px;font-size:9px;font-weight:900;white-space:nowrap}
+.payment-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.payment-card{padding:18px 10px;text-align:center}
+.payment-logo{height:48px;width:48px;margin:0 auto 10px;border-radius:15px;background:#fff;display:grid;place-items:center;color:#25324c;font-weight:900;font-size:20px;box-shadow:5px 7px 12px #0003}
+.payment-card h4{font-size:11px}
+.contact-box{text-align:center;border-radius:22px;padding:36px 20px;background:linear-gradient(120deg,#251d3d,#172d45);color:white}
+.contact-box p{color:#d3d7e4;font-size:12px;margin:10px 0 20px}
+footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:11px;text-align:center}
+footer strong{color:var(--accent)}
+@media(max-width:800px){.service-strip,.category-grid{grid-template-columns:repeat(2,1fr)}.product-grid{grid-template-columns:repeat(2,1fr)}.payment-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){header{height:67px}.brand{font-size:12px}.brand img{width:37px;height:37px}.menu{display:block}.nav{display:none;position:absolute;top:67px;left:0;right:0;padding:12px 4%;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}.nav.open{display:flex}.nav a{text-align:center}.hero{min-height:530px;padding:65px 0}.hero h1{letter-spacing:-2.5px}.section{padding:55px 0}.service-strip{gap:9px}.service-card{padding:15px 10px}.icon3d{width:61px;height:61px}.icon3d img{width:36px;height:36px}.category-grid{gap:10px}.category-card{padding:18px 10px}.slide{padding:35px 22px;min-height:285px}.slide-art{font-size:54px;padding:0}.product-grid{grid-template-columns:1fr}.product{min-height:88px}.payment-grid{grid-template-columns:repeat(2,1fr)}.price-tools{align-items:stretch}.search{width:100%}}
 </style>
 </head>
 <body>
-<div class="topline"></div>
-<header>
- <div class="head-inner">
-  <a class="brand" href="#" aria-label="Saqi Digital Hub home" onclick="showCategories();return false">
-   <img src="file_000000008f6482109e8f54778bcdd1b8.png" alt="SAQI DIGITAL HUB logo">
-   <span class="brand-name">SAQI DIGITAL HUB</span>
-  </a>
-  <button class="menu" aria-label="Open menu" onclick="document.querySelector('nav').classList.toggle('open')"><i class="fa-solid fa-bars"></i></button>
-  <nav id="nav">
-   <a class="active" href="#home" onclick="showCategories()">HOME</a>
-   <a href="#categories" onclick="showCategories()">CATEGORIES</a>
-   <a href="#contact" onclick="document.getElementById('contact').scrollIntoView()">CONTACT</a>
-  </nav>
- </div>
-</header>
+<header><div class="wrap head">
+ <a class="brand" href="#home"><img src="file_000000008f6482109e8f54778bcdd1b8.png" alt="Saqi Digital Hub logo"><span>SAQI DIGITAL HUB</span></a>
+ <nav class="nav" id="nav"><a href="#home">HOME</a><a href="#services">SERVICES</a><a href="#categories">CATEGORIES</a><a href="#prices">PRICES</a><a href="#payments">PAYMENT</a></nav>
+ <div style="display:flex;gap:8px;align-items:center"><button class="theme" id="themeBtn" onclick="toggleTheme()" aria-label="Switch theme"><i class="fa-solid fa-sun"></i> LIGHT</button><button class="menu" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button></div>
+</div></header>
 <main id="home">
- <section class="intro">
-  <div class="eyebrow">YOUR PREMIUM DIGITAL STORE</div>
-  <h1>SAQI <span>DIGITAL HUB</span></h1>
-  <p>Premium subscriptions, creative apps, VPN services and entertainment — choose a category to explore all available tools and prices.</p>
- </section>
- <div class="promo">
-  <div><strong>Everything you need, in one place.</strong><p>Apni pasand ka section select karein, tools aur prices dekhein, aur WhatsApp par order karein.</p></div>
-  <div class="promo-icon"><i class="fa-solid fa-bag-shopping"></i></div>
+<section class="hero"><div class="wrap hero-content">
+ <div class="hero-kicker">WELCOME TO YOUR DIGITAL WORLD</div>
+ <h1>SAQI <span>DIGITAL HUB</span></h1>
+ <div class="round-lines"><i></i><i></i><i></i></div>
+ <p>Premium digital subscriptions, VPN services, streaming, creative tools and more — everything you need in one trusted digital store.</p>
+ <a class="btn" href="#services"><i class="fa-solid fa-arrow-down"></i> EXPLORE SERVICES</a>
+</div></section>
+<section class="section" id="services"><div class="wrap">
+ <div class="section-head"><div class="kicker">OUR SERVICES</div><h2>Digital Services, <span style="color:var(--accent)">All in One Place</span></h2><p>Explore our main service areas and find the right digital tool for you.</p></div>
+ <div class="service-strip">
+  <article class="service-card"><div class="icon3d"><i class="fa-solid fa-shield-halved"></i></div><h3>VPN Services</h3><p>Privacy and secure browsing tools</p></article>
+  <article class="service-card"><div class="icon3d"><i class="fa-solid fa-tv"></i></div><h3>Streaming</h3><p>Movies, series and entertainment</p></article>
+  <article class="service-card"><div class="icon3d"><i class="fa-solid fa-palette"></i></div><h3>Design</h3><p>Creative design and photo apps</p></article>
+  <article class="service-card"><div class="icon3d"><i class="fa-solid fa-clapperboard"></i></div><h3>Video Editing</h3><p>Tools for content creators</p></article>
  </div>
- <section id="categories">
-  <div class="section-head"><div class="eyebrow">EXPLORE OUR SERVICES</div><h2>Choose Your <span style="color:var(--red)">Category</span></h2><p>Kisi bhi section par click karein — us category ke tamam tools aur prices khul jayenge.</p></div>
-  <div class="categories" id="categoryGrid"></div>
- </section>
- <section id="catalog">
-  <div class="catalog-top"><div><div class="eyebrow">CATEGORY PRODUCTS</div><h2 id="catalogTitle">All Tools</h2></div><button class="back" onclick="showCategories()"><i class="fa-solid fa-arrow-left"></i> ALL SECTIONS</button></div>
-  <div class="search-wrap"><input class="search" id="productSearch" type="search" placeholder="Search in this section..." oninput="renderProducts()"></div>
-  <div class="products" id="productGrid"></div>
- </section>
- <section class="contact" id="contact">
-  <h2>Need Help or Want to Order?</h2>
-  <p>Contact SAQI DIGITAL HUB directly on WhatsApp.</p>
-  <a href="https://wa.me/923471191229" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp: 0347 1191229</a>
- </section>
+</div></section>
+<section class="section" style="padding-top:15px"><div class="wrap">
+ <div class="section-head"><div class="kicker">WHY SAQI DIGITAL HUB?</div><h2>Why Choose <span style="color:var(--accent)">Us</span></h2><p>Our promise is simple: convenient service, clear prices and friendly support.</p></div>
+ <div class="slider-shell"><div class="slides" id="slides">
+  <article class="slide"><div><small>01 / WHY CHOOSE US</small><h3>Most Affordable Rates</h3><p>Explore budget-friendly prices across popular digital subscriptions and tools.</p></div><div class="slide-art"><i class="fa-solid fa-tags"></i></div></article>
+  <article class="slide"><div><small>02 / CUSTOMER SUPPORT</small><h3>Quick & Friendly Support</h3><p>Need help choosing a service? Contact us directly and get friendly assistance.</p></div><div class="slide-art"><i class="fa-solid fa-headset"></i></div></article>
+  <article class="slide"><div><small>03 / EASY ORDERING</small><h3>Simple WhatsApp Orders</h3><p>Choose your service, check its price and send your order through WhatsApp.</p></div><div class="slide-art"><i class="fa-brands fa-whatsapp"></i></div></article>
+ </div><div class="slider-controls" id="dots"><button class="dot active" aria-label="Slide 1"></button><button class="dot" aria-label="Slide 2"></button><button class="dot" aria-label="Slide 3"></button></div></div>
+</div></section>
+<section class="section" id="categories"><div class="wrap">
+ <div class="section-head"><div class="kicker">LET'S GO</div><h2>Choose Your <span style="color:var(--accent)">Section</span></h2><p>Tap a category to jump to its products and prices.</p></div>
+ <div class="category-grid" id="categoryCards"></div>
+ <div class="center"><a class="btn" href="#prices"><i class="fa-solid fa-grid-2"></i> EXPLORE ALL</a></div>
+</div></section>
+<section class="section" id="prices"><div class="wrap">
+ <div class="section-head"><div class="kicker">OUR PRICE LIST</div><h2>Explore All <span style="color:var(--accent)">Services</span></h2><p>Browse each category separately. Prices are shown in Pakistani Rupees.</p></div>
+ <div class="price-tools"><input class="search" id="search" placeholder="Search any service..." oninput="renderPrices()"><div class="price-tabs" id="tabs"></div></div>
+ <div id="priceGroups"></div>
+</div></section>
+<section class="section" id="payments"><div class="wrap">
+ <div class="section-head"><div class="kicker">SAFE & EASY PAYMENTS</div><h2>Payment <span style="color:var(--accent)">Methods</span></h2><p>Available payment options — confirm payment details with us before sending.</p></div>
+ <div class="payment-grid">
+  <article class="payment-card"><div class="payment-logo" style="color:#1c9c63">e</div><h4>Easypaisa</h4></article>
+  <article class="payment-card"><div class="payment-logo" style="color:#8b42bd">U</div><h4>UPaisa</h4></article>
+  <article class="payment-card"><div class="payment-logo" style="color:#ed8b20">J</div><h4>JazzCash</h4></article>
+  <article class="payment-card"><div class="payment-logo" style="color:#2768d8">S</div><h4>SadaPay</h4></article>
+  <article class="payment-card"><div class="payment-logo" style="color:#23a7a0">N</div><h4>NayaPay</h4></article>
+ </div>
+</div></section>
+<section class="section" style="padding-top:10px"><div class="wrap"><div class="contact-box"><div class="kicker">READY TO ORDER?</div><h2>Let's Connect</h2><p>Message SAQI DIGITAL HUB on WhatsApp for orders and support.</p><a class="btn" href="https://wa.me/923471191229" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WHATSAPP 0347 1191229</a></div></div></section>
 </main>
-<footer><strong>SAQI DIGITAL HUB</strong> · WE PROVIDE QUALITY · © 2026 All Rights Reserved.</footer>
+<footer><div class="wrap"><strong>SAQI DIGITAL HUB</strong> · WE PROVIDE QUALITY · © 2026 All Rights Reserved.</div></footer>
 <script>
-const WHATSAPP='https://wa.me/923471191229';
-const categories=[
- {id:'editing',name:'Video Editing',desc:'Video editing and creator applications.',icon:'fa-film',items:[
-  ['CapCut Pro','capcut','650','fa-video']]},
- {id:'design',name:'Designing & Photo Editing',desc:'Graphic design, templates and photo editing.',icon:'fa-palette',items:[
-  ['Canva Pro','canva','1,000','fa-palette'],['Picsart','picsart','500','fa-image']]},
- {id:'streaming',name:'Streaming & Entertainment',desc:'Movies, series, anime and entertainment.',icon:'fa-tv',items:[
-  ['Netflix','netflix','400','fa-film'],['Prime Video','primevideo','150','fa-play'],['Crunchyroll','crunchyroll','250','fa-dragon'],['Disney+','disneyplus','500','fa-wand-magic-sparkles'],['HBO Max','hbo','450','fa-clapperboard'],['Choupal','', '350','fa-tv'],['Choupal International','','550','fa-globe']]},
- {id:'music',name:'Music',desc:'Music streaming subscriptions.',icon:'fa-music',items:[
-  ['Spotify','spotify','350','fa-music'],['Spotify International','spotify','550','fa-headphones']]},
- {id:'vpn',name:'VPN & Security',desc:'Privacy, security and VPN subscriptions.',icon:'fa-shield-halved',items:[
-  ['NordVPN','nordvpn','450','fa-shield-halved'],['Surfshark VPN','surfshark','450','fa-shield'],['ExpressVPN','expressvpn','600','fa-lock'],['HMA VPN','hide-my-ass','500','fa-user-secret'],['Proton VPN','protonvpn','500','fa-shield']]},
- {id:'productivity',name:'Writing & Productivity',desc:'Writing, grammar and productivity tools.',icon:'fa-pen-nib',items:[
-  ['QuillBot','quillbot','500','fa-pen-to-square'],['Grammarly','grammarly','500','fa-spell-check']]}
+const WA='https://wa.me/923471191229';
+const data=[
+ {id:'vpn',name:'VPN Services',desc:'Privacy and secure browsing',icon:'fa-shield-halved',items:[
+  ['NordVPN','nordvpn',450],['Surfshark VPN','surfshark',450],['ExpressVPN','expressvpn',600],['HMA VPN','hide-my-ass',500],['Proton VPN','protonvpn',500]]},
+ {id:'streaming',name:'Streaming & Entertainment',desc:'Movies, series and anime',icon:'fa-tv',items:[
+  ['Netflix','netflix',400],['Prime Video','primevideo',150],['Crunchyroll','crunchyroll',250],['Disney+','disneyplus',500],['HBO Max','hbo',450],['Choupal','',350],['Choupal International','',550],['IPTV','',null]]},
+ {id:'editing',name:'Video Editing & Design',desc:'Creative apps and editing tools',icon:'fa-clapperboard',items:[
+  ['CapCut Pro','capcut',650],['Canva Pro','canva',1000],['Picsart','picsart',500]]},
+ {id:'other',name:'Other Tools',desc:'Writing, productivity and music',icon:'fa-layer-group',items:[
+  ['QuillBot','quillbot',500],['Grammarly','grammarly',500],['Spotify','spotify',350],['Spotify International','spotify',550]]}
 ];
-let currentCategory=null;
-function logoUrl(slug){return slug?'https://cdn.simpleicons.org/'+slug:'';}
-function showCategories(){
- document.getElementById('catalog').style.display='none';
- document.getElementById('categories').style.display='block';
- document.getElementById('nav').classList.remove('open');
- document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.textContent==='CATEGORIES'||a.textContent==='HOME'));
- window.scrollTo({top:0,behavior:'smooth'});
-}
-function openCategory(id){
- currentCategory=categories.find(c=>c.id===id);
- if(!currentCategory)return;
- document.getElementById('catalogTitle').textContent=currentCategory.name;
- document.getElementById('productSearch').value='';
- document.getElementById('categories').style.display='none';
- document.getElementById('catalog').style.display='block';
- document.getElementById('nav').classList.remove('open');
- renderProducts();
- document.getElementById('catalog').scrollIntoView({behavior:'smooth',block:'start'});
-}
+function simpleIcon(slug){return slug?'https://cdn.simpleicons.org/'+slug:''}
+function productIcon(slug,fallback){return slug?`<img src="${simpleIcon(slug)}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid ${fallback||'fa-star'}" style="display:none"></i>`:`<i class="fa-solid ${fallback||'fa-star'}"></i>`}
 function renderCategories(){
- document.getElementById('categoryGrid').innerHTML=categories.map(c=>`
-  <button class="category" type="button" onclick="openCategory('${c.id}')">
-   <span class="arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span>
-   <div class="cat-icon"><i class="fa-solid ${c.icon}"></i></div>
-   <h3>${c.name}</h3><p>${c.desc}</p>
-  </button>`).join('');
+ document.getElementById('categoryCards').innerHTML=data.map(c=>`<a class="category-card" href="#prices" onclick="setFilter('${c.id}')"><div class="icon3d"><i class="fa-solid ${c.icon}"></i></div><h3>${c.name}</h3><p>${c.desc}</p></a>`).join('');
 }
-function renderProducts(){
- if(!currentCategory)return;
- const q=document.getElementById('productSearch').value.toLowerCase().trim();
- const items=currentCategory.items.filter(p=>p[0].toLowerCase().includes(q));
- document.getElementById('productGrid').innerHTML=items.length?items.map(p=>{
-  const [name,slug,price,fallback]=p;
-  const message=encodeURIComponent('Assalam o Alaikum! I want to order '+name+' from SAQI DIGITAL HUB. Please share details.');
-  return `<article class="product">
-   <div class="product-head"><div class="logo-box">${slug?`<img src="${logoUrl(slug)}" alt="${name} official logo" onerror="this.outerHTML='<i class=&quot;fa-solid ${fallback}&quot;></i>'">`:`<i class="fa-solid ${fallback}"></i>`}</div><span class="available">AVAILABLE</span></div>
-   <h3>${name}</h3>
-   <div class="product-foot"><div class="price">Rs. ${price}<small> /-</small></div><a class="order" href="${WHATSAPP}?text=${message}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> ORDER NOW</a></div>
-  </article>`;
- }).join(''):'<div class="empty">No tools found in this category.</div>';
+let active='all';
+function renderTabs(){document.getElementById('tabs').innerHTML=[['all','All'],...data.map(c=>[c.id,c.name])].map(([id,n])=>`<button class="${active===id?'active':''}" onclick="setFilter('${id}')">${n}</button>`).join('')}
+function setFilter(id){active=id;renderTabs();renderPrices()}
+function renderPrices(){
+ const q=document.getElementById('search').value.toLowerCase().trim();
+ const groups=data.filter(c=>active==='all'||c.id===active).map(c=>{
+  const items=c.items.filter(p=>p[0].toLowerCase().includes(q));
+  if(!items.length)return '';
+  return `<section class="price-group"><h3>${c.name}</h3><div class="product-grid">${items.map(p=>{
+   const price=p[2]===null?'Contact for price':`Rs. ${Number(p[2]).toLocaleString('en-PK')} /-`;
+   const msg=encodeURIComponent('Assalam o Alaikum! I want to order '+p[0]+' from SAQI DIGITAL HUB.');
+   return `<article class="product"><div class="icon3d">${productIcon(p[1],c.icon)}</div><div class="product-info"><h4>${p[0]}</h4><div class="price">${price}${p[2]===null?'':' <small>PKR</small>'}</div></div><a class="order" href="${WA}?text=${msg}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> ORDER</a></article>`;
+  }).join('')}</div></section>`;
+ }).join('');
+ document.getElementById('priceGroups').innerHTML=groups||'<p style="color:var(--muted);text-align:center;padding:25px">No matching services found.</p>';
 }
-renderCategories();
+function toggleTheme(){
+ const light=document.body.classList.toggle('light');
+ localStorage.setItem('saqiTheme',light?'light':'dark');
+ document.getElementById('themeBtn').innerHTML=light?'<i class="fa-solid fa-moon"></i> DARK':'<i class="fa-solid fa-sun"></i> LIGHT';
+}
+(function initTheme(){if(localStorage.getItem('saqiTheme')==='light'){document.body.classList.add('light');document.getElementById('themeBtn').innerHTML='<i class="fa-solid fa-moon"></i> DARK'}})();
+let slide=0;const slides=document.getElementById('slides');const dots=[...document.querySelectorAll('.dot')];
+function goSlide(n){slide=n;slides.style.transform=`translateX(-${slide*100}%)`;dots.forEach((d,i)=>d.classList.toggle('active',i===slide))}
+dots.forEach((d,i)=>d.addEventListener('click',()=>goSlide(i)));
+setInterval(()=>goSlide((slide+1)%3),4200);
+renderCategories();renderTabs();renderPrices();
 </script>
 </body>
 </html>
