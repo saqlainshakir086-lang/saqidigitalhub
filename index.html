@@ -3,274 +3,164 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SAQI DIGITAL HUB</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
- --red:#ed3445;
- --red2:#ff6571;
- --bg:#ffffff;
- --surface:#fff5f6;
- --card:#ffffff;
- --text:#171717;
- --muted:#777;
- --border:#f0dfe1;
- --shadow:0 12px 35px rgba(0,0,0,.07);
+ --red:#ed3345;--bg:#fff;--card:#fff;--soft:#fff1f2;
+ --text:#181818;--muted:#777;--line:#f0dfe1;
 }
 body.dark{
- --bg:#101114;
- --surface:#191b20;
- --card:#202229;
- --text:#f5f5f5;
- --muted:#a4a4aa;
- --border:#30323a;
- --shadow:0 12px 35px rgba(0,0,0,.22);
+ --bg:#101116;--card:#1d2028;--soft:#29212a;
+ --text:#f5f5f5;--muted:#aaa;--line:#343640;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
- background:var(--bg);color:var(--text);
- font-family:'Outfit',sans-serif;
- transition:background .3s,color .3s;
- overflow-x:hidden;
-}
-button{font-family:inherit}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Outfit,sans-serif;background:var(--bg);color:var(--text);transition:.25s}
+button{font-family:inherit;cursor:pointer}
 header{
- height:76px;display:flex;align-items:center;
- justify-content:space-between;padding:0 6%;
- position:sticky;top:0;z-index:100;
- background:var(--bg);
- border-bottom:1px solid var(--border);
+ height:72px;padding:0 5%;display:flex;align-items:center;
+ justify-content:space-between;background:var(--bg);
+ border-bottom:1px solid var(--line);position:sticky;top:0;z-index:99
 }
 .brand{display:flex;align-items:center;gap:10px}
 .brand img{width:48px;height:48px;object-fit:contain}
-.brand-name{
- font-family:Orbitron,sans-serif;
- font-weight:800;color:var(--text);
- font-size:14px;letter-spacing:1px
+.brand strong{font-family:Orbitron;font-size:12px;letter-spacing:1px}
+.actions{display:flex;align-items:center;gap:14px}
+.theme{
+ width:38px;height:38px;border-radius:50%;border:1px solid var(--line);
+ background:var(--soft);color:var(--text);font-size:18px
 }
-.header-actions{display:flex;align-items:center;gap:17px}
-.theme-btn{
- border:1px solid var(--border);background:var(--surface);
- color:var(--text);width:38px;height:38px;
- border-radius:50%;cursor:pointer;font-size:17px
+.menu-btn{width:35px;height:35px;border:0;background:none;position:relative}
+.menu-btn span{
+ position:absolute;left:4px;width:26px;height:2.5px;
+ background:var(--text);border-radius:5px;transition:.3s
 }
+.menu-btn span:nth-child(1){top:8px}
+.menu-btn span:nth-child(2){top:16px}
+.menu-btn span:nth-child(3){top:24px}
+.menu-btn.open span:nth-child(1){top:16px;transform:rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){top:16px;transform:rotate(-45deg)}
+.menu{
+ position:absolute;right:5%;top:65px;width:220px;padding:12px;
+ background:var(--card);border:1px solid var(--line);
+ border-radius:15px;box-shadow:0 12px 35px #0002;
+ opacity:0;visibility:hidden;transform:translateY(-10px);
+ transition:.25s
+}
+.menu.open{opacity:1;visibility:visible;transform:translateY(0)}
+.menu button{
+ display:block;width:100%;text-align:left;padding:12px;
+ border:0;background:transparent;color:var(--text);
+ border-radius:9px;font-weight:600
+}
+.menu button:hover{background:var(--soft);color:var(--red)}
 
-/* Animated hamburger */
-.menu-btn{
- width:39px;height:39px;background:transparent;
- border:0;cursor:pointer;position:relative;
- display:flex;align-items:center;justify-content:center;
-}
-.menu-lines{width:25px;height:20px;position:relative}
-.menu-lines span{
- position:absolute;left:0;width:25px;height:2.5px;
- background:var(--text);border-radius:5px;
- transition:.35s ease;
-}
-.menu-lines span:nth-child(1){top:2px}
-.menu-lines span:nth-child(2){top:9px;width:18px}
-.menu-lines span:nth-child(3){top:16px}
-.menu-btn.open .menu-lines span:nth-child(1){
- top:9px;transform:rotate(45deg)
-}
-.menu-btn.open .menu-lines span:nth-child(2){
- opacity:0;transform:translateX(10px)
-}
-.menu-btn.open .menu-lines span:nth-child(3){
- top:9px;transform:rotate(-45deg)
-}
-.menu-panel{
- position:absolute;right:5%;top:68px;width:225px;
- background:var(--card);border:1px solid var(--border);
- border-radius:17px;padding:12px;
- box-shadow:var(--shadow);
- opacity:0;visibility:hidden;transform:translateY(-12px) scale(.96);
- transform-origin:top right;
- transition:.3s ease;
-}
-.menu-panel.open{
- opacity:1;visibility:visible;transform:translateY(0) scale(1)
-}
-.menu-panel button{
- width:100%;padding:12px;text-align:left;
- border:0;border-radius:10px;background:transparent;
- color:var(--text);font-weight:600;cursor:pointer;
-}
-.menu-panel button:hover{background:var(--surface);color:var(--red)}
+/* PAGES */
+.page{display:none;min-height:75vh}
+.page.active{display:block;animation:appear .3s ease}
+@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-.page{display:none;min-height:70vh}
-.page.active{display:block;animation:pageIn .4s ease}
-@keyframes pageIn{
- from{opacity:0;transform:translateY(10px)}
- to{opacity:1;transform:translateY(0)}
-}
 .hero{
- min-height:570px;display:flex;align-items:center;
- justify-content:center;flex-direction:column;
- text-align:center;padding:75px 20px;position:relative;
- overflow:hidden;
+ min-height:520px;display:flex;align-items:center;justify-content:center;
+ flex-direction:column;text-align:center;padding:60px 18px;position:relative;overflow:hidden
 }
 .hero:before,.hero:after{
- content:"";position:absolute;width:600px;height:170px;
- border:2px solid rgba(237,52,69,.13);
- border-radius:50%;transform:rotate(-18deg);
- z-index:-1;animation:orbit 10s linear infinite;
+ content:"";position:absolute;width:650px;height:170px;
+ border:2px solid #ed334522;border-radius:50%;
+ transform:rotate(-15deg);z-index:-1
 }
-.hero:after{width:750px;height:210px;transform:rotate(18deg);animation-direction:reverse}
-@keyframes orbit{to{transform:rotate(342deg)}}
-.hero-logo{
- width:145px;height:145px;object-fit:contain;
- margin-bottom:20px;filter:drop-shadow(0 12px 15px #ed344522)
-}
-.hero h1{
- font-family:Orbitron,sans-serif;
- font-size:clamp(29px,7vw,64px);
- font-weight:800;letter-spacing:2px;
-}
-.hero h1 span{color:var(--red)}
-.hero p{color:var(--muted);letter-spacing:2px;font-size:12px;margin:17px 0 25px}
+.hero:after{width:780px;height:210px;transform:rotate(15deg)}
+.hero img{width:150px;height:150px;object-fit:contain;margin-bottom:20px}
+.hero h1{font:800 clamp(28px,7vw,58px) Orbitron;letter-spacing:1px}
+.red{color:var(--red)}
+.hero p{color:var(--muted);font-size:12px;letter-spacing:2px;margin:16px 0 25px}
 .btn{
- border:0;background:var(--red);color:white;
- border-radius:30px;padding:14px 29px;
- font-size:13px;font-weight:800;letter-spacing:1px;
- cursor:pointer;box-shadow:0 8px 22px #ed344533;
- transition:.25s;
+ border:0;background:var(--red);color:white;padding:13px 25px;
+ border-radius:30px;font-size:12px;font-weight:800;letter-spacing:1px;
+ box-shadow:0 7px 20px #ed334433
 }
-.btn:hover{background:#ce2032;transform:translateY(-3px)}
-.section{padding:65px 6%;text-align:center}
-.section h2{font-size:30px;font-weight:800}
-.section h2 span{color:var(--red)}
-.subtext{color:var(--muted);font-size:14px;max-width:650px;margin:12px auto 28px;line-height:1.8}
-.cards{
- display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:20px;margin-top:30px
-}
+.btn:hover{filter:brightness(.9)}
+.section{padding:55px 6%;text-align:center}
+.section h2{font-size:29px;font-weight:800}
+.desc{max-width:650px;margin:12px auto 28px;color:var(--muted);font-size:13px;line-height:1.8}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:28px}
 .card{
- background:var(--card);border:1px solid var(--border);
- border-radius:20px;padding:26px 20px;
- box-shadow:var(--shadow);transition:.25s;
+ background:var(--card);border:1px solid var(--line);border-radius:19px;
+ padding:25px 18px;box-shadow:0 8px 25px #00000008;transition:.2s
 }
 .card:hover{transform:translateY(-5px);border-color:var(--red)}
-.card-icon{font-size:38px;margin-bottom:12px}
+.card .emoji{font-size:38px;margin-bottom:12px}
 .card h3{font-size:17px;margin-bottom:9px}
-.card p{font-size:13px;color:var(--muted);line-height:1.8}
+.card p{font-size:12px;color:var(--muted);line-height:1.8}
+.card .btn{margin-top:17px}
 .category-card{cursor:pointer}
-.category-card .btn{margin-top:17px}
 
-/* Logo carousel */
-.logo-window{
- width:100%;overflow:hidden;margin:30px auto;
- padding:15px 0;
- background:var(--surface);
- border-radius:18px;
+/* ICON SLIDER */
+.slider-window{overflow:hidden;background:var(--soft);padding:18px 0;border-radius:18px;margin:25px 0}
+.slider-track{display:flex;align-items:center;gap:38px;width:max-content;animation:move 22s linear infinite}
+.slider-track img{width:53px;height:53px;object-fit:contain}
+.slider-track .fake-icon{
+ width:55px;height:55px;display:grid;place-items:center;
+ border-radius:14px;border:1px solid var(--red);
+ background:var(--card);color:var(--red);font-weight:900
 }
-.logo-track{
- display:flex;align-items:center;gap:35px;
- width:max-content;
- animation:slideLogos 24s linear infinite;
-}
-.logo-window:hover .logo-track{animation-play-state:paused}
-.logo-track img{
- width:58px;height:58px;object-fit:contain;
- filter:grayscale(10%);
-}
-.logo-track .iptv-logo{
- width:62px;height:62px;display:flex;
- align-items:center;justify-content:center;
- border:1.5px solid var(--red);
- color:var(--red);border-radius:16px;
- font-weight:900;font-size:17px;
- background:var(--card);
-}
-@keyframes slideLogos{
- from{transform:translateX(0)}
- to{transform:translateX(-50%)}
-}
-.products{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
- gap:15px;margin-top:25px
-}
+@keyframes move{to{transform:translateX(-50%)}}
+
+/* PRODUCTS */
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:14px;margin-top:25px}
 .product{
- padding:20px 12px;background:var(--card);
- border:1px solid var(--border);border-radius:17px;
- cursor:pointer;transition:.25s;
- box-shadow:0 5px 17px rgba(0,0,0,.035)
+ background:var(--card);border:1px solid var(--line);border-radius:16px;
+ padding:19px 10px;cursor:pointer;transition:.2s
 }
-.product:hover{transform:translateY(-5px);border-color:var(--red)}
-.product img{width:43px;height:43px;object-fit:contain;margin-bottom:9px}
-.product .fallback{
- width:43px;height:43px;margin:0 auto 9px;
- display:flex;align-items:center;justify-content:center;
- border:1.5px solid var(--red);border-radius:12px;
- color:var(--red);font-weight:900;font-size:13px
+.product:hover{border-color:var(--red);transform:translateY(-4px)}
+.product img{width:43px;height:43px;object-fit:contain;margin-bottom:8px}
+.product .initial{
+ width:43px;height:43px;margin:0 auto 8px;border-radius:12px;
+ display:grid;place-items:center;background:var(--soft);
+ color:var(--red);font-weight:900
 }
-.product h3{font-size:14px;margin:3px 0 7px}
-.price{color:var(--red);font-size:14px;font-weight:800}
+.product h3{font-size:13px;margin-bottom:7px}
+.product .price{color:var(--red);font-size:14px;font-weight:800}
 .product small{display:block;color:var(--muted);font-size:10px;margin-top:8px}
-.back-btn{background:#303038;margin-top:30px}
-.badge{
- display:inline-block;color:var(--red);
- background:var(--surface);padding:7px 13px;
- border-radius:30px;font-size:11px;font-weight:800;
- letter-spacing:1px;margin-bottom:12px
+.detail-box{
+ max-width:560px;margin:25px auto;background:var(--card);
+ border:1px solid var(--line);border-radius:22px;padding:30px;
+ box-shadow:0 10px 30px #0000000a
 }
-
-/* Payment section */
-.payment-grid{
- display:flex;justify-content:center;align-items:center;
- flex-wrap:wrap;gap:10px;margin:25px auto;
- max-width:650px
-}
+.detail-box img{width:90px;height:90px;object-fit:contain;margin:15px}
+.detail-box h2{font-size:25px}
+.detail-price{font-size:25px;color:var(--red);font-weight:900;margin:15px}
+.back{background:#333;margin-top:25px}
+.payment-list{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:25px auto}
 .payment{
- display:flex;align-items:center;gap:7px;
- background:var(--card);border:1px solid var(--border);
- border-radius:10px;padding:8px 11px;
- font-size:10px;font-weight:700;color:var(--text);
- box-shadow:0 3px 12px #00000008
+ display:flex;align-items:center;gap:6px;padding:7px 10px;
+ background:var(--card);border:1px solid var(--line);
+ border-radius:9px;font-size:10px;font-weight:700
 }
-.payment-icon{
- width:22px;height:22px;border-radius:7px;
- display:flex;align-items:center;justify-content:center;
- background:var(--surface);color:var(--red);
- font-size:11px;font-weight:900
+.payment i{
+ width:21px;height:21px;border-radius:6px;
+ display:grid;place-items:center;background:var(--soft);
+ color:var(--red);font-style:normal
 }
 .contact-box{
- max-width:600px;margin:25px auto;
- background:var(--surface);border:1px solid var(--border);
- border-radius:20px;padding:25px;text-align:left;
- line-height:2.5
+ max-width:580px;margin:25px auto;padding:25px;text-align:left;
+ background:var(--soft);border-radius:18px;line-height:2.5;font-size:14px
 }
-.contact-box a{color:var(--red);text-decoration:none;font-weight:700}
-footer{
- background:#15161a;color:white;padding:40px 6%;
- text-align:center;margin-top:30px
-}
-.footer-logo{width:65px;height:65px;object-fit:contain}
-footer h2{font-family:Orbitron;font-size:19px;margin-top:10px}
-footer p{font-size:11px;color:#aaa;margin:12px}
-.footer-links{margin:20px 0}
-.footer-links button{
- background:none;border:0;color:white;
- margin:7px;font-size:12px;cursor:pointer
-}
-footer .payment{background:#24262c;color:white;border-color:#333}
-footer .payment-icon{background:#333}
+.contact-box a{color:var(--red);font-weight:700;text-decoration:none}
+footer{background:#15161a;color:white;text-align:center;padding:35px 5%;margin-top:30px}
+footer img{width:65px;height:65px;object-fit:contain}
+footer h2{font:700 17px Orbitron;margin:10px}
+footer p{color:#aaa;font-size:10px;margin:12px}
+footer button{background:none;border:0;color:white;padding:9px;font-size:11px}
 @media(max-width:600px){
- header{padding:0 4%}
- .brand-name{font-size:11px}
- .brand img{width:42px;height:42px}
- .hero{min-height:490px}
- .hero-logo{width:120px;height:120px}
- .section{padding:48px 5%}
- .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
- .product{padding:17px 8px}
- .menu-panel{right:4%}
+ header{padding:0 4%}.brand strong{font-size:10px}
+ .hero{min-height:470px}.hero img{width:125px;height:125px}
+ .section{padding:42px 5%}
+ .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+ .product{padding:15px 6px}
 }
 </style>
 </head>
@@ -279,196 +169,176 @@ footer .payment-icon{background:#333}
 
 <header>
  <div class="brand">
-  <img src="saqi-wolf-logo.png" alt="Saqi Wolf Logo">
-  <div class="brand-name">SAQI DIGITAL HUB</div>
+  <!-- YAHAN TUMHARA ASLI UPLOADED WOLF PNG -->
+  <img src="1776664169683.png" alt="SAQI DIGITAL HUB">
+  <strong>SAQI DIGITAL HUB</strong>
  </div>
 
- <div class="header-actions">
-  <button class="theme-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Change theme">☾</button>
-  <button class="menu-btn" id="menuBtn" onclick="toggleMenu()" aria-label="Open menu">
-   <div class="menu-lines"><span></span><span></span><span></span></div>
+ <div class="actions">
+  <button class="theme" id="themeBtn" onclick="toggleTheme()">☾</button>
+  <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+   <span></span><span></span><span></span>
   </button>
  </div>
 
- <nav class="menu-panel" id="menuPanel">
-  <button onclick="showPage('home')">⌂ &nbsp; Home</button>
-  <button onclick="showPage('shop')">▣ &nbsp; Shop</button>
-  <button onclick="showPage('prices')">＄ &nbsp; All Prices</button>
-  <button onclick="showPage('payments')">▤ &nbsp; Payments</button>
-  <button onclick="showPage('contact')">✉ &nbsp; Contact Us</button>
+ <nav class="menu" id="menu">
+  <button onclick="go('home')">⌂ Home</button>
+  <button onclick="go('shop')">▣ Shop</button>
+  <button onclick="go('prices')">＄ All Prices</button>
+  <button onclick="go('payments')">▤ Payments</button>
+  <button onclick="go('contact')">✉ Contact Us</button>
  </nav>
 </header>
 
-<!-- HOME -->
-<main id="home" class="page active">
- <section class="hero">
-  <img class="hero-logo" src="saqi-wolf-logo.png" alt="SAQI Wolf Logo">
-  <h1>SAQI <span>DIGITAL HUB</span></h1>
+<!-- PAGE 1: HOME -->
+<section class="page active" id="home">
+ <div class="hero">
+  <img src="1776664169683.png" alt="SAQI DIGITAL HUB">
+  <h1>SAQI <span class="red">DIGITAL HUB</span></h1>
   <p>YOUR PREMIUM DIGITAL SERVICES DESTINATION</p>
-  <button class="btn" onclick="showPage('shop')">LET'S GO &nbsp; →</button>
- </section>
+  <button class="btn" onclick="go('shop')">LET'S GO →</button>
+ </div>
 
- <section class="section">
-  <span class="badge">WHAT WE OFFER</span>
-  <h2>OUR <span>SERVICES</span></h2>
-  <p class="subtext">Premium subscriptions, entertainment aur digital tools — sab aik hi jagah.</p>
-
+ <div class="section">
+  <h2>OUR <span class="red">SERVICES</span></h2>
+  <p class="desc">Explore our premium digital subscriptions and services.</p>
   <div class="cards">
    <div class="card">
-    <div class="card-icon">🛡️</div>
-    <h3>VPN SERVICES</h3>
-    <p>Online privacy, secure browsing aur internet connection ko protect karne ke liye premium VPN services.</p>
-    <button class="btn" style="margin-top:18px" onclick="openCategory('vpn')">EXPLORE VPNs</button>
+    <div class="emoji">🛡️</div><h3>VPN SERVICES</h3>
+    <p>Online privacy aur secure internet browsing ke liye premium VPN services.</p>
+    <button class="btn" onclick="openCategory('vpn')">EXPLORE VPNs</button>
    </div>
    <div class="card">
-    <div class="card-icon">🎬</div>
-    <h3>STREAMING</h3>
-    <p>Movies, series, dramas aur entertainment ke liye premium streaming subscriptions.</p>
-    <button class="btn" style="margin-top:18px" onclick="openCategory('streaming')">EXPLORE STREAMING</button>
+    <div class="emoji">🎬</div><h3>STREAMING</h3>
+    <p>Movies, series aur entertainment ke liye premium streaming apps.</p>
+    <button class="btn" onclick="openCategory('streaming')">EXPLORE</button>
    </div>
    <div class="card">
-    <div class="card-icon">💎</div>
-    <h3>OTHER SERVICES</h3>
-    <p>AI tools, editing, designing aur productivity ke useful premium subscriptions.</p>
-    <button class="btn" style="margin-top:18px" onclick="openCategory('other')">EXPLORE TOOLS</button>
+    <div class="emoji">📺</div><h3>IPTV SERVICES</h3>
+    <p>Premium IPTV subscriptions aur packages.</p>
+    <button class="btn" onclick="openCategory('iptv')">EXPLORE IPTV</button>
    </div>
   </div>
- </section>
-</main>
+ </div>
+</section>
 
-<!-- SHOP -->
-<main id="shop" class="page">
- <section class="section">
-  <span class="badge">SAQI DIGITAL HUB STORE</span>
-  <h2>EXPLORE OUR <span>SHOP</span></h2>
-  <p class="subtext">Category select karein. Har category mein sirf usi service ki price list aur logos show honge.</p>
-
+<!-- PAGE 2: SHOP -->
+<section class="page" id="shop">
+ <div class="section">
+  <h2>WELCOME TO <span class="red">OUR SHOP</span></h2>
+  <p class="desc">Category select karo. Agla page sirf us category ki details dikhayega.</p>
   <div class="cards">
    <div class="card category-card" onclick="openCategory('streaming')">
-    <div class="card-icon">🎬</div>
-    <h3>STREAMING</h3>
-    <p>Netflix, Prime Video, Crunchyroll aur more.</p>
-    <button class="btn">VIEW STREAMING →</button>
+    <div class="emoji">🎬</div><h3>STREAMING</h3>
+    <p>Netflix, Prime Video, Disney+ and more.</p>
+    <button class="btn">OPEN STREAMING →</button>
    </div>
-
    <div class="card category-card" onclick="openCategory('vpn')">
-    <div class="card-icon">🛡️</div>
-    <h3>VPNs</h3>
-    <p>NordVPN, Surfshark, ExpressVPN aur more.</p>
-    <button class="btn">VIEW VPNs →</button>
+    <div class="emoji">🛡️</div><h3>VPNs</h3>
+    <p>NordVPN, Surfshark, ExpressVPN and more.</p>
+    <button class="btn">OPEN VPNs →</button>
    </div>
-
    <div class="card category-card" onclick="openCategory('iptv')">
-    <div class="card-icon">📺</div>
-    <h3>IPTVs</h3>
-    <p>Premium IPTV services aur packages.</p>
-    <button class="btn">VIEW IPTV →</button>
+    <div class="emoji">📺</div><h3>IPTVs</h3>
+    <p>Opplex, Hexa4K, StarShare and more.</p>
+    <button class="btn">OPEN IPTV →</button>
    </div>
-
    <div class="card category-card" onclick="openCategory('other')">
-    <div class="card-icon">💎</div>
-    <h3>OTHER SUBSCRIPTIONS</h3>
-    <p>AI, editing, designing aur productivity tools.</p>
-    <button class="btn">VIEW OTHER →</button>
+    <div class="emoji">💎</div><h3>OTHER SUBSCRIPTIONS</h3>
+    <p>Canva, CapCut, Grammarly and more.</p>
+    <button class="btn">OPEN OTHER →</button>
    </div>
   </div>
+  <button class="btn" style="margin-top:30px" onclick="go('prices')">EXPLORE ALL PRICES</button>
+ </div>
+</section>
 
-  <button class="btn" style="margin-top:35px" onclick="showPage('prices')">EXPLORE ALL PRICES</button>
- </section>
-</main>
+<!-- PAGE 3: CATEGORY -->
+<section class="page" id="category">
+ <div class="section">
+  <h2 id="categoryTitle">CATEGORY</h2>
+  <p class="desc" id="categoryDesc"></p>
 
-<!-- CATEGORY -->
-<main id="category" class="page">
- <section class="section">
-  <span class="badge" id="categoryBadge">OUR SERVICES</span>
-  <h2 id="categoryTitle">OUR PRODUCTS</h2>
-  <p class="subtext" id="categoryDescription">Select your product and order through WhatsApp.</p>
-
-  <!-- Is slider mein sirf logos show honge -->
-  <div class="logo-window">
-   <div class="logo-track" id="logoTrack"></div>
+  <div class="slider-window">
+   <div class="slider-track" id="sliderTrack"></div>
   </div>
 
-  <h2 style="font-size:21px;margin-top:28px">PRICE <span>LIST</span></h2>
-  <div class="products" id="productList"></div>
+  <h2 style="font-size:22px">AVAILABLE <span class="red">PRICE LIST</span></h2>
+  <div class="products" id="categoryProducts"></div>
+  <button class="btn back" onclick="go('shop')">← BACK TO SHOP</button>
+ </div>
+</section>
 
-  <button class="btn back-btn" onclick="showPage('shop')">← BACK TO SHOP</button>
- </section>
-</main>
+<!-- PAGE 4: PRODUCT DETAIL -->
+<section class="page" id="detail">
+ <div class="section">
+  <span class="red">PRODUCT DETAILS</span>
+  <div class="detail-box">
+   <div id="detailIcon"></div>
+   <h2 id="detailName"></h2>
+   <div class="detail-price" id="detailPrice"></div>
+   <p class="desc">Order karne ke liye neeche WhatsApp button par click karein. Hamari team aapko details provide karegi.</p>
+   <button class="btn" id="orderBtn">ORDER ON WHATSAPP</button>
+  </div>
+  <button class="btn back" onclick="backToCategory()">← BACK TO PRODUCTS</button>
+ </div>
+</section>
 
-<!-- ALL PRICES -->
-<main id="prices" class="page">
- <section class="section">
-  <span class="badge">COMPLETE PRICE LIST</span>
-  <h2>EXPLORE ALL <span>PRICES</span></h2>
-  <p class="subtext">All available digital subscriptions in one place.</p>
+<!-- PAGE 5: ALL PRICES -->
+<section class="page" id="prices">
+ <div class="section">
+  <h2>ALL <span class="red">PRICE LIST</span></h2>
+  <p class="desc">Yahan tamam categories ke products listed hain. Product par click karke detail dekhein.</p>
   <div class="products" id="allProducts"></div>
- </section>
-</main>
+ </div>
+</section>
 
-<!-- PAYMENTS -->
-<main id="payments" class="page">
- <section class="section">
-  <span class="badge">SAFE & EASY PAYMENTS</span>
-  <h2>PAYMENT <span>METHODS</span></h2>
-  <p class="subtext">Available payment options.</p>
-
-  <div class="payment-grid">
-   <div class="payment"><span class="payment-icon">E</span>Easypaisa</div>
-   <div class="payment"><span class="payment-icon">J</span>JazzCash</div>
-   <div class="payment"><span class="payment-icon">U</span>UPaisa</div>
-   <div class="payment"><span class="payment-icon">S</span>SadaPay</div>
-   <div class="payment"><span class="payment-icon">N</span>NayaPay</div>
+<!-- PAGE 6: PAYMENTS -->
+<section class="page" id="payments">
+ <div class="section">
+  <h2>PAYMENT <span class="red">METHODS</span></h2>
+  <p class="desc">Available payment options. Payment details ke liye WhatsApp karein.</p>
+  <div class="payment-list">
+   <div class="payment"><i>E</i>Easypaisa</div>
+   <div class="payment"><i>J</i>JazzCash</div>
+   <div class="payment"><i>U</i>UPaisa</div>
+   <div class="payment"><i>S</i>SadaPay</div>
+   <div class="payment"><i>N</i>NayaPay</div>
   </div>
+  <button class="btn" onclick="sendWhatsApp('Please share your payment details.')">GET PAYMENT DETAILS</button>
+ </div>
+</section>
 
-  <p class="subtext">Payment details ke liye WhatsApp par contact karein.</p>
-  <button class="btn" onclick="whatsapp('Assalamualaikum! Please share payment details.')">PAYMENT DETAILS</button>
- </section>
-</main>
-
-<!-- CONTACT -->
-<main id="contact" class="page">
- <section class="section">
-  <span class="badge">GET IN TOUCH</span>
-  <h2>CONTACT <span>US</span></h2>
-  <p class="subtext">Orders aur information ke liye humse rabta karein.</p>
-
+<!-- PAGE 7: CONTACT -->
+<section class="page" id="contact">
+ <div class="section">
+  <h2>CONTACT <span class="red">US</span></h2>
+  <p class="desc">Any query? Contact SAQI DIGITAL HUB.</p>
   <div class="contact-box">
    <p>Official WhatsApp: <a href="https://wa.me/923471191229" target="_blank">0347 1191229</a></p>
    <p>Backup WhatsApp: <a href="https://wa.me/923325293980" target="_blank">0332 5293980</a></p>
    <p>Email: <a href="mailto:saqidigitalhub@gmail.com">saqidigitalhub@gmail.com</a></p>
    <p>Instagram: <a href="https://www.instagram.com/saqi_digitalhub/" target="_blank">@saqi_digitalhub</a></p>
   </div>
-
-  <button class="btn" onclick="whatsapp('Hello SAQI DIGITAL HUB!')">WHATSAPP NOW</button>
- </section>
-</main>
+  <button class="btn" onclick="sendWhatsApp('Hello SAQI DIGITAL HUB!')">WHATSAPP NOW</button>
+ </div>
+</section>
 
 <footer>
- <img src="saqi-wolf-logo.png" class="footer-logo" alt="Wolf Logo">
+ <img src="1776664169683.png" alt="SAQI DIGITAL HUB">
  <h2>SAQI DIGITAL HUB</h2>
  <p>YOUR PREMIUM DIGITAL SERVICES DESTINATION</p>
-
- <div class="payment-grid">
-  <div class="payment"><span class="payment-icon">E</span>Easypaisa</div>
-  <div class="payment"><span class="payment-icon">J</span>JazzCash</div>
-  <div class="payment"><span class="payment-icon">U</span>UPaisa</div>
-  <div class="payment"><span class="payment-icon">S</span>SadaPay</div>
-  <div class="payment"><span class="payment-icon">N</span>NayaPay</div>
- </div>
-
- <div class="footer-links">
-  <button onclick="showPage('home')">HOME</button>
-  <button onclick="showPage('shop')">SHOP NOW</button>
-  <button onclick="showPage('prices')">PRICES</button>
-  <button onclick="showPage('contact')">CONTACT</button>
- </div>
+ <button onclick="go('home')">HOME</button>
+ <button onclick="go('shop')">SHOP NOW</button>
+ <button onclick="go('prices')">PRICES</button>
+ <button onclick="go('payments')">PAYMENTS</button>
+ <button onclick="go('contact')">CONTACT</button>
  <p>© 2026 SAQI DIGITAL HUB. ALL RIGHTS RESERVED.</p>
 </footer>
 
 <script>
-/* PRODUCTS AND PRICES */
-const products = {
+/* PRODUCT DATABASE */
+const data={
  streaming:[
   ["Netflix",400,"netflix"],
   ["Prime Video",150,"primevideo"],
@@ -511,109 +381,122 @@ const products = {
  ]
 };
 
-const categoryInfo={
- streaming:{
-  title:"STREAMING SERVICES",
-  description:"Netflix, Prime Video aur doosri streaming services ki price list.",
-  logos:["netflix","primevideo","crunchyroll","disneyplus","hbo","spotify"]
- },
- vpn:{
-  title:"PREMIUM VPN SERVICES",
-  description:"Yahan sirf VPN subscriptions aur unki prices show hongi.",
-  logos:["nordvpn","surfshark","expressvpn","protonvpn"]
- },
- iptv:{
-  title:"PREMIUM IPTV SERVICES",
-  description:"Tamam IPTV services ki updated price list.",
-  logos:[]
- },
- other:{
-  title:"OTHER SUBSCRIPTIONS",
-  description:"AI, editing, designing aur productivity subscriptions.",
-  logos:["capcut","canva","picsart","grammarly"]
- }
+const info={
+ streaming:["STREAMING SERVICES","Netflix, Prime Video aur doosri streaming apps ki price list."],
+ vpn:["PREMIUM VPN SERVICES","Yahan sirf VPN subscriptions aur unki prices hain."],
+ iptv:["PREMIUM IPTV SERVICES","Tumhari tamam IPTV services aur unki prices."],
+ other:["OTHER SUBSCRIPTIONS","AI, editing, designing aur productivity tools."]
 };
 
-/* PAGE NAVIGATION */
-function showPage(id){
+let currentCategory="streaming";
+let currentProduct=null;
+
+/* NAVIGATION: HAR PAGE ALAG OPEN HOTA HAI */
+function go(page){
  document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
- document.getElementById(id).classList.add("active");
+ document.getElementById(page).classList.add("active");
  closeMenu();
  window.scrollTo({top:0,behavior:"smooth"});
 }
 
-/* MENU OPEN AND CLOSE */
-function toggleMenu(){
- document.getElementById("menuBtn").classList.toggle("open");
- document.getElementById("menuPanel").classList.toggle("open");
-}
-function closeMenu(){
- document.getElementById("menuBtn").classList.remove("open");
- document.getElementById("menuPanel").classList.remove("open");
+/* CATEGORY PAGE */
+function openCategory(category){
+ currentCategory=category;
+ document.getElementById("categoryTitle").textContent=info[category][0];
+ document.getElementById("categoryDesc").textContent=info[category][1];
+
+ document.getElementById("categoryProducts").innerHTML=
+  data[category].map((p,i)=>productCard(p,category,i)).join("");
+
+ makeSlider(category);
+ go("category");
 }
 
-/* THEME SWITCH */
+/* PRODUCT CARD */
+function productCard(p,category,index){
+ let icon=p[2]
+ ? `<img src="https://cdn.simpleicons.org/${p[2]}" alt="${p[0]}" onerror="this.outerHTML='<div class=\\'initial\\'>${p[0].slice(0,2).toUpperCase()}</div>'">`
+ : `<div class="initial">${p[0].slice(0,2).toUpperCase()}</div>`;
+
+ return `<div class="product" onclick="openDetail('${category}',${index})">
+  ${icon}
+  <h3>${p[0]}</h3>
+  <div class="price">Rs. ${p[1]}</div>
+  <small>VIEW DETAILS →</small>
+ </div>`;
+}
+
+/* PRODUCT DETAIL PAGE */
+function openDetail(category,index){
+ currentCategory=category;
+ currentProduct=data[category][index];
+ const p=currentProduct;
+ const icon=p[2]
+ ? `<img src="https://cdn.simpleicons.org/${p[2]}" alt="${p[0]}">`
+ : `<div class="initial" style="width:75px;height:75px;margin:15px auto;font-size:22px">${p[0].slice(0,2).toUpperCase()}</div>`;
+
+ document.getElementById("detailIcon").innerHTML=icon;
+ document.getElementById("detailName").textContent=p[0];
+ document.getElementById("detailPrice").textContent="Rs. "+p[1];
+
+ document.getElementById("orderBtn").onclick=()=>{
+  sendWhatsApp("Assalamualaikum! I need "+p[0]+". Price Rs. "+p[1]+". Please share details.");
+ };
+ go("detail");
+}
+function backToCategory(){openCategory(currentCategory)}
+
+/* ICON SLIDER: CATEGORY KE HISAB SE */
+function makeSlider(category){
+ const track=document.getElementById("sliderTrack");
+ let items=data[category].map(p=>{
+  if(p[2]){
+   return `<img src="https://cdn.simpleicons.org/${p[2]}" alt="${p[0]}" onerror="this.style.display='none'">`;
+  }
+  return `<div class="fake-icon">${p[0].slice(0,2).toUpperCase()}</div>`;
+ }).join("");
+
+ track.innerHTML=items+items;
+ track.style.animationDuration=category==="vpn"?"17s":category==="iptv"?"30s":"23s";
+}
+
+/* ALL PRICES PAGE */
+document.getElementById("allProducts").innerHTML=
+ Object.keys(data).map(category=>
+  data[category].map((p,i)=>productCard(p,category,i)).join("")
+ ).join("");
+
+/* MENU */
+function toggleMenu(){
+ document.getElementById("menu").classList.toggle("open");
+ document.getElementById("menuBtn").classList.toggle("open");
+}
+function closeMenu(){
+ document.getElementById("menu").classList.remove("open");
+ document.getElementById("menuBtn").classList.remove("open");
+}
+document.addEventListener("click",e=>{
+ if(!e.target.closest("#menu")&&!e.target.closest("#menuBtn"))closeMenu();
+});
+
+/* DARK / LIGHT MODE */
 function toggleTheme(){
  document.body.classList.toggle("dark");
- const dark=document.body.classList.contains("dark");
+ let dark=document.body.classList.contains("dark");
  document.getElementById("themeBtn").textContent=dark?"☀":"☾";
- try{localStorage.setItem("saqi-theme",dark?"dark":"light")}catch(e){}
+ try{localStorage.setItem("saqiTheme",dark?"dark":"light")}catch(e){}
 }
 try{
- if(localStorage.getItem("saqi-theme")==="dark"){
+ if(localStorage.getItem("saqiTheme")==="dark"){
   document.body.classList.add("dark");
   document.getElementById("themeBtn").textContent="☀";
  }
 }catch(e){}
 
 /* WHATSAPP */
-function whatsapp(message){
- const url="https://wa.me/923471191229?text="+encodeURIComponent(message);
- window.open(url,"_blank");
+function sendWhatsApp(message){
+ window.open("https://wa.me/923471191229?text="+encodeURIComponent(message),"_blank");
 }
-
-/* PRODUCT CARD */
-function makeProduct(item){
- const name=item[0];
- const price=item[1];
- const slug=item[2];
- const logo=slug?"https://cdn.simpleicons.org/"+slug:"";
- const priceText="Rs. "+price;
-
- return `
- <div class="product" onclick="whatsapp('Assalamualaikum! I need ${name}. Please share details.')">
-  ${
-   logo
-   ? `<img src="${logo}" alt="${name} logo" onerror="this.outerHTML='<div class=\\'fallback\\'>${name.substring(0,2).toUpperCase()}</div>'">`
-   : `<div class="fallback">${name.substring(0,2).toUpperCase()}</div>`
-  }
-  <h3>${name}</h3>
-  <div class="price">${priceText}</div>
-  <small>CLICK TO ORDER →</small>
- </div>`;
-}
-
-/* LOGO SLIDER */
-function makeLogoSlider(category){
- const track=document.getElementById("logoTrack");
- const logos=categoryInfo[category].logos;
-
- if(category==="iptv"){
-  const names=products.iptv.map(p=>p[0]);
-  const logoItems=names.map((name,index)=>
-   `<div class="iptv-logo" title="${name}">${name.substring(0,2).toUpperCase()}</div>`
-  ).join("");
-  track.innerHTML=logoItems+logoItems;
-  track.style.animationDuration="28s";
-  return;
- }
-
- const oneSet=logos.map(slug=>
-  `<img src="https://cdn.simpleicons.org/${slug}" alt="${slug} logo" onerror="this.style.display='none'">`
- ).join("");
-
- track.innerHTML=oneSet+oneSet;
- track.style.animationDuration=category==="vpn"?"18s":"24s";
-}
-
-/* OPEN ONLY SELECTED CATEGORY 
+</script>
+</body>
+</html>
