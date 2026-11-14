@@ -1,189 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#0b1020">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#fff7f7">
 <title>SAQI DIGITAL HUB</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <style>
-:root{--bg:#0b1020;--panel:#121a2d;--panel2:#19243b;--text:#f7f8fc;--muted:#a8b1c5;--line:#ffffff18;--accent:#ff5368;--accent2:#ff9b75;--shadow:0 18px 45px #0005}
-body.light{--bg:#f7f8fc;--panel:#fff;--panel2:#f0f2f8;--text:#171b29;--muted:#687084;--line:#18203a18;--shadow:0 18px 45px #25305212}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text);transition:background .3s,color .3s}
-a{text-decoration:none;color:inherit}button{font:inherit;cursor:pointer}
-.wrap{width:min(1160px,92%);margin:auto}
-header{height:76px;position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.head{height:100%;display:flex;align-items:center;justify-content:space-between;gap:15px}
-.brand{display:flex;align-items:center;gap:12px;font-size:clamp(16px,2.2vw,21px);font-weight:900;letter-spacing:.6px}
-.brand img{width:58px;height:58px;object-fit:contain;filter:drop-shadow(0 5px 10px #ff536833)}
-.brand span{background:linear-gradient(90deg,var(--text),var(--accent),var(--accent2));background-clip:text;-webkit-background-clip:text;color:transparent}
-.nav{display:flex;align-items:center;gap:7px}
-.nav a,.theme{font-size:11px;font-weight:800;color:var(--muted);padding:11px 13px;border:1px solid transparent;border-radius:10px;background:transparent}
-.nav a:hover,.theme:hover{color:var(--text);background:var(--panel2);border-color:var(--line)}
-.theme{border:1px solid var(--line);color:var(--text)}
-.menu{display:none;background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:10px;padding:10px}
-.hero{min-height:700px;display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;padding:75px 0 70px;background:radial-gradient(ellipse at 50% 20%,#ff53682b,transparent 43%),radial-gradient(ellipse at 12% 85%,#625cff20,transparent 35%)}
-.hero:before,.hero:after{content:"";position:absolute;width:240px;height:240px;border:1px solid #ff718333;border-radius:42% 58% 60% 40%;transform:rotate(30deg);pointer-events:none}
-.hero:before{top:50px;left:-120px}.hero:after{right:-120px;bottom:20px}
-.hero-content{position:relative;z-index:1}\n.hero-logo{width:clamp(115px,19vw,185px);height:clamp(115px,19vw,185px);object-fit:contain;margin:0 auto 22px;display:block;filter:drop-shadow(0 18px 24px #ff536844);animation:logoFloat 4s ease-in-out infinite}\n@keyframes logoFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-9px) scale(1.025)}}
-.hero-kicker{font-size:11px;font-weight:900;letter-spacing:4px;color:var(--accent);margin-bottom:20px}
-.hero h1{font-size:clamp(48px,10vw,112px);line-height:.98;letter-spacing:-5px;font-weight:900;text-shadow:0 10px 35px #ff53681c}
-.hero h1 span{display:block;background:linear-gradient(90deg,var(--accent),var(--accent2),#a18cff);background-clip:text;-webkit-background-clip:text;color:transparent}
-.round-lines{display:flex;justify-content:center;gap:9px;margin:25px auto 22px}
-.round-lines i{display:block;height:7px;border-radius:20px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
-.round-lines i:nth-child(1){width:38px}.round-lines i:nth-child(2){width:70px;opacity:.75}.round-lines i:nth-child(3){width:38px;opacity:.5}
-.hero p{max-width:650px;margin:auto;color:var(--muted);font-size:14px;line-height:1.9}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 21px;border:0;border-radius:12px;background:linear-gradient(110deg,var(--accent),var(--accent2));color:white;font-size:11px;font-weight:900;box-shadow:0 12px 28px #ff536833;transition:.2s}
-.btn:hover{transform:translateY(-3px);filter:brightness(1.07)}
-.hero .btn{margin-top:28px}
-.section{padding:75px 0}
-.section-head{text-align:center;margin:0 auto 32px;max-width:720px}
-.kicker{font-size:10px;letter-spacing:3px;color:var(--accent);font-weight:900;margin-bottom:12px}
-.section-head h2{font-size:clamp(28px,5vw,43px);font-weight:900;letter-spacing:-1.5px}
-.section-head p{font-size:13px;color:var(--muted);line-height:1.8;margin-top:10px}
-.service-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
-.service-card,.category-card,.product,.payment-card{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:22px;box-shadow:var(--shadow);position:relative;overflow:hidden}\n.service-card:before,.category-card:before{content:"";position:absolute;top:0;left:18px;right:18px;height:2px;background:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent);opacity:.8}
-.service-card{padding:22px;text-align:center}
-.service-card .icon3d{margin:0 auto 13px}
-.service-card h3{font-size:14px;margin-bottom:6px}
-.service-card p{font-size:11px;color:var(--muted);line-height:1.6}
-.icon3d{width:72px;height:72px;border-radius:21px;display:grid;place-items:center;background:linear-gradient(145deg,#fff,#d9dfec);box-shadow:8px 10px 16px #0004,inset -4px -5px 9px #9ba6bc55,inset 3px 3px 7px #fff;transform:perspective(500px) rotateX(7deg) rotateY(-8deg);transition:.25s;overflow:hidden}
-.icon3d img{width:43px;height:43px;object-fit:contain;filter:drop-shadow(2px 3px 2px #0003)}
-.icon3d i{font-size:30px;color:#202a40}
-.service-card:hover .icon3d,.category-card:hover .icon3d{transform:perspective(500px) rotateX(-5deg) rotateY(12deg) translateY(-4px)}
-.slider-shell{position:relative;overflow:hidden;border-radius:25px;background:linear-gradient(120deg,#211d3d,#172d45 65%,#45263a);border:1px solid #ffffff1c;box-shadow:var(--shadow);min-height:255px}
-.slides{display:flex;transition:transform .65s cubic-bezier(.2,.8,.2,1)}
-.slide{min-width:100%;padding:45px clamp(24px,7vw,75px);min-height:255px;display:flex;align-items:center;justify-content:space-between;gap:25px;color:#fff}
-.slide small{color:#ff9eaa;letter-spacing:3px;font-weight:900;font-size:10px}
-.slide h3{font-size:clamp(25px,4vw,40px);font-weight:900;margin:12px 0}
-.slide p{color:#d3d7e4;max-width:500px;font-size:13px;line-height:1.8}
-.slide-art{font-size:clamp(55px,9vw,100px);color:#ffffffd9;filter:drop-shadow(8px 14px 8px #0007);padding:10px 25px}
-.slider-controls{position:absolute;bottom:16px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:8px}
-.dot{width:8px;height:8px;border:0;border-radius:20px;background:#ffffff66;padding:0}
-.dot.active{width:25px;background:#fff}
-.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
-.category-card{padding:23px 17px;text-align:center;cursor:pointer;color:var(--text);transition:.25s}
-.category-card:hover{transform:translateY(-6px);border-color:#ff536877}
-.category-card .icon3d{margin:0 auto 15px}
-.category-card h3{font-size:14px;margin-bottom:7px}
-.category-card p{font-size:11px;color:var(--muted);line-height:1.6}
-.center{text-align:center;margin-top:28px}
-#prices{scroll-margin-top:90px}
-.price-tools{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin:0 0 20px}
-.search{background:var(--panel);color:var(--text);border:1px solid var(--line);border-radius:11px;padding:13px 15px;width:min(100%,330px);outline:none}
-.price-tabs{display:flex;gap:7px;flex-wrap:wrap}
-.price-tabs button{border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:9px 12px;border-radius:9px;font-size:10px;font-weight:800}
-.price-tabs button.active{background:var(--accent);color:white;border-color:var(--accent)}
-.price-group{margin:25px 0 34px}
-.price-group h3{font-size:19px;font-weight:900;margin-bottom:14px}
-.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
-.product{padding:17px;display:flex;align-items:center;gap:13px;min-height:105px}
-.product .icon3d{width:53px;height:53px;flex:0 0 53px;border-radius:15px}
-.product .icon3d img{width:31px;height:31px}
-.product .icon3d i{font-size:22px}
-.product-info{min-width:0;flex:1}
-.product h4{font-size:12px;font-weight:800;margin-bottom:6px}
-.product .price{font-size:14px;color:var(--accent);font-weight:900}
-.product .price small{font-size:9px;color:var(--muted);font-weight:600}
-.order{display:inline-flex;align-items:center;gap:6px;background:#1dbb68;color:white;border-radius:8px;padding:9px 10px;font-size:9px;font-weight:900;white-space:nowrap}
-.payment-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
-.payment-card{padding:18px 10px;text-align:center}
-.payment-logo{height:48px;width:48px;margin:0 auto 10px;border-radius:15px;background:#fff;display:grid;place-items:center;color:#25324c;font-weight:900;font-size:20px;box-shadow:5px 7px 12px #0003}
-.payment-card h4{font-size:11px}
-.contact-box{text-align:center;border-radius:22px;padding:36px 20px;background:linear-gradient(120deg,#251d3d,#172d45);color:white}
-.contact-box p{color:#d3d7e4;font-size:12px;margin:10px 0 20px}\n.contact-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}\n.contact-actions a{display:inline-flex;align-items:center;gap:8px}
-footer{border-top:1px solid var(--line);padding:25px 0;color:var(--muted);font-size:11px;text-align:center}
-footer strong{color:var(--accent)}
-@media(max-width:800px){.service-strip,.category-grid{grid-template-columns:repeat(2,1fr)}.product-grid{grid-template-columns:repeat(2,1fr)}.payment-grid{grid-template-columns:repeat(3,1fr)}}
-@media(max-width:560px){header{height:72px}.brand{font-size:13px}.brand img{width:45px;height:45px}.menu{display:block}.nav{display:none;position:absolute;top:67px;left:0;right:0;padding:12px 4%;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}.nav.open{display:flex}.nav a{text-align:center}.hero{min-height:590px;padding:55px 0}.hero-logo{width:125px;height:125px;margin-bottom:18px}.hero h1{font-size:clamp(43px,12vw,68px);letter-spacing:-2.5px}.hero h1{letter-spacing:-2.5px}.section{padding:55px 0}.service-strip{gap:9px}.service-card{padding:15px 10px}.icon3d{width:61px;height:61px}.icon3d img{width:36px;height:36px}.category-grid{gap:10px}.category-card{padding:18px 10px}.slide{padding:35px 22px;min-height:285px}.slide-art{font-size:54px;padding:0}.product-grid{grid-template-columns:1fr}.product{min-height:88px}.payment-grid{grid-template-columns:repeat(2,1fr)}.price-tools{align-items:stretch}.search{width:100%}}
+:root{--bg:#fffafa;--paper:#fff;--soft:#fff0f1;--ink:#241c25;--muted:#82747d;--red:#f0445c;--coral:#ff8b83;--line:#f2dfe2;--shadow:0 15px 40px #7d344014}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--ink)}button,a{font:inherit}a{text-decoration:none;color:inherit}button{cursor:pointer}.wrap{width:min(1120px,92%);margin:auto}.topbar{height:70px;position:sticky;top:0;z-index:50;background:#fffafaeF;backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}.head{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.5px}.brand img{width:48px;height:48px;object-fit:contain}.brand span{font-size:15px;background:linear-gradient(90deg,var(--red),#f99a86);background-clip:text;color:transparent}.head-actions{display:flex;gap:9px;align-items:center}.pill-btn,.dots-btn{border:1px solid var(--line);background:white;border-radius:12px;padding:11px 14px;font-weight:800;font-size:11px;color:var(--ink)}.dots-btn{width:42px;height:42px;font-size:17px}.menu-panel{display:none;position:absolute;right:4%;top:62px;width:205px;padding:9px;background:white;border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}.menu-panel.show{display:grid}.menu-panel a,.menu-panel button{text-align:left;padding:12px;border:0;background:white;border-radius:9px;font-size:12px;font-weight:800;color:var(--ink)}.menu-panel a:hover,.menu-panel button:hover{background:var(--soft)}.view{display:none}.view.active{display:block}.hero{min-height:calc(100vh - 70px);display:grid;place-items:center;text-align:center;position:relative;overflow:hidden;padding:60px 0;background:radial-gradient(ellipse at 50% 15%,#ff64731c,transparent 43%),linear-gradient(180deg,#fffafa,#fff4f4)}.hero:before,.hero:after{content:"";position:absolute;width:330px;height:330px;border:2px solid #f0445c20;border-radius:42% 58% 61% 39%;pointer-events:none}.hero:before{left:-190px;top:10%}.hero:after{right:-190px;bottom:3%;transform:rotate(50deg)}.hero-inner{position:relative;z-index:1}.hero-logo{width:clamp(155px,26vw,245px);height:clamp(155px,26vw,245px);object-fit:contain;display:block;margin:0 auto 18px;filter:drop-shadow(0 18px 20px #e84a5b26);animation:float 4s ease-in-out infinite}@keyframes float{50%{transform:translateY(-10px)}}.eyebrow{font-size:10px;letter-spacing:4px;font-weight:900;color:var(--red);margin-bottom:16px}.hero h1{font-size:clamp(45px,9vw,100px);font-weight:900;letter-spacing:-5px;line-height:.98}.hero h1 span{display:block;color:var(--red)}.squiggles{display:flex;justify-content:center;gap:8px;margin:25px auto}.squiggles i{display:block;width:55px;height:12px;border:3px solid var(--red);border-radius:100%;transform:rotate(-18deg)}.squiggles i:nth-child(2){width:78px;transform:rotate(12deg);border-color:var(--coral)}.squiggles i:nth-child(3){transform:rotate(-9deg);border-color:#f6b2a9}.hero p,.section-head p{max-width:660px;margin:0 auto;color:var(--muted);font-size:13px;line-height:1.9}.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;border-radius:13px;padding:14px 23px;background:linear-gradient(110deg,var(--red),var(--coral));color:#fff;font-size:11px;font-weight:900;box-shadow:0 10px 24px #f0445c30;transition:.2s}.btn:hover{transform:translateY(-3px)}.hero .btn{margin-top:27px}.section{padding:70px 0}.section-head{text-align:center;margin:0 auto 30px}.section-head h2{font-size:clamp(28px,5vw,43px);font-weight:900;letter-spacing:-1.5px;margin:7px 0 10px}.section-head h2 span{color:var(--red)}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.service-card,.category-card,.item-card,.payment-card{background:var(--paper);border:1px solid var(--line);border-radius:21px;box-shadow:var(--shadow)}.service-card{padding:25px;text-align:center;position:relative;overflow:hidden}.service-card:before{content:"";position:absolute;top:0;left:20px;right:20px;height:3px;background:linear-gradient(90deg,var(--red),var(--coral));border-radius:0 0 8px 8px}.service-icon{width:66px;height:66px;border-radius:20px;margin:0 auto 15px;display:grid;place-items:center;background:linear-gradient(145deg,#fff,#ffe2e5);box-shadow:7px 9px 14px #9b39451c,inset -3px -4px 7px #eab9c0;font-size:27px;color:var(--red);transform:perspective(400px) rotateX(7deg) rotateY(-8deg)}.service-card h3{font-size:17px;margin-bottom:9px}.service-card p{font-size:12px;line-height:1.8;color:var(--muted)}.lets{text-align:center;padding:10px 0 75px}.lets p{font-size:12px;color:var(--muted);margin-bottom:17px}.shop-hero{padding:55px 0 25px;text-align:center}.shop-hero h1,.prices-hero h1{font-size:clamp(32px,6vw,54px);font-weight:900;letter-spacing:-2px}.shop-hero p,.prices-hero p{color:var(--muted);font-size:13px;margin-top:9px}.shop-section{padding:25px 0 35px}.shop-section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin-bottom:16px}.shop-section-head h2{font-size:24px;font-weight:900}.shop-section-head p{font-size:11px;color:var(--muted);margin-top:5px}.mini-slide{overflow:hidden;border-radius:18px;background:linear-gradient(110deg,#fff0f1,#fff);border:1px solid var(--line);padding:17px 0;margin-bottom:16px}.logo-track{display:flex;align-items:center;gap:32px;width:max-content;animation:marquee 23s linear infinite}.mini-slide:hover .logo-track{animation-play-state:paused}.logo-chip{display:flex;align-items:center;gap:9px;min-width:130px;font-size:12px;font-weight:900;color:#51434a}.logo-chip img{width:33px;height:33px;object-fit:contain;filter:drop-shadow(2px 4px 3px #0002)}.logo-chip i{font-size:27px;color:var(--red)}@keyframes marquee{to{transform:translateX(-50%)}}.shop-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.category-card{padding:18px 12px;text-align:center;transition:.2s}.category-card:hover{transform:translateY(-4px);border-color:#f0445c88}.category-card .service-icon{width:53px;height:53px;font-size:22px;margin-bottom:10px}.category-card h3{font-size:12px}.category-card p{font-size:10px;color:var(--muted);margin-top:5px}.explore-row{text-align:center;padding:38px 0 65px}.prices-hero{text-align:center;padding:52px 0 24px}.price-filter{display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap;margin:15px 0 25px}.search{width:min(100%,330px);padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:#fff;outline:none}.tabs{display:flex;gap:7px;flex-wrap:wrap}.tabs button{padding:9px 12px;border:1px solid var(--line);background:#fff;border-radius:9px;color:var(--muted);font-size:10px;font-weight:800}.tabs button.active{background:var(--red);color:white;border-color:var(--red)}.price-group{margin:24px 0 32px}.price-group h2{font-size:19px;margin-bottom:13px}.items-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.item-card{padding:14px;display:flex;align-items:center;gap:12px;min-height:94px}.brand-icon{width:55px;height:55px;flex:0 0 55px;border-radius:17px;background:linear-gradient(145deg,#fff,#ffe4e7);box-shadow:6px 7px 12px #9639441a,inset -3px -4px 7px #eab9c0;display:grid;place-items:center}.brand-icon img{width:32px;height:32px;object-fit:contain}.brand-icon i{font-size:23px;color:var(--red)}.item-info{min-width:0;flex:1}.item-info h3{font-size:12px;margin-bottom:5px}.price{font-size:13px;font-weight:900;color:var(--red)}.price small{font-size:9px;color:var(--muted)}.order{display:inline-flex;align-items:center;gap:5px;background:#20b86b;color:white;padding:9px 10px;border-radius:9px;font-size:9px;font-weight:900;white-space:nowrap}.payment-section{padding:30px 0 20px}.payment-grid{display:flex;justify-content:center;gap:15px;flex-wrap:wrap}.payment-card{width:82px;padding:10px 5px;text-align:center;border-radius:15px}.payment-logo{width:34px;height:34px;margin:0 auto 6px;border-radius:10px;background:linear-gradient(145deg,#fff,#fce8ea);box-shadow:4px 5px 8px #0002;display:grid;place-items:center;font-weight:900;font-size:16px}.payment-card img{width:26px;height:26px;object-fit:contain}.payment-card h4{font-size:9px;color:var(--muted)}.contact{margin:45px auto 25px;padding:34px 20px;border-radius:23px;text-align:center;color:white;background:linear-gradient(115deg,#39232f,#7a3445)}.contact h2{font-size:30px;font-weight:900}.contact p{font-size:12px;color:#f4dce1;margin:9px 0 18px;line-height:1.8}.contact-links{display:flex;justify-content:center;gap:9px;flex-wrap:wrap}.contact-links a{font-size:11px;font-weight:800;border:1px solid #ffffff55;padding:11px 14px;border-radius:10px}.contact-links a:hover{background:#ffffff18}.shop-now{margin:20px 0 10px}.footer{border-top:1px solid var(--line);padding:23px 0 28px;text-align:center;color:var(--muted);font-size:10px}.footer strong{color:var(--red)}.footer-nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin-top:12px}.footer-nav a{font-weight:800;color:var(--ink)}
+@media(max-width:760px){.service-grid{grid-template-columns:1fr}.shop-cards{grid-template-columns:repeat(2,1fr)}.items-grid{grid-template-columns:repeat(2,1fr)}.item-card{flex-wrap:wrap}.order{margin-left:67px}.shop-section-head h2{font-size:21px}}
+@media(max-width:520px){.topbar{height:64px}.brand img{width:40px;height:40px}.brand span{font-size:12px}.hero{min-height:calc(100svh - 64px);padding:45px 0}.hero h1{letter-spacing:-2.5px}.section{padding:52px 0}.shop-cards{gap:9px}.category-card{padding:15px 8px}.shop-section{padding:20px 0}.items-grid{grid-template-columns:1fr}.item-card{flex-wrap:nowrap}.order{margin-left:0}.price-filter{align-items:stretch}.search{width:100%}.payment-grid{gap:8px}.payment-card{width:69px}.contact h2{font-size:25px}}
 </style>
 </head>
 <body>
-<header><div class="wrap head">
- <a class="brand" href="#home"><img src="file_000000008f6482109e8f54778bcdd1b8.png" alt="Saqi Digital Hub logo"><span>SAQI DIGITAL HUB</span></a>
- <nav class="nav" id="nav"><a href="#home">HOME</a><a href="#services">SERVICES</a><a href="#categories">CATEGORIES</a><a href="#prices">PRICES</a><a href="#payments">PAYMENT</a></nav>
- <div style="display:flex;gap:8px;align-items:center"><button class="theme" id="themeBtn" onclick="toggleTheme()" aria-label="Switch theme"><i class="fa-solid fa-sun"></i> LIGHT</button><button class="menu" onclick="document.getElementById('nav').classList.toggle('open')" aria-label="Open menu"><i class="fa-solid fa-bars"></i></button></div>
-</div></header>
-<main id="home">
-<section class="hero"><div class="wrap hero-content">
- <div class="hero-kicker">WELCOME TO YOUR DIGITAL WORLD</div>
- <img class="hero-logo" src="file_000000008f6482109e8f54778bcdd1b8.png" alt="SAQI DIGITAL HUB official logo">
- <h1>SAQI <span>DIGITAL HUB</span></h1>
- <div class="round-lines"><i></i><i></i><i></i></div>
- <p>Premium digital subscriptions, VPN services, streaming, creative tools and more — everything you need in one trusted digital store.</p>
- <a class="btn" href="#services"><i class="fa-solid fa-arrow-down"></i> EXPLORE SERVICES</a>
-</div></section>
-<section class="section" id="services"><div class="wrap">
- <div class="section-head"><div class="kicker">OUR SERVICES</div><h2>Digital Services, <span style="color:var(--accent)">All in One Place</span></h2><p>Explore our main service areas and find the right digital tool for you.</p></div>
- <div class="service-strip">
-  <article class="service-card"><div class="icon3d"><i class="fa-solid fa-shield-halved"></i></div><h3>VPN Services</h3><p>Privacy and secure browsing tools</p></article>
-  <article class="service-card"><div class="icon3d"><i class="fa-solid fa-tv"></i></div><h3>Streaming</h3><p>Movies, series and entertainment</p></article>
-  <article class="service-card"><div class="icon3d"><i class="fa-solid fa-palette"></i></div><h3>Design</h3><p>Creative design and photo apps</p></article>
-  <article class="service-card"><div class="icon3d"><i class="fa-solid fa-clapperboard"></i></div><h3>Video Editing</h3><p>Tools for content creators</p></article>
- </div>
-</div></section>
-<section class="section" style="padding-top:15px"><div class="wrap">
- <div class="section-head"><div class="kicker">WHY SAQI DIGITAL HUB?</div><h2>Why Choose <span style="color:var(--accent)">Us</span></h2><p>Our promise is simple: convenient service, clear prices and friendly support.</p></div>
- <div class="slider-shell"><div class="slides" id="slides">
-  <article class="slide"><div><small>01 / WHY CHOOSE US</small><h3>Most Affordable Rates</h3><p>Explore budget-friendly prices across popular digital subscriptions and tools.</p></div><div class="slide-art"><i class="fa-solid fa-tags"></i></div></article>
-  <article class="slide"><div><small>02 / CUSTOMER SUPPORT</small><h3>Quick & Friendly Support</h3><p>Need help choosing a service? Contact us directly and get friendly assistance.</p></div><div class="slide-art"><i class="fa-solid fa-headset"></i></div></article>
-  <article class="slide"><div><small>03 / EASY ORDERING</small><h3>Simple WhatsApp Orders</h3><p>Choose your service, check its price and send your order through WhatsApp.</p></div><div class="slide-art"><i class="fa-brands fa-whatsapp"></i></div></article>
- </div><div class="slider-controls" id="dots"><button class="dot active" aria-label="Slide 1"></button><button class="dot" aria-label="Slide 2"></button><button class="dot" aria-label="Slide 3"></button></div></div>
-</div></section>
-<section class="section" id="categories"><div class="wrap">
- <div class="section-head"><div class="kicker">LET'S GO</div><h2>Choose Your <span style="color:var(--accent)">Section</span></h2><p>Tap a category to jump to its products and prices.</p></div>
- <div class="category-grid" id="categoryCards"></div>
- <div class="center"><a class="btn" href="#prices"><i class="fa-solid fa-grid-2"></i> EXPLORE ALL</a></div>
-</div></section>
-<section class="section" id="prices"><div class="wrap">
- <div class="section-head"><div class="kicker">OUR PRICE LIST</div><h2>Explore All <span style="color:var(--accent)">Services</span></h2><p>Browse each category separately. Prices are shown in Pakistani Rupees.</p></div>
- <div class="price-tools"><input class="search" id="search" placeholder="Search any service..." oninput="renderPrices()"><div class="price-tabs" id="tabs"></div></div>
- <div id="priceGroups"></div>
-</div></section>
-<section class="section" id="payments"><div class="wrap">
- <div class="section-head"><div class="kicker">SAFE & EASY PAYMENTS</div><h2>Payment <span style="color:var(--accent)">Methods</span></h2><p>Available payment options — confirm payment details with us before sending.</p></div>
- <div class="payment-grid">
-  <article class="payment-card"><div class="payment-logo" style="color:#1c9c63">e</div><h4>Easypaisa</h4></article>
-  <article class="payment-card"><div class="payment-logo" style="color:#8b42bd">U</div><h4>UPaisa</h4></article>
-  <article class="payment-card"><div class="payment-logo" style="color:#ed8b20">J</div><h4>JazzCash</h4></article>
-  <article class="payment-card"><div class="payment-logo" style="color:#2768d8">S</div><h4>SadaPay</h4></article>
-  <article class="payment-card"><div class="payment-logo" style="color:#23a7a0">N</div><h4>NayaPay</h4></article>
- </div>
-</div></section>
-<section class="section" style="padding-top:10px"><div class="wrap"><div class="contact-box"><div class="kicker">READY TO ORDER?</div><h2>Let's Connect</h2><p>Message SAQI DIGITAL HUB on WhatsApp for orders and support.</p><div class="contact-actions"><a class="btn" href="https://wa.me/923471191229" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WHATSAPP 0347 1191229</a><a class="btn" href="https://www.instagram.com/saqi_digitalhub/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> INSTAGRAM @SAQI_DIGITALHUB</a></div></div></div></section>
+<header class="topbar"><div class="wrap head"><a class="brand" href="#" onclick="showView('home');return false"><img src="file_000000008f6482109e8f54778bcdd1b8.png" alt="Saqi Digital Hub logo"><span>SAQI DIGITAL HUB</span></a><div class="head-actions"><button class="pill-btn" onclick="showView('shop')"><i class="fa-solid fa-bag-shopping"></i> SHOP NOW</button><button class="dots-btn" id="dotsBtn" aria-label="Open menu" onclick="toggleMenu()"><i class="fa-solid fa-ellipsis-vertical"></i></button></div><nav class="menu-panel" id="menu"><a href="#" onclick="showView('home');toggleMenu();return false"><i class="fa-solid fa-house"></i> Home</a><a href="#" onclick="showView('shop');toggleMenu();return false"><i class="fa-solid fa-store"></i> Shop Now</a><a href="#" onclick="showView('prices');toggleMenu();return false"><i class="fa-solid fa-tags"></i> Explore All / Prices</a><a href="#contact" onclick="showView('prices');toggleMenu();setTimeout(()=>document.getElementById('contact').scrollIntoView(),80);return false"><i class="fa-solid fa-address-book"></i> Contact Us</a></nav></div></header>
+<main>
+<section class="view active" id="homeView"><section class="hero"><div class="wrap hero-inner"><div class="eyebrow">WELCOME TO YOUR DIGITAL WORLD</div><img class="hero-logo" src="file_000000008f6482109e8f54778bcdd1b8.png" alt="SAQI DIGITAL HUB official logo"><h1>SAQI <span>DIGITAL HUB</span></h1><div class="squiggles"><i></i><i></i><i></i></div><p>Your trusted destination for VPN privacy, streaming entertainment, IPTV and premium digital subscriptions — all in one place.</p><button class="btn" onclick="showView('shop')">LET'S GO <i class="fa-solid fa-arrow-right"></i></button></div></section>
+<section class="section"><div class="wrap"><div class="section-head"><div class="eyebrow">OUR SERVICES</div><h2>Explore Our <span>Services</span></h2><p>Discover what each service category is for and choose what you need.</p></div><div class="service-grid"><article class="service-card"><div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div><h3>VPNs</h3><p>VPN stands for Virtual Private Network. It helps encrypt your internet connection, adds privacy on public Wi-Fi and can provide access to region-specific services where permitted.</p></article><article class="service-card"><div class="service-icon"><i class="fa-solid fa-tv"></i></div><h3>Streaming</h3><p>Streaming services let you watch movies, TV shows, documentaries, live content and anime over the internet without downloading the full video first.</p></article><article class="service-card"><div class="service-icon"><i class="fa-solid fa-layer-group"></i></div><h3>Other Services</h3><p>Explore useful digital subscriptions for design, video editing, AI, productivity, music and everyday creative work — all collected in one store.</p></article></div></div></section><div class="lets"><p>Ready to explore subscriptions and prices?</p><button class="btn" onclick="showView('shop')">LET'S GO <i class="fa-solid fa-arrow-right"></i></button></div></section>
+<section class="view" id="shopView"><div class="shop-hero wrap"><div class="eyebrow">SAQI DIGITAL HUB STORE</div><h1>Choose Your <span style="color:var(--red)">Category</span></h1><p>Browse a category or explore the complete price list.</p></div><div class="wrap">
+<section class="shop-section"><div class="shop-section-head"><div><h2>Streaming</h2><p>Movies, series, sports and anime platforms</p></div><button class="pill-btn" onclick="showView('prices','streaming')">View All</button></div><div class="mini-slide"><div class="logo-track" id="streamTrack"></div></div><div class="shop-cards" id="streamCards"></div></section>
+<section class="shop-section"><div class="shop-section-head"><div><h2>VPNs</h2><p>Privacy and secure browsing subscriptions</p></div><button class="pill-btn" onclick="showView('prices','vpn')">View All</button></div><div class="mini-slide"><div class="logo-track" id="vpnTrack"></div></div><div class="shop-cards" id="vpnCards"></div></section>
+<section class="shop-section"><div class="shop-section-head"><div><h2>IPTVs</h2><p>Internet television and live channel packages</p></div><button class="pill-btn" onclick="showView('prices','iptv')">View All</button></div><div class="mini-slide"><div class="logo-track" id="iptvTrack"></div></div><div class="shop-cards" id="iptvCards"></div></section>
+<section class="shop-section"><div class="shop-section-head"><div><h2>Other Subscriptions</h2><p>AI, editing, designing, music and productivity tools</p></div><button class="pill-btn" onclick="showView('prices','other')">View All</button></div><div class="mini-slide"><div class="logo-track" id="otherTrack"></div></div><div class="shop-cards" id="otherCards"></div></section>
+<div class="explore-row"><button class="btn" onclick="showView('prices')">EXPLORE ALL <i class="fa-solid fa-arrow-right"></i></button></div></div></section>
+<section class="view" id="pricesView"><div class="prices-hero wrap"><div class="eyebrow">OFFICIAL PRICE LIST</div><h1>Explore All <span style="color:var(--red)">Services</span></h1><p>Select your service and order directly through WhatsApp.</p></div><div class="wrap"><div class="price-filter"><input class="search" id="search" placeholder="Search Netflix, NordVPN, Canva..." oninput="renderPrices()"><div class="tabs" id="tabs"></div></div><div id="priceGroups"></div>
+<section class="payment-section"><div class="section-head"><div class="eyebrow">QUICK & EASY</div><h2>Payment <span>Methods</span></h2><p>Confirm payment details with us before sending your payment.</p></div><div class="payment-grid"><article class="payment-card"><div class="payment-logo"><span style="color:#20a56b">e</span></div><h4>Easypaisa</h4></article><article class="payment-card"><div class="payment-logo"><span style="color:#8a43b8">U</span></div><h4>UPaisa</h4></article><article class="payment-card"><div class="payment-logo"><span style="color:#ed8b20">J</span></div><h4>JazzCash</h4></article><article class="payment-card"><div class="payment-logo"><span style="color:#2869d7">S</span></div><h4>SadaPay</h4></article><article class="payment-card"><div class="payment-logo"><span style="color:#20a5a0">N</span></div><h4>NayaPay</h4></article></div></section>
+<section class="contact" id="contact"><div class="eyebrow" style="color:#ffb6bd">WE'RE HERE TO HELP</div><h2>SAQI DIGITAL HUB</h2><p>For orders, questions and support, contact us using the details below.</p><div class="contact-links"><a href="https://wa.me/923471191229" target="_blank"><i class="fa-brands fa-whatsapp"></i> Official: +92 347 1191229</a><a href="https://wa.me/923325293980" target="_blank"><i class="fa-brands fa-whatsapp"></i> Backup: +92 332 5293980</a><a href="mailto:saqidigitalhub@gmail.com"><i class="fa-solid fa-envelope"></i> saqidigitalhub@gmail.com</a></div><div class="shop-now"><button class="btn" onclick="showView('shop')"><i class="fa-solid fa-bag-shopping"></i> SHOP NOW</button></div></section></div><footer class="footer"><div class="wrap"><strong>SAQI DIGITAL HUB</strong> · PREMIUM DIGITAL SERVICES · © 2026 ALL RIGHTS RESERVED<div class="footer-nav"><a href="#" onclick="showView('home');return false">HOME</a><a href="#" onclick="showView('shop');return false">SHOP NOW</a><a href="#" onclick="showView('prices');return false">EXPLORE ALL</a><a href="#contact" onclick="document.getElementById('contact').scrollIntoView();return false">CONTACT US</a></div></div></footer></section>
 </main>
-<footer><div class="wrap"><strong>SAQI DIGITAL HUB</strong> · WE PROVIDE QUALITY · © 2026 All Rights Reserved.</div></footer>
 <script>
 const WA='https://wa.me/923471191229';
-const data=[
- {id:'vpn',name:'VPN Services',desc:'Privacy and secure browsing',icon:'fa-shield-halved',items:[
-  ['NordVPN','nordvpn',450],['Surfshark VPN','surfshark',450],['ExpressVPN','expressvpn',600],['HMA VPN','hide-my-ass',500],['Proton VPN','protonvpn',500]]},
- {id:'streaming',name:'Streaming & Entertainment',desc:'Movies, series and anime',icon:'fa-tv',items:[
-  ['Netflix','netflix',400],['Prime Video','primevideo',150],['Crunchyroll','crunchyroll',250],['Disney+','disneyplus',500],['HBO Max','hbo',450],['Choupal','',350],['Choupal International','',550],['IPTV','',null]]},
- {id:'editing',name:'Video Editing & Design',desc:'Creative apps and editing tools',icon:'fa-clapperboard',items:[
-  ['CapCut Pro','capcut',650],['Canva Pro','canva',1000],['Picsart','picsart',500]]},
- {id:'other',name:'Other Tools',desc:'Writing, productivity and music',icon:'fa-layer-group',items:[
-  ['QuillBot','quillbot',500],['Grammarly','grammarly',500],['Spotify','spotify',350],['Spotify International','spotify',550]]}
+const groups=[
+{id:'streaming',name:'Streaming',icon:'fa-tv',desc:'Movies, series and anime',items:[['Netflix','netflix',400],['Prime Video','primevideo',150],['Crunchyroll','crunchyroll',250],['Disney+','disneyplus',500],['HBO Max','hbo',450],['Choupal','',350],['Choupal International','',550]]},
+{id:'vpn',name:'VPNs',icon:'fa-shield-halved',desc:'Privacy and secure browsing',items:[['NordVPN','nordvpn',450],['Surfshark VPN','surfshark',450],['ExpressVPN','expressvpn',600],['Hotspot Shield','',450],['HMA VPN','',500],['Proton VPN','protonvpn',500]]},
+{id:'iptv',name:'IPTVs',icon:'fa-satellite-dish',desc:'Internet television packages',items:[['IPTV 1 Month','',350],['IPTV 6 Months','',1600],['IPTV 12 Months','',2800]]},
+{id:'other',name:'Other Subscriptions',icon:'fa-layer-group',desc:'AI, editing, design and productivity',items:[['Canva Pro','canva',1000],['CapCut Pro','capcut',650],['Picsart','picsart',500],['ChatGPT Plus','openai',null],['Gemini Pro','googlegemini',null],['QuillBot','quillbot',500],['Grammarly','grammarly',500],['Spotify','spotify',350],['Spotify International','spotify',550]]}
 ];
-function simpleIcon(slug){return slug?'https://cdn.simpleicons.org/'+slug:''}
-function productIcon(slug,fallback){return slug?`<img src="${simpleIcon(slug)}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid ${fallback||'fa-star'}" style="display:none"></i>`:`<i class="fa-solid ${fallback||'fa-star'}"></i>`}
-function renderCategories(){
- document.getElementById('categoryCards').innerHTML=data.map(c=>`<a class="category-card" href="#prices" onclick="setFilter('${c.id}')"><div class="icon3d"><i class="fa-solid ${c.icon}"></i></div><h3>${c.name}</h3><p>${c.desc}</p></a>`).join('');
-}
-let active='all';
-function renderTabs(){document.getElementById('tabs').innerHTML=[['all','All'],...data.map(c=>[c.id,c.name])].map(([id,n])=>`<button class="${active===id?'active':''}" onclick="setFilter('${id}')">${n}</button>`).join('')}
-function setFilter(id){active=id;renderTabs();renderPrices()}
-function renderPrices(){
- const q=document.getElementById('search').value.toLowerCase().trim();
- const groups=data.filter(c=>active==='all'||c.id===active).map(c=>{
-  const items=c.items.filter(p=>p[0].toLowerCase().includes(q));
-  if(!items.length)return '';
-  return `<section class="price-group"><h3>${c.name}</h3><div class="product-grid">${items.map(p=>{
-   const price=p[2]===null?'Contact for price':`Rs. ${Number(p[2]).toLocaleString('en-PK')} /-`;
-   const msg=encodeURIComponent('Assalam o Alaikum! I want to order '+p[0]+' from SAQI DIGITAL HUB.');
-   return `<article class="product"><div class="icon3d">${productIcon(p[1],c.icon)}</div><div class="product-info"><h4>${p[0]}</h4><div class="price">${price}${p[2]===null?'':' <small>PKR</small>'}</div></div><a class="order" href="${WA}?text=${m
+const simple=(slug)=>slug?'https://cdn.simpleicons.org/'+slug:'';
+function iconMarkup(item, fallback='fa-star'){return item[1]?`<img src="${simple(item[1])}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><i class="fa-solid ${fallback}" style="display:none"></i>`:`<i class="fa-solid ${fallback}"></i>`}
+function brandIcon(item, fallback){return `<div class="brand-icon">${iconMarkup(item,fallback)}</div>`}
+function makeLogoChip(item, fallback){return `<div class="logo-chip">${item[1]?`<img src="${simple(item[1])}" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='inline-block'"><i class="fa-solid ${fallback}" style="display:none"></i>`:`<i class="fa-solid ${fallback}"></i>`}<span>${item[0]}</span></div>`}
+function fillTrack(id, group){const el=document.getElementById(id);const items=group.items;el.innerHTML=[...items,...items].map(p=>makeLogoChip(p,group.icon)).join('')}
+function fillCards(id, group){document.getElementById(id).innerHTM
