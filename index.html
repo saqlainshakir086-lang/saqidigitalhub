@@ -3,39 +3,46 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SAQI DIGITAL HUB</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Orbitron:wght@700;800&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SAQI DIGITAL HUB | Premium Digital Store</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Orbitron:wght@600;700;800&display=swap" rel="stylesheet">
 
 <style>
 :root{
- --red:#ed3345;--bg:#fff;--card:#fff;--soft:#fff1f2;
- --text:#181818;--muted:#777;--line:#f0dfe1;
-}
-body.dark{
- --bg:#101116;--card:#1d2028;--soft:#29212a;
- --text:#f5f5f5;--muted:#aaa;--line:#343640;
+ --bg:#fff;--surface:#f7f7fb;--card:#fff;--text:#171827;
+ --muted:#77798a;--line:#e9e9f0;--accent:#e8324a;
+ --accent2:#ff7b54;--shadow:0 15px 35px rgba(20,20,40,.09);
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Outfit,sans-serif;background:var(--bg);color:var(--text);transition:.25s}
-button{font-family:inherit;cursor:pointer}
+body{
+ font-family:Outfit,sans-serif;background:var(--bg);color:var(--text);
+ transition:background .3s,color .3s;overflow-x:hidden
+}
+body.dark{
+ --bg:#101116;--surface:#191b24;--card:#20232d;--text:#f6f6fb;
+ --muted:#a6a7b4;--line:#343642;--shadow:0 15px 35px #0005
+}
+button,input{font-family:inherit}
+button{cursor:pointer}
 header{
  height:72px;padding:0 5%;display:flex;align-items:center;
- justify-content:space-between;background:var(--bg);
- border-bottom:1px solid var(--line);position:sticky;top:0;z-index:99
+ justify-content:space-between;position:sticky;top:0;z-index:100;
+ background:var(--bg);border-bottom:1px solid var(--line)
 }
 .brand{display:flex;align-items:center;gap:10px}
-.brand img{width:48px;height:48px;object-fit:contain}
-.brand strong{font-family:Orbitron;font-size:12px;letter-spacing:1px}
-.actions{display:flex;align-items:center;gap:14px}
+.brand img{width:47px;height:47px;object-fit:contain}
+.brand strong{font:800 12px Orbitron;letter-spacing:1px}
+.actions{display:flex;align-items:center;gap:13px}
 .theme{
  width:38px;height:38px;border-radius:50%;border:1px solid var(--line);
- background:var(--soft);color:var(--text);font-size:18px
+ color:var(--text);background:var(--surface);font-size:18px
 }
 .menu-btn{width:35px;height:35px;border:0;background:none;position:relative}
 .menu-btn span{
- position:absolute;left:4px;width:26px;height:2.5px;
- background:var(--text);border-radius:5px;transition:.3s
+ position:absolute;left:4px;width:27px;height:2.5px;
+ border-radius:5px;background:var(--text);transition:.3s
 }
 .menu-btn span:nth-child(1){top:8px}
 .menu-btn span:nth-child(2){top:16px}
@@ -44,123 +51,228 @@ header{
 .menu-btn.open span:nth-child(2){opacity:0}
 .menu-btn.open span:nth-child(3){top:16px;transform:rotate(-45deg)}
 .menu{
- position:absolute;right:5%;top:65px;width:220px;padding:12px;
- background:var(--card);border:1px solid var(--line);
- border-radius:15px;box-shadow:0 12px 35px #0002;
- opacity:0;visibility:hidden;transform:translateY(-10px);
- transition:.25s
+ position:absolute;right:5%;top:66px;width:225px;padding:12px;
+ background:var(--card);border:1px solid var(--line);border-radius:16px;
+ box-shadow:var(--shadow);opacity:0;visibility:hidden;
+ transform:translateY(-10px);transition:.25s
 }
 .menu.open{opacity:1;visibility:visible;transform:translateY(0)}
 .menu button{
- display:block;width:100%;text-align:left;padding:12px;
- border:0;background:transparent;color:var(--text);
- border-radius:9px;font-weight:600
+ display:block;width:100%;padding:12px;border:0;border-radius:9px;
+ background:transparent;text-align:left;color:var(--text);font-weight:600
 }
-.menu button:hover{background:var(--soft);color:var(--red)}
+.menu button:hover{background:var(--surface);color:var(--accent)}
 
-/* PAGES */
+/* PAGE SYSTEM */
 .page{display:none;min-height:75vh}
-.page.active{display:block;animation:appear .3s ease}
-@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.page.active{display:block;animation:pageShow .35s ease}
+@keyframes pageShow{
+ from{opacity:0;transform:translateY(9px)}
+ to{opacity:1;transform:translateY(0)}
+}
 
+/* HOME HERO: TOP HALF COLOURED */
 .hero{
- min-height:520px;display:flex;align-items:center;justify-content:center;
- flex-direction:column;text-align:center;padding:60px 18px;position:relative;overflow:hidden
+ min-height:570px;position:relative;overflow:hidden;
+ display:flex;flex-direction:column;align-items:center;justify-content:center;
+ text-align:center;padding:65px 20px 95px;color:white;
+ background:linear-gradient(135deg,#151629 0%,#292044 50%,#8d243e 100%);
+ isolation:isolate
 }
-.hero:before,.hero:after{
- content:"";position:absolute;width:650px;height:170px;
- border:2px solid #ed334522;border-radius:50%;
- transform:rotate(-15deg);z-index:-1
+.hero:after{
+ content:"";position:absolute;bottom:-100px;left:-5%;width:110%;height:170px;
+ background:var(--bg);border-radius:50% 50% 0 0;z-index:-1
 }
-.hero:after{width:780px;height:210px;transform:rotate(15deg)}
-.hero img{width:150px;height:150px;object-fit:contain;margin-bottom:20px}
-.hero h1{font:800 clamp(28px,7vw,58px) Orbitron;letter-spacing:1px}
-.red{color:var(--red)}
-.hero p{color:var(--muted);font-size:12px;letter-spacing:2px;margin:16px 0 25px}
+.hero-orbit{
+ position:absolute;width:430px;height:430px;border:1px solid #ffffff2d;
+ border-radius:50%;animation:spin 18s linear infinite;z-index:-1
+}
+.hero-orbit:before,.hero-orbit:after{
+ content:"";position:absolute;inset:35px;border:1px solid #ffffff20;border-radius:50%
+}
+.hero-orbit:after{inset:75px}
+.hero-orbit.two{width:560px;height:230px;transform:rotate(35deg);animation:spinReverse 22s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes spinReverse{to{transform:rotate(-325deg)}}
+.hero-logo{
+ width:145px;height:145px;object-fit:contain;
+ animation:floatWolf 3s ease-in-out infinite;
+ filter:drop-shadow(0 18px 18px #0007);margin-bottom:22px
+}
+@keyframes floatWolf{
+ 0%,100%{transform:translateY(0)}
+ 50%{transform:translateY(-17px)}
+}
+.hero h1{
+ font:800 clamp(28px,7vw,62px) Orbitron;
+ letter-spacing:2px;text-shadow:0 5px 25px #0005
+}
+.hero h1 span{color:#ff9b81}
+.hero p{font-size:11px;letter-spacing:3px;color:#e7dce9;margin:17px 0 25px}
 .btn{
- border:0;background:var(--red);color:white;padding:13px 25px;
- border-radius:30px;font-size:12px;font-weight:800;letter-spacing:1px;
- box-shadow:0 7px 20px #ed334433
+ border:0;border-radius:30px;padding:14px 27px;
+ color:white;background:linear-gradient(135deg,var(--accent),var(--accent2));
+ font-size:12px;font-weight:800;letter-spacing:1px;
+ box-shadow:0 9px 22px #e8324a44;transition:.25s
 }
-.btn:hover{filter:brightness(.9)}
+.btn:hover{transform:translateY(-3px);filter:brightness(1.08)}
 .section{padding:55px 6%;text-align:center}
 .section h2{font-size:29px;font-weight:800}
-.desc{max-width:650px;margin:12px auto 28px;color:var(--muted);font-size:13px;line-height:1.8}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px;margin-top:28px}
-.card{
- background:var(--card);border:1px solid var(--line);border-radius:19px;
- padding:25px 18px;box-shadow:0 8px 25px #00000008;transition:.2s
+.section h2 span{color:var(--accent)}
+.desc{
+ max-width:680px;margin:12px auto 28px;color:var(--muted);
+ font-size:13px;line-height:1.8
 }
-.card:hover{transform:translateY(-5px);border-color:var(--red)}
-.card .emoji{font-size:38px;margin-bottom:12px}
-.card h3{font-size:17px;margin-bottom:9px}
+
+/* CATEGORY CARDS */
+.cards{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));
+ gap:19px;margin-top:28px
+}
+.card{
+ --card-accent:#e8324a;
+ position:relative;overflow:hidden;text-align:center;
+ background:var(--card);border:1px solid var(--line);
+ border-radius:21px;padding:27px 18px;
+ box-shadow:var(--shadow);transition:.25s
+}
+.card:before{
+ content:"";position:absolute;top:-45px;right:-40px;
+ width:120px;height:120px;border-radius:50%;
+ background:var(--card-accent);opacity:.08
+}
+.card:hover{transform:translateY(-6px);border-color:var(--card-accent)}
+.card h3{font-size:17px;margin:14px 0 8px}
 .card p{font-size:12px;color:var(--muted);line-height:1.8}
 .card .btn{margin-top:17px}
 .category-card{cursor:pointer}
 
-/* ICON SLIDER */
-.slider-window{overflow:hidden;background:var(--soft);padding:18px 0;border-radius:18px;margin:25px 0}
-.slider-track{display:flex;align-items:center;gap:38px;width:max-content;animation:move 22s linear infinite}
-.slider-track img{width:53px;height:53px;object-fit:contain}
-.slider-track .fake-icon{
- width:55px;height:55px;display:grid;place-items:center;
- border-radius:14px;border:1px solid var(--red);
- background:var(--card);color:var(--red);font-weight:900
+/* 3D CATEGORY ICONS */
+.icon3d{
+ width:82px;height:82px;margin:0 auto;
+ display:grid;place-items:center;border-radius:25px;
+ color:white;background:linear-gradient(145deg,var(--icon1),var(--icon2));
+ box-shadow:inset 3px 3px 7px #ffffff65,
+ inset -5px -6px 10px #0003,0 13px 18px #0003;
+ transform:perspective(300px) rotateX(8deg) rotateY(-9deg);
+ transition:.3s
 }
-@keyframes move{to{transform:translateX(-50%)}}
+.card:hover .icon3d{transform:perspective(300px) rotateX(0) rotateY(0) translateY(-5px)}
+.icon3d svg{width:44px;height:44px;stroke:white;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.streaming-icon{--icon1:#fa3d5b;--icon2:#7c174e}
+.vpn-icon{--icon1:#2b8cf5;--icon2:#123b89}
+.iptv-icon{--icon1:#9c57ee;--icon2:#44228e}
+.video-icon{--icon1:#ff914d;--icon2:#d62b59}
+.social-icon{--icon1:#4b9cf2;--icon2:#6235b8}
+.ai-icon{--icon1:#18b8a4;--icon2:#086b7c}
+.design-icon{--icon1:#e6a52b;--icon2:#b74d19}
 
-/* PRODUCTS */
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:14px;margin-top:25px}
-.product{
- background:var(--card);border:1px solid var(--line);border-radius:16px;
- padding:19px 10px;cursor:pointer;transition:.2s
+/* SEARCH */
+.search-wrap{max-width:650px;margin:25px auto}
+.search-box{
+ display:flex;align-items:center;gap:10px;padding:13px 17px;
+ border:1px solid var(--line);border-radius:30px;
+ background:var(--card);box-shadow:var(--shadow)
 }
-.product:hover{border-color:var(--red);transform:translateY(-4px)}
-.product img{width:43px;height:43px;object-fit:contain;margin-bottom:8px}
-.product .initial{
- width:43px;height:43px;margin:0 auto 8px;border-radius:12px;
- display:grid;place-items:center;background:var(--soft);
- color:var(--red);font-weight:900
+.search-box span{font-size:19px;color:var(--muted)}
+.search-box input{
+ width:100%;border:0;outline:0;background:transparent;
+ color:var(--text);font-size:14px
+}
+
+/* LOGO SLIDER */
+.slider-window{
+ overflow:hidden;background:var(--surface);padding:17px 0;
+ border-radius:18px;margin:25px 0
+}
+.slider-track{
+ display:flex;align-items:center;gap:35px;width:max-content;
+ animation:logoMove 25s linear infinite
+}
+.slider-window:hover .slider-track{animation-play-state:paused}
+.slider-track img{
+ width:54px;height:54px;object-fit:contain;
+ filter:drop-shadow(0 5px 5px #0002)
+}
+.slider-track .fallback-logo{
+ width:55px;height:55px;display:grid;place-items:center;
+ border-radius:16px;background:var(--card);color:var(--accent);
+ border:1px solid var(--line);font-weight:900
+}
+@keyframes logoMove{to{transform:translateX(-50%)}}
+
+/* PRODUCT LIST */
+.products{
+ display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));
+ gap:14px;margin-top:25px
+}
+.product{
+ background:var(--card);border:1px solid var(--line);
+ border-radius:17px;padding:19px 10px;cursor:pointer;
+ box-shadow:0 8px 20px #00000008;transition:.25s
+}
+.product:hover{transform:translateY(-5px);border-color:var(--accent)}
+.product img{
+ width:48px;height:48px;object-fit:contain;
+ filter:drop-shadow(0 5px 5px #0002);margin-bottom:8px
+}
+.product .fallback-logo{
+ width:48px;height:48px;display:grid;place-items:center;
+ border-radius:14px;margin:0 auto 8px;
+ background:var(--surface);color:var(--accent);font-weight:900
 }
 .product h3{font-size:13px;margin-bottom:7px}
-.product .price{color:var(--red);font-size:14px;font-weight:800}
-.product small{display:block;color:var(--muted);font-size:10px;margin-top:8px}
-.detail-box{
- max-width:560px;margin:25px auto;background:var(--card);
- border:1px solid var(--line);border-radius:22px;padding:30px;
- box-shadow:0 10px 30px #0000000a
+.price{color:var(--accent);font-size:14px;font-weight:900}
+.product small{display:block;font-size:10px;color:var(--muted);margin-top:8px}
+.back{background:#343747;margin-top:27px}
+
+/* DETAIL PAGE */
+.detail-card{
+ max-width:570px;margin:25px auto;background:var(--card);
+ border:1px solid var(--line);border-radius:24px;padding:30px;
+ box-shadow:var(--shadow)
 }
-.detail-box img{width:90px;height:90px;object-fit:contain;margin:15px}
-.detail-box h2{font-size:25px}
-.detail-price{font-size:25px;color:var(--red);font-weight:900;margin:15px}
-.back{background:#333;margin-top:25px}
-.payment-list{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin:25px auto}
+.detail-logo{width:100px;height:100px;object-fit:contain;margin:10px}
+.detail-price{font-size:27px;font-weight:900;color:var(--accent);margin:16px}
+.detail-note{font-size:13px;line-height:1.8;color:var(--muted);margin:15px 0}
+
+/* PAYMENTS */
+.payment-grid{
+ display:flex;justify-content:center;align-items:center;
+ flex-wrap:wrap;gap:10px;margin:25px auto
+}
 .payment{
- display:flex;align-items:center;gap:6px;padding:7px 10px;
+ display:flex;align-items:center;gap:7px;
  background:var(--card);border:1px solid var(--line);
- border-radius:9px;font-size:10px;font-weight:700
+ border-radius:10px;padding:8px 11px;
+ font-size:10px;font-weight:700
 }
-.payment i{
- width:21px;height:21px;border-radius:6px;
- display:grid;place-items:center;background:var(--soft);
- color:var(--red);font-style:normal
+.payment img{width:23px;height:23px;object-fit:contain}
+.payment .fallback-logo{
+ width:23px;height:23px;border-radius:6px;
+ display:grid;place-items:center;background:var(--surface);
+ color:var(--accent);font-size:10px
 }
 .contact-box{
- max-width:580px;margin:25px auto;padding:25px;text-align:left;
- background:var(--soft);border-radius:18px;line-height:2.5;font-size:14px
+ max-width:600px;margin:25px auto;padding:24px;text-align:left;
+ background:var(--surface);border:1px solid var(--line);
+ border-radius:18px;line-height:2.5;font-size:14px
 }
-.contact-box a{color:var(--red);font-weight:700;text-decoration:none}
-footer{background:#15161a;color:white;text-align:center;padding:35px 5%;margin-top:30px}
+.contact-box a{color:var(--accent);text-decoration:none;font-weight:700}
+footer{background:#141520;color:white;text-align:center;padding:35px 5%;margin-top:30px}
 footer img{width:65px;height:65px;object-fit:contain}
 footer h2{font:700 17px Orbitron;margin:10px}
 footer p{color:#aaa;font-size:10px;margin:12px}
 footer button{background:none;border:0;color:white;padding:9px;font-size:11px}
+.empty{padding:30px;color:var(--muted);grid-column:1/-1}
+
 @media(max-width:600px){
  header{padding:0 4%}.brand strong{font-size:10px}
- .hero{min-height:470px}.hero img{width:125px;height:125px}
+ .hero{min-height:510px}.hero-logo{width:125px;height:125px}
  .section{padding:42px 5%}
  .products{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
  .product{padding:15px 6px}
+ .menu{right:4%}
 }
 </style>
 </head>
@@ -169,167 +281,212 @@ footer button{background:none;border:0;color:white;padding:9px;font-size:11px}
 
 <header>
  <div class="brand">
-  <!-- YAHAN TUMHARA ASLI UPLOADED WOLF PNG -->
-  <img src="1776664169683.png" alt="SAQI DIGITAL HUB">
+  <!-- ORIGINAL WOLF PNG: IMAGE KO SAME FOLDER MEIN RAKHEIN -->
+  <img src="file_000000008f6482109e8f54778bcdd1b8.png" alt="SAQI Digital Hub Logo">
   <strong>SAQI DIGITAL HUB</strong>
  </div>
-
  <div class="actions">
   <button class="theme" id="themeBtn" onclick="toggleTheme()">☾</button>
   <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">
    <span></span><span></span><span></span>
   </button>
  </div>
-
  <nav class="menu" id="menu">
-  <button onclick="go('home')">⌂ Home</button>
-  <button onclick="go('shop')">▣ Shop</button>
-  <button onclick="go('prices')">＄ All Prices</button>
-  <button onclick="go('payments')">▤ Payments</button>
-  <button onclick="go('contact')">✉ Contact Us</button>
+  <button onclick="go('home')">⌂ &nbsp; Home</button>
+  <button onclick="go('services')">✦ &nbsp; Services</button>
+  <button onclick="go('shop')">▣ &nbsp; Shop</button>
+  <button onclick="go('search')">⌕ &nbsp; Search Products</button>
+  <button onclick="go('payments')">▤ &nbsp; Payments</button>
+  <button onclick="go('contact')">✉ &nbsp; Contact</button>
  </nav>
 </header>
 
 <!-- PAGE 1: HOME -->
-<section class="page active" id="home">
- <div class="hero">
-  <img src="1776664169683.png" alt="SAQI DIGITAL HUB">
-  <h1>SAQI <span class="red">DIGITAL HUB</span></h1>
+<main id="home" class="page active">
+ <section class="hero">
+  <div class="hero-orbit"></div>
+  <div class="hero-orbit two"></div>
+  <img class="hero-logo" src="file_000000008f6482109e8f54778bcdd1b8.png" alt="Original Wolf Logo">
+  <h1>SAQI <span>DIGITAL HUB</span></h1>
   <p>YOUR PREMIUM DIGITAL SERVICES DESTINATION</p>
-  <button class="btn" onclick="go('shop')">LET'S GO →</button>
- </div>
+  <button class="btn" onclick="go('services')">EXPLORE SERVICES &nbsp; →</button>
+ </section>
 
- <div class="section">
-  <h2>OUR <span class="red">SERVICES</span></h2>
-  <p class="desc">Explore our premium digital subscriptions and services.</p>
-  <div class="cards">
-   <div class="card">
-    <div class="emoji">🛡️</div><h3>VPN SERVICES</h3>
-    <p>Online privacy aur secure internet browsing ke liye premium VPN services.</p>
-    <button class="btn" onclick="openCategory('vpn')">EXPLORE VPNs</button>
-   </div>
-   <div class="card">
-    <div class="emoji">🎬</div><h3>STREAMING</h3>
-    <p>Movies, series aur entertainment ke liye premium streaming apps.</p>
-    <button class="btn" onclick="openCategory('streaming')">EXPLORE</button>
-   </div>
-   <div class="card">
-    <div class="emoji">📺</div><h3>IPTV SERVICES</h3>
-    <p>Premium IPTV subscriptions aur packages.</p>
-    <button class="btn" onclick="openCategory('iptv')">EXPLORE IPTV</button>
-   </div>
-  </div>
- </div>
-</section>
+ <section class="section">
+  <h2>WELCOME TO <span>SAQI DIGITAL HUB</span></h2>
+  <p class="desc">Premium subscriptions, entertainment, editing tools aur social media services — sab aik jagah.</p>
+  <button class="btn" onclick="go('shop')">SHOP NOW →</button>
+ </section>
+</main>
 
-<!-- PAGE 2: SHOP -->
-<section class="page" id="shop">
- <div class="section">
-  <h2>WELCOME TO <span class="red">OUR SHOP</span></h2>
-  <p class="desc">Category select karo. Agla page sirf us category ki details dikhayega.</p>
+<!-- PAGE 2: SERVICES -->
+<main id="services" class="page">
+ <section class="section">
+  <h2>OUR <span>SERVICES</span></h2>
+  <p class="desc">Apni required service select karein. Har category ka apna page aur apni product list hai.</p>
+
   <div class="cards">
    <div class="card category-card" onclick="openCategory('streaming')">
-    <div class="emoji">🎬</div><h3>STREAMING</h3>
-    <p>Netflix, Prime Video, Disney+ and more.</p>
-    <button class="btn">OPEN STREAMING →</button>
+    <div class="icon3d streaming-icon">
+     <svg viewBox="0 0 48 48"><rect x="5" y="8" width="38" height="27" rx="5"/><path d="m20 16 11 6-11 6z"/><path d="M17 41h14M24 35v6"/></svg>
+    </div>
+    <h3>STREAMING APPS</h3>
+    <p>Netflix, Prime Video, Disney+, Crunchyroll aur entertainment platforms.</p>
+    <button class="btn">VIEW STREAMING →</button>
    </div>
+
    <div class="card category-card" onclick="openCategory('vpn')">
-    <div class="emoji">🛡️</div><h3>VPNs</h3>
-    <p>NordVPN, Surfshark, ExpressVPN and more.</p>
-    <button class="btn">OPEN VPNs →</button>
+    <div class="icon3d vpn-icon">
+     <svg viewBox="0 0 48 48"><path d="M24 4 40 10v12c0 10-7 17-16 22C15 39 8 32 8 22V10z"/><rect x="17" y="21" width="14" height="11" rx="2"/><path d="M20 21v-4a4 4 0 0 1 8 0v4"/></svg>
+    </div>
+    <h3>VPN SERVICES</h3>
+    <p>NordVPN, Surfshark, ExpressVPN aur online privacy tools.</p>
+    <button class="btn">VIEW VPNs →</button>
    </div>
+
    <div class="card category-card" onclick="openCategory('iptv')">
-    <div class="emoji">📺</div><h3>IPTVs</h3>
-    <p>Opplex, Hexa4K, StarShare and more.</p>
-    <button class="btn">OPEN IPTV →</button>
+    <div class="icon3d iptv-icon">
+     <svg viewBox="0 0 48 48"><rect x="5" y="8" width="38" height="27" rx="4"/><path d="M18 43h12M24 35v8M20 4l4 4 4-4"/><path d="m20 17 11 6-11 6z"/></svg>
+    </div>
+    <h3>IPTV SERVICES</h3>
+    <p>Opplex TV, Hexa4K, StarShare, Mega OTT aur more.</p>
+    <button class="btn">VIEW IPTV →</button>
    </div>
-   <div class="card category-card" onclick="openCategory('other')">
-    <div class="emoji">💎</div><h3>OTHER SUBSCRIPTIONS</h3>
-    <p>Canva, CapCut, Grammarly and more.</p>
-    <button class="btn">OPEN OTHER →</button>
+
+   <div class="card category-card" onclick="openCategory('video')">
+    <div class="icon3d video-icon">
+     <svg viewBox="0 0 48 48"><rect x="5" y="11" width="38" height="27" rx="4"/><path d="m20 18 12 6-12 7z"/><path d="M5 17h38M12 11l5 6M25 11l5 6M36 11l5 6"/></svg>
+    </div>
+    <h3>VIDEO EDITING</h3>
+    <p>CapCut Pro, Canva Pro aur creative editing tools.</p>
+    <button class="btn">VIEW EDITING →</button>
+   </div>
+
+   <div class="card category-card" onclick="openCategory('social')">
+    <div class="icon3d social-icon">
+     <svg viewBox="0 0 48 48"><circle cx="12" cy="24" r="6"/><circle cx="36" cy="10" r="6"/><circle cx="36" cy="38" r="6"/><path d="m17 21 13-8M17 27l13 8"/></svg>
+    </div>
+    <h3>SOCIAL MEDIA</h3>
+    <p>TikTok, Instagram, Facebook aur YouTube services.</p>
+    <button class="btn">VIEW SOCIAL →</button>
+   </div>
+
+   <div class="card category-card" onclick="openCategory('ai')">
+    <div class="icon3d ai-icon">
+     <svg viewBox="0 0 48 48"><path d="m24 4 4.5 13.5L42 22l-13.5 4.5L24 40l-4.5-13.5L6 22l13.5-4.5z"/><path d="m39 31 2 6 5 2-5 2-2 5-2-5-5-2 5-2z"/></svg>
+    </div>
+    <h3>AI TOOLS</h3>
+    <p>AI assistants, writing tools aur smart productivity services.</p>
+    <button class="btn">VIEW AI TOOLS →</button>
+   </div>
+
+   <div class="card category-card" onclick="openCategory('design')">
+    <div class="icon3d design-icon">
+     <svg viewBox="0 0 48 48"><path d="M8 35 30 7l11 9-22 28H8z"/><path d="m25 13 11 9M8 35l11 9M7 44h34"/></svg>
+    </div>
+    <h3>DESIGNING TOOLS</h3>
+    <p>Design, graphics aur creative content tools.</p>
+    <button class="btn">VIEW DESIGN →</button>
    </div>
   </div>
-  <button class="btn" style="margin-top:30px" onclick="go('prices')">EXPLORE ALL PRICES</button>
- </div>
-</section>
+ </section>
+</main>
 
-<!-- PAGE 3: CATEGORY -->
-<section class="page" id="category">
- <div class="section">
+<!-- PAGE 3: SHOP -->
+<main id="shop" class="page">
+ <section class="section">
+  <h2>EXPLORE OUR <span>SHOP</span></h2>
+  <p class="desc">Choose a category to see its products, logos and prices.</p>
+  <div class="cards" id="shopCategories"></div>
+ </section>
+</main>
+
+<!-- PAGE 4: CATEGORY DETAILS -->
+<main id="category" class="page">
+ <section class="section">
   <h2 id="categoryTitle">CATEGORY</h2>
   <p class="desc" id="categoryDesc"></p>
-
   <div class="slider-window">
    <div class="slider-track" id="sliderTrack"></div>
   </div>
-
-  <h2 style="font-size:22px">AVAILABLE <span class="red">PRICE LIST</span></h2>
+  <h2 style="font-size:22px">PRODUCT <span>LIST</span></h2>
   <div class="products" id="categoryProducts"></div>
   <button class="btn back" onclick="go('shop')">← BACK TO SHOP</button>
- </div>
-</section>
+ </section>
+</main>
 
-<!-- PAGE 4: PRODUCT DETAIL -->
-<section class="page" id="detail">
- <div class="section">
-  <span class="red">PRODUCT DETAILS</span>
-  <div class="detail-box">
+<!-- PAGE 5: PRODUCT DETAILS -->
+<main id="detail" class="page">
+ <section class="section">
+  <span class="desc">PRODUCT INFORMATION</span>
+  <div class="detail-card">
    <div id="detailIcon"></div>
    <h2 id="detailName"></h2>
    <div class="detail-price" id="detailPrice"></div>
-   <p class="desc">Order karne ke liye neeche WhatsApp button par click karein. Hamari team aapko details provide karegi.</p>
-   <button class="btn" id="orderBtn">ORDER ON WHATSAPP</button>
+   <p class="detail-note" id="detailDescription"></p>
+   <button class="btn" id="orderButton">ORDER ON WHATSAPP</button>
   </div>
   <button class="btn back" onclick="backToCategory()">← BACK TO PRODUCTS</button>
- </div>
-</section>
+ </section>
+</main>
 
-<!-- PAGE 5: ALL PRICES -->
-<section class="page" id="prices">
- <div class="section">
-  <h2>ALL <span class="red">PRICE LIST</span></h2>
-  <p class="desc">Yahan tamam categories ke products listed hain. Product par click karke detail dekhein.</p>
-  <div class="products" id="allProducts"></div>
- </div>
-</section>
-
-<!-- PAGE 6: PAYMENTS -->
-<section class="page" id="payments">
- <div class="section">
-  <h2>PAYMENT <span class="red">METHODS</span></h2>
-  <p class="desc">Available payment options. Payment details ke liye WhatsApp karein.</p>
-  <div class="payment-list">
-   <div class="payment"><i>E</i>Easypaisa</div>
-   <div class="payment"><i>J</i>JazzCash</div>
-   <div class="payment"><i>U</i>UPaisa</div>
-   <div class="payment"><i>S</i>SadaPay</div>
-   <div class="payment"><i>N</i>NayaPay</div>
+<!-- PAGE 6: SEARCH -->
+<main id="search" class="page">
+ <section class="section">
+  <h2>SEARCH <span>PRODUCTS</span></h2>
+  <p class="desc">Netflix, NordVPN, CapCut, TikTok ya kisi bhi service ka naam search karein.</p>
+  <div class="search-wrap">
+   <div class="search-box">
+    <span>⌕</span>
+    <input id="searchInput" type="search" placeholder="Search all services..." oninput="searchProducts()">
+   </div>
   </div>
-  <button class="btn" onclick="sendWhatsApp('Please share your payment details.')">GET PAYMENT DETAILS</button>
- </div>
-</section>
+  <div class="products" id="searchResults"></div>
+ </section>
+</main>
 
-<!-- PAGE 7: CONTACT -->
-<section class="page" id="contact">
- <div class="section">
-  <h2>CONTACT <span class="red">US</span></h2>
-  <p class="desc">Any query? Contact SAQI DIGITAL HUB.</p>
+<!-- PAGE 7: ALL PRICES -->
+<main id="prices" class="page">
+ <section class="section">
+  <h2>ALL <span>PRODUCTS</span></h2>
+  <p class="desc">All categories and services in one list.</p>
+  <div class="products" id="allProducts"></div>
+ </section>
+</main>
+
+<!-- PAGE 8: PAYMENTS -->
+<main id="payments" class="page">
+ <section class="section">
+  <h2>PAYMENT <span>METHODS</span></h2>
+  <p class="desc">Available payment options. Payment details ke liye contact karein.</p>
+  <div class="payment-grid" id="paymentGrid"></div>
+  <button class="btn" onclick="sendWhatsApp('Please share your payment details.')">GET PAYMENT DETAILS</button>
+ </section>
+</main>
+
+<!-- PAGE 9: CONTACT -->
+<main id="contact" class="page">
+ <section class="section">
+  <h2>CONTACT <span>US</span></h2>
+  <p class="desc">Need help? Contact our team.</p>
   <div class="contact-box">
-   <p>Official WhatsApp: <a href="https://wa.me/923471191229" target="_blank">0347 1191229</a></p>
-   <p>Backup WhatsApp: <a href="https://wa.me/923325293980" target="_blank">0332 5293980</a></p>
+   <p>Official WhatsApp: <a href="https://wa.me/923471191229" target="_blank">+92 347 1191229</a></p>
+   <p>Backup WhatsApp: <a href="https://wa.me/923325293980" target="_blank">+92 332 5293980</a></p>
+   <p>Second Backup: <a href="https://wa.me/923448988996" target="_blank">+92 344 8988996</a></p>
    <p>Email: <a href="mailto:saqidigitalhub@gmail.com">saqidigitalhub@gmail.com</a></p>
    <p>Instagram: <a href="https://www.instagram.com/saqi_digitalhub/" target="_blank">@saqi_digitalhub</a></p>
   </div>
   <button class="btn" onclick="sendWhatsApp('Hello SAQI DIGITAL HUB!')">WHATSAPP NOW</button>
- </div>
-</section>
+ </section>
+</main>
 
 <footer>
- <img src="1776664169683.png" alt="SAQI DIGITAL HUB">
+ <img src="file_000000008f6482109e8f54778bcdd1b8.png" alt="SAQI Digital Hub">
  <h2>SAQI DIGITAL HUB</h2>
  <p>YOUR PREMIUM DIGITAL SERVICES DESTINATION</p>
  <button onclick="go('home')">HOME</button>
- <button onclick="go('shop')">SHOP NOW</button>
+ <button onclick="go('services')">SERVICES</button>
+ <button onclick="go('shop')">SHOP</button>
  <button onclick="go('prices')">PRICES</button>
  <button onclick="go('payments')">PAYMENTS</button>
  <button onclick="go('contact')">CONTACT</button>
@@ -337,14 +494,19 @@ footer button{background:none;border:0;color:white;padding:9px;font-size:11px}
 </footer>
 
 <script>
-/* PRODUCT DATABASE */
-const data={
+/* ======================================
+   PRODUCT DATA
+   Rates wohi hain jo pehle diye gaye thay.
+   Jahan rate nahi mila wahan Contact for price.
+====================================== */
+
+const data = {
  streaming:[
   ["Netflix",400,"netflix"],
   ["Prime Video",150,"primevideo"],
   ["Crunchyroll",250,"crunchyroll"],
   ["Disney+",500,"disneyplus"],
-  ["HBO Max",450,"hbo"],
+  ["HBO Max",450,"max"],
   ["Choupal",350,""],
   ["Choupal International",550,""]
  ],
@@ -370,133 +532,13 @@ const data={
   ["Trex OTT",850,""],
   ["Strong 8K",850,""]
  ],
- other:[
+ video:[
   ["CapCut Pro",650,"capcut"],
   ["Canva Pro",1000,"canva"],
-  ["Picsart",500,"picsart"],
-  ["QuillBot",500,""],
-  ["Grammarly",500,"grammarly"],
-  ["Spotify",350,"spotify"],
-  ["Spotify International",550,"spotify"]
- ]
-};
-
-const info={
- streaming:["STREAMING SERVICES","Netflix, Prime Video aur doosri streaming apps ki price list."],
- vpn:["PREMIUM VPN SERVICES","Yahan sirf VPN subscriptions aur unki prices hain."],
- iptv:["PREMIUM IPTV SERVICES","Tumhari tamam IPTV services aur unki prices."],
- other:["OTHER SUBSCRIPTIONS","AI, editing, designing aur productivity tools."]
-};
-
-let currentCategory="streaming";
-let currentProduct=null;
-
-/* NAVIGATION: HAR PAGE ALAG OPEN HOTA HAI */
-function go(page){
- document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
- document.getElementById(page).classList.add("active");
- closeMenu();
- window.scrollTo({top:0,behavior:"smooth"});
-}
-
-/* CATEGORY PAGE */
-function openCategory(category){
- currentCategory=category;
- document.getElementById("categoryTitle").textContent=info[category][0];
- document.getElementById("categoryDesc").textContent=info[category][1];
-
- document.getElementById("categoryProducts").innerHTML=
-  data[category].map((p,i)=>productCard(p,category,i)).join("");
-
- makeSlider(category);
- go("category");
-}
-
-/* PRODUCT CARD */
-function productCard(p,category,index){
- let icon=p[2]
- ? `<img src="https://cdn.simpleicons.org/${p[2]}" alt="${p[0]}" onerror="this.outerHTML='<div class=\\'initial\\'>${p[0].slice(0,2).toUpperCase()}</div>'">`
- : `<div class="initial">${p[0].slice(0,2).toUpperCase()}</div>`;
-
- return `<div class="product" onclick="openDetail('${category}',${index})">
-  ${icon}
-  <h3>${p[0]}</h3>
-  <div class="price">Rs. ${p[1]}</div>
-  <small>VIEW DETAILS →</small>
- </div>`;
-}
-
-/* PRODUCT DETAIL PAGE */
-function openDetail(category,index){
- currentCategory=category;
- currentProduct=data[category][index];
- const p=currentProduct;
- const icon=p[2]
- ? `<img src="https://cdn.simpleicons.org/${p[2]}" alt="${p[0]}">`
- : `<div class="initial" style="width:75px;height:75px;margin:15px auto;font-size:22px">${p[0].slice(0,2).toUpperCase()}</div>`;
-
- document.getElementById("detailIcon").innerHTML=icon;
- document.getElementById("detailName").textContent=p[0];
- document.getElementById("detailPrice").textContent="Rs. "+p[1];
-
- document.getElementById("orderBtn").onclick=()=>{
-  sendWhatsApp("Assalamualaikum! I need "+p[0]+". Price Rs. "+p[1]+". Please share details.");
- };
- go("detail");
-}
-function backToCategory(){openCategory(currentCategory)}
-
-/* ICON SLIDER: CATEGORY KE HISAB SE */
-function makeSlider(category){
- const track=document.getElementById("sliderTrack");
- let items=data[category].map(p=>{
-  if(p[2]){
-   return `<img src="https://cdn.simpleicons.org/${p[2]}" alt="${p[0]}" onerror="this.style.display='none'">`;
-  }
-  return `<div class="fake-icon">${p[0].slice(0,2).toUpperCase()}</div>`;
- }).join("");
-
- track.innerHTML=items+items;
- track.style.animationDuration=category==="vpn"?"17s":category==="iptv"?"30s":"23s";
-}
-
-/* ALL PRICES PAGE */
-document.getElementById("allProducts").innerHTML=
- Object.keys(data).map(category=>
-  data[category].map((p,i)=>productCard(p,category,i)).join("")
- ).join("");
-
-/* MENU */
-function toggleMenu(){
- document.getElementById("menu").classList.toggle("open");
- document.getElementById("menuBtn").classList.toggle("open");
-}
-function closeMenu(){
- document.getElementById("menu").classList.remove("open");
- document.getElementById("menuBtn").classList.remove("open");
-}
-document.addEventListener("click",e=>{
- if(!e.target.closest("#menu")&&!e.target.closest("#menuBtn"))closeMenu();
-});
-
-/* DARK / LIGHT MODE */
-function toggleTheme(){
- document.body.classList.toggle("dark");
- let dark=document.body.classList.contains("dark");
- document.getElementById("themeBtn").textContent=dark?"☀":"☾";
- try{localStorage.setItem("saqiTheme",dark?"dark":"light")}catch(e){}
-}
-try{
- if(localStorage.getItem("saqiTheme")==="dark"){
-  document.body.classList.add("dark");
-  document.getElementById("themeBtn").textContent="☀";
- }
-}catch(e){}
-
-/* WHATSAPP */
-function sendWhatsApp(message){
- window.open("https://wa.me/923471191229?text="+encodeURIComponent(message),"_blank");
-}
-</script>
-</body>
-</html>
+  ["Picsart",500,"picsart"]
+ ],
+ social:[
+  ["TikTok Likes","Contact for price","tiktok"],
+  ["TikTok Followers","Contact for price","tiktok"],
+  ["TikTok Views","Contact for price","tiktok"],
+  ["Facebook Likes","Con
