@@ -1,0 +1,40 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SAQI DIGITAL HUB | Streaming</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body>
+
+<header class="top"><div class="container nav">
+<a class="brand" href="index.html"><span class="mark">S</span><span class="brand-name">SAQI DIGITAL HUB</span></a>
+<nav class="links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="contact.html">Contact Us</a><a href="https://wa.me/923471191229" target="_blank">WhatsApp Live Chat</a></nav>
+<button class="menu" onclick="toggleMenu()">☰</button></div>
+<div id="mobile" class="mobile"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="contact.html">Contact Us</a><a class="wa" href="https://wa.me/923471191229" target="_blank">WhatsApp Live Chat</a></div></header>
+
+<section class="hero"><div class="hero-card"><div class="eyebrow">Home &gt; Streaming</div><h1>Streaming Services</h1><div class="tag">Premium Entertainment Subscriptions</div><p>Choose from premium streaming platforms and entertainment services available through SAQI DIGITAL HUB.</p></div></section>
+<div class="rail"><div class="track"><div class="logo">NETFLIX</div><div class="logo">Prime Video</div><div class="logo">Spotify</div><div class="logo">YouTube</div><div class="logo">HBO</div><div class="logo">Disney+</div><div class="logo">Hulu</div><div class="logo">Crunchyroll</div><div class="logo">NETFLIX</div><div class="logo">Prime Video</div><div class="logo">Spotify</div><div class="logo">YouTube</div><div class="logo">HBO</div><div class="logo">Disney+</div><div class="logo">Hulu</div><div class="logo">Crunchyroll</div></div></div>
+<section class="shop"><div class="container"><div class="head"><h2>Streaming Services</h2><p>Premium plans with quick activation.</p></div><div class="products" id="streamingProducts"></div></div></section>
+
+<footer><div class="container footgrid">
+<div class="foot"><h2>SAQI DIGITAL HUB</h2><p>The Most Affordable & Reliable Digital Partner in Pakistan & Beyond!</p><p><b>We Provide Quality</b></p></div>
+<div class="foot"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+<div class="foot"><h4>Contact</h4><ul><li>03471191229</li><li>03325293980</li><li>Instagram: @saqi.digitalhub</li><li>TikTok: @saqi_digitalhub206</li></ul></div>
+<div class="foot"><h4>Services</h4><ul><li>Entertainment</li><li>VPN</li><li>AI & Video Editing</li><li>IPTV</li><li>Social Media</li></ul></div>
+</div><div class="container copy">© 2026 SAQI DIGITAL HUB. All rights reserved.</div></footer>
+<script>
+function toggleMenu(){document.getElementById('mobile').classList.toggle('open')}
+const wa='https://wa.me/923471191229?text=';
+const icons={
+netflix:'netflix',primevideo:'primevideo',hbo:'hbo',disney:'disneyplus',hulu:'hulu',paramount:'paramountplus',
+peacock:'peacock',britbox:'britbox',zee5:'zee5',crunchy:'crunchyroll',nord:'nordvpn',surf:'surfshark',
+ipvanish:'ipvanish',proton:'protonvpn',express:'expressvpn',hma:'huawei',capcut:'capcut',canva:'canva',
+picsart:'picsart',adobe:'adobecreativecloud',chatgpt:'openai',quillbot:'quillbot',grammarly:'grammarly',
+freepik:'freepik',microsoft:'microsoft',semrush:'semrush',tiktok:'tiktok',instagram:'instagram',
+facebook:'facebook',youtube:'youtube',telegram:'telegram',whatsapp:'whatsapp'
+};
+function icon(k){return icons[k]?`https://cdn.simpleicons.org/${icons[k]}`:''}
+function cards(id,data){document.getElementById(id).innerHTML=data.map(x=>`<article class="product"><div class="ptop"><div class="picon">${icon(x[2])?`<img src="${icon(x[2])}" alt="${x[0]}">`:`<b>${x[0].split(' ')[0]}</b>`}</div><div><h3>${x[0]}</h3><small>SAQI DIGITAL HUB</small></div></div><p>${x[3]||'Premium service with quick activation. Contact us for availability and package details.'}</p><div class="bottom"><span class="price">${x[1]==='Custom'?'Custom':'Rs. '+x[1]}</span><a class="order" target="_blank" href="${wa}${encodeURIComponent('Hello SAQI DIGITAL HUB, I want to order: '+x[0])}">Activate Plan</a></div></article>`).join('')}
+
+const streaming=[
+['Netflix','750','netflix'],['Prime Video 1M Full','150','primevideo'],['Prime Video 6M','700','primevideo'],
+['HBO Max 1M Private Screen','450','hbo'],['Disney+ No Ads 1M','500','disney'],['Hulu No Ads 1M','450','hulu'],
+['Paramount+ USA 1M','450','paramount'],['Peacock TV No Ads 1M','400','peacock'],['BritBox USA 1M','450','britbox'],
+['Zee5 India 1M (OTP)','400','zee5'],['Chaupal','500',''],['Crunchyroll','450','crunchy']
+];
+cards('streamingProducts',streaming);
+</script></body></html>

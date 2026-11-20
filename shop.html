@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SAQI DIGITAL HUB | Shop</title><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="styles.css"></head><body>
+
+<header class="top"><div class="container nav">
+<a class="brand" href="index.html"><span class="mark">S</span><span class="brand-name">SAQI DIGITAL HUB</span></a>
+<nav class="links"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="contact.html">Contact Us</a><a href="https://wa.me/923471191229" target="_blank">WhatsApp Live Chat</a></nav>
+<button class="menu" onclick="toggleMenu()">☰</button></div>
+<div id="mobile" class="mobile"><a href="index.html">Home</a><a href="shop.html">Shop</a><a href="contact.html">Contact Us</a><a class="wa" href="https://wa.me/923471191229" target="_blank">WhatsApp Live Chat</a></div></header>
+
+<section class="hero"><div class="hero-card"><div class="eyebrow">Home &gt; Shop</div><h1>SAQI DIGITAL HUB</h1><div class="tag">All-in-One Digital Solutions</div><p>Premium subscriptions, AI tools, editing apps, VPN, IPTV and social media services.</p></div></section>
+<section class="shop"><div class="container">
+<div class="head"><h2>Top Picks</h2><p>Premium products and digital services.</p></div>
+<div class="category"><div class="cathead"><h2>Entertainment Subscriptions</h2><span class="badge">PREMIUM</span></div><div class="products" id="ent"></div></div>
+<div class="category"><div class="cathead"><h2>Premium IPTV Services</h2><span class="badge">IPTV</span></div><div class="products" id="iptv"></div></div>
+<div class="category"><div class="cathead"><h2>VPNs</h2><span class="badge">SECURITY</span></div><div class="products" id="vpn"></div></div>
+<div class="category"><div class="cathead"><h2>AI & Video Editing</h2><span class="badge">AI TOOLS</span></div><div class="products" id="ai"></div></div>
+<div class="category"><div class="cathead"><h2>Social Media Services</h2><span class="badge">GROWTH</span></div><div class="products" id="social"></div></div>
+</div></section>
+<section class="payments"><div class="container"><div class="head"><h2>Payment Methods</h2></div><div class="paygrid">
+<div class="pay"><img src="https://cdn.simpleicons.org/easypaisa/00A651"><span>Easypaisa</span></div><div class="pay"><span class="mark" style="width:35px;height:35px;border-radius:10px;font-size:9px">UP</span><span>Upaisa</span></div><div class="pay"><span class="mark" style="width:35px;height:35px;border-radius:10px;font-size:9px">JC</span><span>JazzCash</span></div><div class="pay"><span class="mark" style="width:35px;height:35px;border-radius:10px;font-size:8px">SADA</span><span>SADA Pay</span></div><div class="pay"><span class="mark" style="width:35px;height:35px;border-radius:10px;font-size:8px">NAYA</span><span>NayaPay</span></div><div class="pay"><img src="https://cdn.simpleicons.org/binance/F0B90B"><span>Binance</span></div>
+</div><p style="text-align:center;margin-top:22px;font-size:12px;color:#66707d">Easypaisa / Upaisa: <b>03471191229</b> — <b>Muhammad Ali</b></p></div></section>
+
+<footer><div class="container footgrid">
+<div class="foot"><h2>SAQI DIGITAL HUB</h2><p>The Most Affordable & Reliable Digital Partner in Pakistan & Beyond!</p><p><b>We Provide Quality</b></p></div>
+<div class="foot"><h4>Quick Links</h4><ul><li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="contact.html">Contact Us</a></li></ul></div>
+<div class="foot"><h4>Contact</h4><ul><li>03471191229</li><li>03325293980</li><li>Instagram: @saqi.digitalhub</li><li>TikTok: @saqi_digitalhub206</li></ul></div>
+<div class="foot"><h4>Services</h4><ul><li>Entertainment</li><li>VPN</li><li>AI & Video Editing</li><li>IPTV</li><li>Social Media</li></ul></div>
+</div><div class="container copy">© 2026 SAQI DIGITAL HUB. All rights reserved.</div></footer>
+<script>
+function toggleMenu(){document.getElementById('mobile').classList.toggle('open')}
+const wa='https://wa.me/923471191229?text=';
+const icons={
+netflix:'netflix',primevideo:'primevideo',hbo:'hbo',disney:'disneyplus',hulu:'hulu',paramount:'paramountplus',
+peacock:'peacock',britbox:'britbox',zee5:'zee5',crunchy:'crunchyroll',nord:'nordvpn',surf:'surfshark',
+ipvanish:'ipvanish',proton:'protonvpn',express:'expressvpn',hma:'huawei',capcut:'capcut',canva:'canva',
+picsart:'picsart',adobe:'adobecreativecloud',chatgpt:'openai',quillbot:'quillbot',grammarly:'grammarly',
+freepik:'freepik',microsoft:'microsoft',semrush:'semrush',tiktok:'tiktok',instagram:'instagram',
+facebook:'facebook',youtube:'youtube',telegram:'telegram',whatsapp:'whatsapp'
+};
+function icon(k){return icons[k]?`https://cdn.simpleicons.org/${icons[k]}`:''}
+function cards(id,data){document.getElementById(id).innerHTML=data.map(x=>`<article class="product"><div class="ptop"><div class="picon">${icon(x[2])?`<img src="${icon(x[2])}" alt="${x[0]}">`:`<b>${x[0].split(' ')[0]}</b>`}</div><div><h3>${x[0]}</h3><small>SAQI DIGITAL HUB</small></div></div><p>${x[3]||'Premium service with quick activation. Contact us for availability and package details.'}</p><div class="bottom"><span class="price">${x[1]==='Custom'?'Custom':'Rs. '+x[1]}</span><a class="order" target="_blank" href="${wa}${encodeURIComponent('Hello SAQI DIGITAL HUB, I want to order: '+x[0])}">Activate Plan</a></div></article>`).join('')}
+
+const ent=[
+['Prime Video 1M Full','150','primevideo'],['Prime Video 6M','700','primevideo'],['HBO Max 1M Private Screen','450','hbo'],['Disney+ No Ads 1M','500','disney'],['Hulu No Ads 1M','450','hulu'],['Paramount+ USA 1M','450','paramount'],['Peacock TV No Ads 1M','400','peacock'],['BritBox USA 1M','450','britbox'],['Zee5 India 1M (OTP)','400','zee5'],['Crave Canada','550',''],['ShemarooMe 1M','350',''],['Eros Now 1M','350',''],['AMC+ 1M','600',''],['Starz USA 1M','500',''],['JioHotstar Canada','500',''],['Tabii Turkish 1M','550',''],['KOCOWA+ Korean 1M','600',''],['MGM+ 1M','550',''],['Hallmark+ 1M','550',''],['Rakuten Viki 1M','550',''],['CableOne','350',''],['Chaupal','500',''],['Crunchyroll','450','crunchy'],['Netflix','750','netflix']];
+const iptv=[['Opplex TV','350',''],['Hexa4K','350',''],['StarShare TV','480',''],['B1G TV','600',''],['Geo IPTV','520',''],['5G Live / Zain TV','650',''],['Mega OTT','630',''],['Rolex TV','430',''],['Filex IPTV','430',''],['Boss TV','430',''],['Zum TV (Best For Dubai)','650',''],['Trex OTT','900',''],['Strong 8K','900','']];
+const vpn=[['NordVPN','450','nord'],['Surfshark','450','surf'],['IPVanish','500','ipvanish'],['Proton VPN','500','proton'],['ExpressVPN','600','express'],['HMA','450','hma']];
+const ai=[['CapCut','700','capcut'],['Canva Pro 1 Year','1000','canva'],['PicsArt','550','picsart'],['Adobe Creative Cloud','2500','adobe'],['ChatGPT Shared','850','chatgpt'],['QuillBot','500','quillbot'],['Jenni AI','700',''],['Skillshare Direct Login','500',''],['Grammarly','500','grammarly'],['Envato Premium Portal Access','900',''],['Freepik','1200','freepik'],['Microsoft Invite','4900','microsoft'],['Semrush','1000','semrush']];
+const social=[['TikTok — Likes / Views / Followers / Comments / Shares / Favorites','Custom','tiktok'],['Instagram — Likes / Views / Followers / Comments / Shares / Favorites','Custom','instagram'],['Facebook — Likes / Views / Followers / Comments / Shares / Favorites','Custom','facebook'],['YouTube — Likes / Views / Followers / Comments / Shares / Favorites','Custom','youtube'],['Telegram — Members / Reactions','Custom','telegram'],['WhatsApp — Channel Members / Post Reactions / Poll Votes','Custom','whatsapp']];
+cards('ent',ent);cards('iptv',iptv);cards('vpn',vpn);cards('ai',ai);cards('social',social);
+</script></body></html>
