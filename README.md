@@ -1,2 +1,0 @@
-# saqidigitalhub
-OFFICIAL SAQI DIGITAL HUB WEBSITE
